@@ -87,6 +87,7 @@ export default function App() {
   const [history, setHistory] = useState<{id: string, timestamp: number, script: string, audioUrl: string | null}[]>([]);
   const [showHistory, setShowHistory] = useState(false);
   const [language, setLanguage] = useState<'english' | 'chinese'>('chinese');
+  const [ttsModel, setTtsModel] = useState<'gemini-3.1-flash-tts-preview' | 'gemini-3.1-flash-live-preview'>('gemini-3.1-flash-tts-preview');
 
   const [mode, setMode] = useState<1 | 2 | 3>(2);
   const [genMode, setGenMode] = useState<'auto' | 'custom' | 'direct'>('auto');
@@ -159,7 +160,7 @@ export default function App() {
       const ttsText = voiceDef.prefix ? `${voiceDef.prefix} ${baseText}` : baseText;
       
       const response = await generateWithRetry(() => getAi().models.generateContent({
-        model: "gemini-3.1-flash-tts-preview",
+        model: ttsModel,
         contents: [{ parts: [{ text: ttsText }] }],
         config: {
           responseModalities: ["AUDIO"],
@@ -317,7 +318,7 @@ ${input}`;
         }
 
         const response = await generateWithRetry(() => getAi().models.generateContent({
-          model: "gemini-3.1-flash-tts-preview",
+          model: ttsModel,
           contents: [{ parts: [{ text: ttsText }] }],
           config: {
             responseModalities: ["AUDIO"],
@@ -455,7 +456,7 @@ ${input}`;
   return (
     <div className="min-h-screen bg-neutral-950 text-neutral-100 p-6 font-sans selection:bg-indigo-500/30">
       <div className="max-w-5xl mx-auto space-y-8">
-        <header className="flex items-center justify-between border-b border-neutral-800 pb-6">
+        <header className="flex flex-col xl:flex-row xl:items-center justify-between border-b border-neutral-800 pb-6 gap-4">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-xl bg-indigo-500/20 flex items-center justify-center border border-indigo-500/30">
               <Mic className="w-5 h-5 text-indigo-400" />
@@ -466,7 +467,7 @@ ${input}`;
             </div>
           </div>
           
-          <div className="flex items-center gap-4">
+          <div className="flex flex-wrap items-center gap-3">
             <div className="flex items-center gap-2 bg-neutral-900 p-1 rounded-lg border border-neutral-800">
               <button
                 onClick={() => setLanguage('english')}
@@ -487,6 +488,31 @@ ${input}`;
                 }`}
               >
                 <Globe className="w-4 h-4" /> 中文
+              </button>
+            </div>
+            
+            <div className="flex items-center gap-2 bg-neutral-900 p-1 rounded-lg border border-neutral-800">
+              <button
+                onClick={() => setTtsModel('gemini-3.1-flash-tts-preview')}
+                className={`px-3 py-1.5 text-xs font-medium rounded-md transition-colors flex items-center gap-2 ${
+                  ttsModel === 'gemini-3.1-flash-tts-preview'
+                    ? 'bg-neutral-800 text-purple-400 shadow-sm'
+                    : 'text-neutral-400 hover:text-neutral-200 hover:bg-neutral-800/50'
+                }`}
+                title="Strict rate limits (100 req/day)"
+              >
+                3.1-flash-tts
+              </button>
+              <button
+                onClick={() => setTtsModel('gemini-3.1-flash-live-preview')}
+                className={`px-3 py-1.5 text-xs font-medium rounded-md transition-colors flex items-center gap-2 ${
+                  ttsModel === 'gemini-3.1-flash-live-preview'
+                    ? 'bg-neutral-800 text-blue-400 shadow-sm'
+                    : 'text-neutral-400 hover:text-neutral-200 hover:bg-neutral-800/50'
+                }`}
+                title="Live preview model fallback"
+              >
+                3.1-flash-live
               </button>
             </div>
 
