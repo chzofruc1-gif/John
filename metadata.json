@@ -1,0 +1,5 @@
+{
+  "name": "AI Podcast Studio",
+  "description": "Generate realistic two-person podcasts from scripts or topics using Gemini TTS.",
+  "requestFramePermissions": []
+}
