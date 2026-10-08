@@ -76,8 +76,8 @@ class OutputSpec:
 class ProvidersConfig:
     """Which backend each job uses. Mix freely, e.g. research on Gemini (web search), script on a local
     Qwen via Ollama, art on a local Stable Diffusion, voices with Piper."""
-    research: str = ""   # "" = same as llm.  gemini | openai | mock
-    llm: str = "gemini"  # gemini | openai | mock
+    research: str = ""   # "" = same as llm.  anthropic | gemini | openai | mock
+    llm: str = "gemini"  # anthropic | gemini | openai | mock
     image: str = "gemini"  # gemini | openai | sdwebui | mock
     tts: str = "gemini"  # gemini | openai | command | mock
 
@@ -89,6 +89,17 @@ class GeminiConfig:
     script_model: str = "gemini-2.5-pro"
     image_model: str = "gemini-2.5-flash-image"
     tts_model: str = "gemini-2.5-flash-preview-tts"
+
+
+@dataclass
+class AnthropicConfig:
+    """Claude via the official SDK (credentials: ANTHROPIC_API_KEY or `ant auth login`)."""
+    model: str = "claude-opus-5-5"
+    research_model: str = ""       # "" = same as model
+    effort: str = "high"           # low | medium | high | xhigh | max
+    max_tokens: int = 64000        # requests stream, so long scripts are fine
+    web_search_max_uses: int = 15
+    fallbacks: bool = True         # server-side fallback model if a request is declined
 
 
 @dataclass
@@ -175,6 +186,7 @@ class SeriesConfig:
     voices: VoicePool = field(default_factory=VoicePool)
     providers: ProvidersConfig = field(default_factory=ProvidersConfig)
     gemini: GeminiConfig = field(default_factory=GeminiConfig)
+    anthropic: AnthropicConfig = field(default_factory=AnthropicConfig)
     openai: OpenAIConfig = field(default_factory=OpenAIConfig)
     sdwebui: SDWebUIConfig = field(default_factory=SDWebUIConfig)
     command_tts: CommandTTSConfig = field(default_factory=CommandTTSConfig)

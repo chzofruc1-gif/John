@@ -1,0 +1,13 @@
+{
+  "id": "confucius",
+  "name_zh": "孔子",
+  "name_en": "Confucius",
+  "look": "chibi elderly teacher: tall, high forehead, long grey beard, plain off-white scholar's robe, holding a bamboo scroll",
+  "gender": "male",
+  "voice": {
+    "zh": "",
+    "en": "",
+    "style_zh": "",
+    "style_en": ""
+  }
+}

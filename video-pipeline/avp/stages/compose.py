@@ -16,7 +16,7 @@ from dataclasses import dataclass
 from pathlib import Path
 
 from ..config import OutputSpec, frame_size
-from ..diagrams import DiagramRenderer, diagram_data
+from ..diagrams import TEMPLATE, DiagramRenderer, diagram_data
 from ..media import audio_duration, require_ffmpeg, run_ffmpeg
 from ..models import NARRATOR, Episode, Scene
 from ..overlays import OverlayRenderer, cropped, find_font_path, make_cover
@@ -186,8 +186,8 @@ def render_file(ctx: Context, ep: Episode, of: OutputFile, font: str | None) -> 
 
     def segment_key(index: int, shot: Shot) -> tuple[Path, str]:
         s = shot.scene
-        if s.kind == "diagram":
-            content = diagram_data(s.diagram, lang)
+        if s.kind == "diagram":  # template edits must re-render diagrams too
+            content = [diagram_data(s.diagram, lang), fingerprint(TEMPLATE.read_text(encoding="utf-8"))]
         else:
             content = ctx.episode.recorded(f"image:{s.id}") or str(ctx.episode.image_path(s).stat().st_mtime)
         fp = fingerprint("seg-v2", s.kind, s.camera, content, shot.duration, [(c.start, c.end, c.text) for c in shot.cues],

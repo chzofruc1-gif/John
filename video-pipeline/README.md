@@ -28,7 +28,7 @@
 
 ```bash
 cd video-pipeline
-pip install -e '.[gemini,dev]'     # 不用 Gemini 可以去掉 gemini
+pip install -e '.[anthropic,gemini,dev]'   # 只装你用得到的：anthropic = Claude，gemini = Gemini
 playwright install chromium        # 或设置 AVP_CHROMIUM=/path/to/chrome
 export GEMINI_API_KEY=...          # 用哪家就配哪家的 key，见 .env.example；本地模型不需要
 ```
@@ -46,6 +46,8 @@ avp approve channels/econ/episodes/01-guanzhong
 avp run     channels/econ/episodes/01-guanzhong              # 生产全部成片
 
 avp status channels/econ
+avp check  channels/econ/episodes/01-guanzhong   # 手改或别的模型改过 script.json 后：校验并重新生成 script.md
+avp run    channels/econ/episodes/01-guanzhong --skip-review --draft --provider mock   # 零成本、低清预览结构和节奏
 ```
 
 常用选项：
@@ -57,6 +59,8 @@ avp status channels/econ
 | `--scenes s03,s07 --force` | 只重做某几个镜头 |
 | `--outputs youtube_en` | 只渲染某个输出 |
 | `--skip-review` | 不审稿先出草稿片（看效果用） |
+| `--draft` | 540p 低清快速预览（正式清晰度单独缓存，不冲突） |
+| `--provider anthropic` | 研究和写稿用 Claude（画图、配音仍按 series.toml 设置） |
 
 ## 换模型 / 完全本地运行
 
@@ -64,8 +68,8 @@ avp status channels/econ
 
 | 环节 | 可选提供方 |
 |---|---|
-| `research` 研究 | `gemini`（带 Google 搜索溯源，推荐）· `openai`（任意兼容接口；无联网时会在资料顶部标注"需人工核实"）· 或者你自己写 `research.md` |
-| `llm` 大纲/脚本/改稿 | `gemini` · `openai` = 任何 OpenAI 兼容接口：DeepSeek、通义千问、Kimi、GLM、OpenRouter（含 Claude、GPT）、本地 **Ollama / LM Studio / vLLM / llama.cpp** |
+| `research` 研究 | `anthropic`（Claude + 联网搜索，附来源）· `gemini`（Google 搜索溯源）· `openai`（任意兼容接口；无联网时会在资料顶部标注"需人工核实"）· 或者你自己写 `research.md` |
+| `llm` 大纲/脚本/改稿 | `anthropic`（Claude，官方 SDK，结构化输出）· `gemini` · `openai` = 任何 OpenAI 兼容接口：DeepSeek、通义千问、Kimi、GLM、OpenRouter、本地 **Ollama / LM Studio / vLLM / llama.cpp** |
 | `image` 插画 | `gemini`（支持人物参考图，形象最稳）· `openai`（gpt-image 等）· `sdwebui`（本地 **Stable Diffusion WebUI / Forge**）|
 | `tts` 配音 | `gemini` · `openai`（OpenAI TTS 或本地 **Kokoro-FastAPI** 等）· `command`（任意本地程序：**Piper、CosyVoice、F5-TTS、sherpa-onnx**…）|
 | 全部 | `mock`：离线占位，零成本测试流程 |

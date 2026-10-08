@@ -40,7 +40,12 @@ def _context(episode: EpisodeDir, args) -> Context:
     series = episode.series
     cfg = series.config
     if getattr(args, "provider", None):
-        cfg.providers.research = cfg.providers.llm = cfg.providers.image = cfg.providers.tts = args.provider
+        if args.provider == "anthropic":  # Claude writes; it has no image or speech models
+            cfg.providers.research = cfg.providers.llm = "anthropic"
+        else:
+            cfg.providers.research = cfg.providers.llm = cfg.providers.image = cfg.providers.tts = args.provider
+    if getattr(args, "draft", False):
+        cfg.render.height = 540  # fast low-res preview; full-res renders are cached separately
     if getattr(args, "workers", None):
         cfg.runtime.max_workers = args.workers
     split = lambda v: {x.strip() for x in v.split(",") if x.strip()} if v else set()  # noqa: E731
@@ -113,6 +118,21 @@ def cmd_approve(args) -> None:
     print(f"approved revision {script.revision}. next: avp run {episode.root}")
 
 
+def cmd_check(args) -> None:
+    """Validate script.json (e.g. after hand edits or another model's rewrite) and regenerate script.md."""
+    episode = EpisodeDir(Path(args.episode_dir))
+    script = episode.load_script()
+    episode.script_md_path.write_text(render_script_md(script, episode.series.config), encoding="utf-8")
+    problems = script.validate()
+    en = sum(len(l.text["en"].split()) for s in script.scenes for l in s.lines)
+    zh = sum(len(l.text["zh"]) for s in script.scenes for l in s.lines)
+    print(f"{len(script.scenes)} scenes · {len(script.claims)} claims · ~{en / 150:.1f} min EN ({en} words) · "
+          f"~{zh / 260:.1f} min ZH ({zh} 字) · {'approved' if script.approved else 'draft'} r{script.revision}")
+    if problems:
+        sys.exit("problems:\n  " + "\n  ".join(problems))
+    print(f"ok — {episode.script_md_path} regenerated")
+
+
 def _episode_status(ep: EpisodeDir) -> str:
     marks = []
     for label, path in [("research", ep.research_path), ("outline", ep.outline_path), ("script", ep.script_path)]:
@@ -158,7 +178,7 @@ def main(argv: list[str] | None = None) -> None:
     p.set_defaults(func=cmd_new)
 
     def common(p):
-        p.add_argument("--provider", choices=["gemini", "openai", "mock"],
+        p.add_argument("--provider", choices=["anthropic", "gemini", "openai", "mock"],
                        help="use this provider for every job (mock = offline placeholders)")
         p.add_argument("--workers", type=int, help="parallel API calls / renders")
 
@@ -171,6 +191,7 @@ def main(argv: list[str] | None = None) -> None:
     p.add_argument("--scenes", help="limit regeneration to these scene ids, e.g. s03,s07")
     p.add_argument("--outputs", help="limit rendering to these output ids")
     p.add_argument("--skip-review", action="store_true", help="produce a draft without approving the script")
+    p.add_argument("--draft", action="store_true", help="render at 540p for a quick preview")
     common(p)
     p.set_defaults(func=cmd_run)
 
@@ -184,6 +205,10 @@ def main(argv: list[str] | None = None) -> None:
     p.add_argument("episode_dir")
     p.add_argument("--force", action="store_true")
     p.set_defaults(func=cmd_approve)
+
+    p = sub.add_parser("check", help="validate script.json and regenerate script.md")
+    p.add_argument("episode_dir")
+    p.set_defaults(func=cmd_check)
 
     p = sub.add_parser("status", help="show progress of a series or episode")
     p.add_argument("path")

@@ -193,7 +193,11 @@ const builders = {
     const raw = String(it.primary || "");
     const m = raw.match(/-?\d[\d,]*(\.\d+)?/);
     body.dataset.raw = raw;
-    if (m) { body.dataset.num = m[0].replace(/,/g, ""); body.dataset.idx = m.index; body.dataset.len = m[0].length; body.dataset.dec = (m[1] || "").length ? m[1].length - 1 : 0; }
+    if (m) {
+      body.dataset.num = m[0].replace(/,/g, ""); body.dataset.idx = m.index; body.dataset.len = m[0].length;
+      body.dataset.dec = (m[1] || "").length ? m[1].length - 1 : 0;
+      body.dataset.group = m[0].includes(",") ? "1" : "";  // keep the author's style: "60,000,000" vs "6000万"
+    }
     appear(body.querySelector(".num"), 0.2, "pop", 0.6);
     appear(body.querySelector(".lbl"), 1.4, "up", 0.6);
   },
@@ -255,7 +259,8 @@ window.renderAt = function (t) {
     if (body.dataset.num === undefined) { el.textContent = raw; }
     else {
       const k = easeOut(prog(t, 0.2, Math.min(2.2, D * 0.4))), dec = +body.dataset.dec;
-      const v = (+body.dataset.num * k).toLocaleString("en-US", { minimumFractionDigits: dec, maximumFractionDigits: dec });
+      const v = (+body.dataset.num * k).toLocaleString("en-US", {
+        minimumFractionDigits: dec, maximumFractionDigits: dec, useGrouping: !!body.dataset.group });
       const i = +body.dataset.idx;
       el.textContent = raw.slice(0, i) + v + raw.slice(i + +body.dataset.len);
     }

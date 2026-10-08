@@ -1,5 +1,6 @@
 """Provider registry: maps names in series.toml [providers] to implementations.
 
+    anthropic  Claude via the Anthropic SDK (research with web search, outline, script)
     gemini   Google Gemini API (research with Google Search grounding, Nano Banana / Imagen, Gemini TTS)
     openai   any OpenAI-compatible endpoint — cloud (OpenAI, DeepSeek, Qwen, Kimi, OpenRouter, Claude …)
              or local (Ollama, LM Studio, vLLM, llama.cpp, Kokoro-FastAPI …); see [openai.*] in series.toml
@@ -16,8 +17,8 @@ from .base import ImageProvider, LLMProvider, ResearchResult, Source, TTSProvide
 __all__ = ["Providers", "ResearchResult", "Source", "build_providers", "KINDS"]
 
 KINDS = {
-    "research": ("gemini", "openai", "mock"),
-    "llm": ("gemini", "openai", "mock"),
+    "research": ("anthropic", "gemini", "openai", "mock"),
+    "llm": ("anthropic", "gemini", "openai", "mock"),
     "image": ("gemini", "openai", "sdwebui", "mock"),
     "tts": ("gemini", "openai", "command", "mock"),
 }
@@ -45,6 +46,11 @@ def build_providers(config: SeriesConfig) -> Providers:
         if name == "mock":
             from . import mock
             return {"research": mock.MockLLM, "llm": mock.MockLLM, "image": mock.MockImage, "tts": mock.MockTTS}[kind]()
+        if name == "anthropic":
+            from .claude import ClaudeLLM
+            if "anthropic" not in cache:
+                cache["anthropic"] = ClaudeLLM(config.anthropic, retries)
+            return cache["anthropic"]
         if name == "gemini":
             from . import gemini
             cls = {"research": gemini.GeminiLLM, "llm": gemini.GeminiLLM, "image": gemini.GeminiImage,
