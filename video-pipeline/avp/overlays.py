@@ -98,12 +98,13 @@ class OverlayRenderer:
 
     def subtitle(self, text: str, out: Path) -> Path:
         img, draw = self._canvas()
-        font = _font(self.font_path, max(18, int(self.unit * 0.052)))
-        stroke = max(2, int(self.unit * 0.004))
-        lines = wrap(text, font, int(self.w * 0.86), draw)
+        portrait = self.h > self.w
+        font = _font(self.font_path, max(18, int(self.unit * (0.062 if portrait else 0.05))))
+        stroke = max(2, int(self.unit * 0.005))
+        lines = wrap(text, font, int(self.w * (0.9 if portrait else 0.86)), draw)
         gap = int(self.unit * 0.012)
         block = self._block_height(draw, lines, font, gap, stroke)
-        bottom_margin = int(self.h * (0.12 if self.h > self.w else 0.07))
+        bottom_margin = int(self.h * (0.13 if portrait else 0.07))
         self._draw_lines(draw, lines, font, self.w / 2, self.h - bottom_margin - block, gap, (255, 255, 255, 255), stroke)
         img.save(out)
         return out
@@ -155,3 +156,12 @@ def make_cover(image_path: Path, title: str, width: int, height: int, font_path:
     Image.alpha_composite(base, Image.open(layer_path)).convert("RGB").save(out, "JPEG", quality=92)
     layer_path.unlink(missing_ok=True)
     return out
+
+
+def cropped(png: Path) -> tuple[Path, int, int]:
+    """Crop a full-frame overlay to its visible pixels; returns (path, x, y) for placement."""
+    img = Image.open(png)
+    box = img.getbbox() or (0, 0, 2, 2)
+    out = png.with_name(png.stem + ".crop.png")
+    img.crop(box).save(out)
+    return out, box[0], box[1]

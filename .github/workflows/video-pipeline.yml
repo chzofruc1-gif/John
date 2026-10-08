@@ -1,0 +1,27 @@
+name: video-pipeline
+
+on:
+  push:
+    paths: ["video-pipeline/**", ".github/workflows/video-pipeline.yml"]
+  pull_request:
+    paths: ["video-pipeline/**", ".github/workflows/video-pipeline.yml"]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: video-pipeline
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: System packages (ffmpeg, CJK font)
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg fonts-wqy-zenhei
+      - name: Install
+        run: |
+          pip install -e '.[dev]'
+          playwright install --with-deps chromium
+      - name: Test
+        run: pytest -q

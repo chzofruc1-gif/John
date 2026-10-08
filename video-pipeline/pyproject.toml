@@ -5,11 +5,13 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "avp"
 version = "0.1.0"
-description = "AI Video Pipeline: brief -> storyboard -> visuals -> voice-over -> finished MP4"
+description = "AI video pipeline for faceless, bilingual explainer series"
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
   "Pillow>=10.1",
+  "playwright>=1.40",
+  "httpx>=0.25",
   "tomli>=2.0; python_version < '3.11'",
 ]
 
@@ -22,6 +24,9 @@ avp = "avp.cli:main"
 
 [tool.setuptools.packages.find]
 include = ["avp*"]
+
+[tool.setuptools.package-data]
+avp = ["templates/*.toml", "diagrams/*.html"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

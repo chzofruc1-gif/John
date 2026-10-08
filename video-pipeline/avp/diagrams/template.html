@@ -1,0 +1,266 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  :root {
+    --paper: #f3e9d2; --paper-dark: #e6d6b3; --ink: #1f1a17; --ink-soft: #5b4f45;
+    --red: #b23a2b; --gold: #b8892a; --jade: #3a6b5b;
+    --serif: "Noto Serif CJK SC", "Source Han Serif SC", "Songti SC", "STSong", "SimSun", "WenQuanYi Zen Hei", serif;
+    --sans: "Noto Sans CJK SC", "Source Han Sans SC", "PingFang SC", "Microsoft YaHei", "WenQuanYi Zen Hei", sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 100%; height: 100%; overflow: hidden; }
+  body {
+    background:
+      radial-gradient(ellipse at 30% 20%, rgba(255,255,255,.35), transparent 60%),
+      radial-gradient(ellipse at 80% 90%, rgba(120,90,40,.18), transparent 55%),
+      repeating-linear-gradient(0deg, rgba(90,60,20,.025) 0 2px, transparent 2px 5px),
+      var(--paper);
+    color: var(--ink); font-family: var(--sans);
+  }
+  /* Safe area: the bottom band is reserved for burned-in subtitles. */
+  #stage { position: absolute; left: 6%; right: 6%; top: 7%; bottom: 24%; display: flex; flex-direction: column; }
+  body.portrait #stage { top: 12%; bottom: 26%; left: 7%; right: 7%; }
+  .title { font-family: var(--serif); font-weight: 700; font-size: calc(var(--u) * 6.2); line-height: 1.25;
+           text-align: center; margin-bottom: calc(var(--u) * 3); }
+  .title::after { content: ""; display: block; height: calc(var(--u) * .5); width: calc(var(--u) * 14);
+                  background: var(--red); margin: calc(var(--u) * 1.6) auto 0; border-radius: 4px;
+                  transform-origin: center; transform: scaleX(var(--rule, 1)); }
+  .body { flex: 1; position: relative; display: flex; align-items: center; justify-content: center; }
+  .card { background: rgba(255,250,238,.88); border: calc(var(--u)*.35) solid var(--ink); border-radius: calc(var(--u)*1.2);
+          box-shadow: calc(var(--u)*.6) calc(var(--u)*.6) 0 rgba(31,26,23,.85); padding: calc(var(--u)*2) calc(var(--u)*2.4); }
+  .seal { display: inline-flex; align-items: center; justify-content: center; background: var(--red); color: #fff4e6;
+          font-family: var(--serif); font-weight: 700; border-radius: calc(var(--u)*.8); }
+
+  /* chapter */
+  .chapter { text-align: center; }
+  .chapter .kicker { font-size: calc(var(--u)*4); letter-spacing: .2em; color: var(--red); font-weight: 700; }
+  .chapter .big { font-family: var(--serif); font-weight: 800; font-size: calc(var(--u)*10); line-height: 1.2; margin-top: calc(var(--u)*2); }
+  .chapter .seal { width: calc(var(--u)*11); height: calc(var(--u)*11); font-size: calc(var(--u)*5); margin-top: calc(var(--u)*4); }
+
+  /* quote */
+  .quote { max-width: 92%; text-align: center; }
+  .quote .orig { font-family: var(--serif); font-weight: 700; font-size: calc(var(--u)*8.6); line-height: 1.6; color: var(--ink); }
+  .quote .orig span { display: inline-block; }
+  .quote .src { margin-top: calc(var(--u)*1.6); font-size: calc(var(--u)*3.8); color: var(--red); font-weight: 700; }
+  .quote .tr { margin-top: calc(var(--u)*2.4); font-size: calc(var(--u)*4.6); line-height: 1.5; color: var(--ink-soft); }
+
+  /* flow */
+  .flow { display: flex; align-items: center; justify-content: center; width: 100%; gap: 0; }
+  body.portrait .flow { flex-direction: column; }
+  .flow .node { text-align: center; font-weight: 700; font-size: calc(var(--u)*5.4); min-width: calc(var(--u)*18); }
+  .flow .arrow { position: relative; flex: 0 0 auto; width: calc(var(--u)*15); height: calc(var(--u)*10);
+                 display: flex; align-items: center; justify-content: center; }
+  body.portrait .flow .arrow { width: calc(var(--u)*14); height: calc(var(--u)*9); }
+  .flow .arrow svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+  .flow .arrow .lbl { position: absolute; top: -14%; font-size: calc(var(--u)*3.4); color: var(--jade); font-weight: 700; white-space: nowrap; }
+  body.portrait .flow .arrow .lbl { top: auto; left: 62%; }
+  .flow .token { position: absolute; width: calc(var(--u)*2.4); height: calc(var(--u)*2.4); border-radius: 50%;
+                 background: var(--gold); box-shadow: 0 0 0 calc(var(--u)*.4) rgba(184,137,42,.3); }
+
+  /* compare */
+  .compare { display: flex; gap: calc(var(--u)*5); width: 100%; align-items: stretch; justify-content: center; position: relative; }
+  body.portrait .compare { flex-direction: column; gap: calc(var(--u)*7); }
+  .compare .card { flex: 1; max-width: 46%; }
+  body.portrait .compare .card { max-width: 100%; }
+  .compare h3 { font-family: var(--serif); font-size: calc(var(--u)*5.8); margin-bottom: calc(var(--u)*1.4); }
+  .compare .left h3 { color: var(--red); } .compare .right h3 { color: var(--jade); }
+  .compare li { list-style: none; font-size: calc(var(--u)*4.3); line-height: 1.45; margin: calc(var(--u)*.9) 0; padding-left: 1.2em; position: relative; }
+  .compare li::before { content: "◆"; position: absolute; left: 0; color: var(--gold); font-size: .8em; top: .15em; }
+  .compare .vs { position: absolute; left: 50%; top: 50%; width: calc(var(--u)*9); height: calc(var(--u)*9);
+                 font-size: calc(var(--u)*4); margin: calc(var(--u)*-4.5) 0 0 calc(var(--u)*-4.5); z-index: 2; }
+
+  /* timeline */
+  .timeline { position: relative; width: 100%; height: 100%; }
+  .timeline .axis { position: absolute; background: var(--ink); border-radius: 4px; }
+  .timeline .ev { position: absolute; text-align: center; transform: translate(-50%, 0); width: calc(var(--u)*26); }
+  .timeline .dot { width: calc(var(--u)*3); height: calc(var(--u)*3); border-radius: 50%; background: var(--red);
+                   border: calc(var(--u)*.5) solid var(--paper); box-shadow: 0 0 0 calc(var(--u)*.35) var(--ink); margin: 0 auto; }
+  .timeline .yr { font-family: var(--serif); font-weight: 800; font-size: calc(var(--u)*5); margin-top: calc(var(--u)*1.2); color: var(--red); }
+  .timeline .what { font-size: calc(var(--u)*3.7); line-height: 1.35; margin-top: calc(var(--u)*.6); }
+  body.portrait .timeline .ev { transform: translate(0, -50%); width: 80%; text-align: left; display: flex; gap: calc(var(--u)*2.5); align-items: center; }
+  body.portrait .timeline .dot { margin: 0; flex: 0 0 auto; }
+  body.portrait .timeline .yr { margin-top: 0; }
+
+  /* stat */
+  .stat { text-align: center; }
+  .stat .num { font-family: var(--serif); font-weight: 900; font-size: calc(var(--u)*20); color: var(--red); line-height: 1; }
+  .stat .lbl { margin-top: calc(var(--u)*2.5); font-size: calc(var(--u)*4.4); font-weight: 700; max-width: 80%; margin-left: auto; margin-right: auto; line-height: 1.4; }
+</style>
+</head>
+<body>
+<div id="stage"><div class="title" id="title"></div><div class="body" id="body"></div></div>
+<script>
+// Deterministic renderer: setup(data) builds the DOM once; renderAt(t) poses every element for time t
+// (seconds) as a pure function of t, so frames can be captured in any order.
+const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
+const easeOut = x => 1 - Math.pow(1 - x, 3);
+const easeOutBack = x => { const c = 1.7, k = c + 1; return 1 + k * Math.pow(x - 1, 3) + c * Math.pow(x - 1, 2); };
+const prog = (t, start, dur) => clamp((t - start) / dur);
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
+let D, anims = [];
+
+function appear(el, start, kind = "up", dur = 0.55) { anims.push({ el, start, kind, dur }); }
+
+function pose(t) {
+  for (const a of anims) {
+    const p = prog(t, a.start, a.dur), e = easeOutBack(p), o = easeOut(p);
+    const s = a.el.style;
+    s.opacity = o;
+    if (a.kind === "up") s.transform = `translateY(${(1 - e) * 40}px)`;
+    else if (a.kind === "left") s.transform = `translateX(${(1 - e) * -80}px)`;
+    else if (a.kind === "right") s.transform = `translateX(${(1 - e) * 80}px)`;
+    else if (a.kind === "pop") s.transform = `scale(${0.4 + 0.6 * e})`;
+    else if (a.kind === "stamp") s.transform = `scale(${2.2 - 1.2 * e}) rotate(${(1 - e) * -14}deg)`;
+    else if (a.kind === "fade") s.transform = "none";
+  }
+}
+
+const builders = {
+  chapter(d, body) {
+    body.innerHTML = `<div class="chapter"><div class="kicker">${esc(d.items[0]?.primary)}</div>
+      <div class="big">${esc(d.title)}</div><div class="seal">${esc(d.seal || "史")}</div></div>`;
+    document.getElementById("title").style.display = "none";
+    const [k, big, seal] = body.querySelectorAll(".kicker, .big, .seal");
+    appear(k, 0.15, "fade"); appear(big, 0.4, "up", 0.7); appear(seal, 1.1, "stamp", 0.45);
+  },
+  quote(d, body) {
+    const phrases = (d.original || d.title).split(/(?<=[，。；：！？、,.;:!?])/).filter(Boolean);
+    body.innerHTML = `<div class="quote"><div class="orig">${phrases.map(p => `<span>${esc(p)}</span>`).join("")}</div>
+      <div class="src">—— ${esc(d.source)}</div><div class="tr">${esc(d.original ? d.title : "")}</div></div>`;
+    document.getElementById("title").style.display = "none";
+    const spans = body.querySelectorAll(".orig span");
+    const span = Math.min(D * 0.35, 0.45 * spans.length);
+    spans.forEach((el, i) => appear(el, 0.2 + (i * span) / spans.length, "up", 0.5));
+    appear(body.querySelector(".src"), 0.4 + span, "fade");
+    appear(body.querySelector(".tr"), 0.9 + span, "up", 0.6);
+  },
+  flow(d, body) {
+    const n = d.items.length;
+    const portrait = document.body.classList.contains("portrait");
+    let html = '<div class="flow">';
+    d.items.forEach((it, i) => {
+      html += `<div class="card node">${esc(it.primary)}</div>`;
+      if (i < n - 1) html += `<div class="arrow"><svg viewBox="0 0 100 100" preserveAspectRatio="none">
+        <path d="${portrait ? "M50 8 L50 92 M38 78 L50 92 L62 78" : "M6 50 L94 50 M80 38 L94 50 L80 62"}"
+          stroke="#1f1a17" stroke-width="5" fill="none" stroke-linecap="round" pathLength="1" vector-effect="non-scaling-stroke"/></svg>
+        <div class="lbl">${esc(it.secondary)}</div></div>`;
+    });
+    html += '</div><div class="token"></div>';
+    body.innerHTML = html;
+    const nodes = body.querySelectorAll(".node"), arrows = body.querySelectorAll(".arrow");
+    const step = Math.min(0.9, (D * 0.55) / Math.max(1, n));
+    nodes.forEach((el, i) => appear(el, 0.3 + i * step, "pop", 0.5));
+    arrows.forEach((el, i) => { el.dataset.start = 0.3 + i * step + step * 0.5; el.dataset.dur = step * 0.6; appear(el.querySelector(".lbl"), 0.3 + (i + 0.9) * step, "fade", 0.4); });
+    body.dataset.tokenStart = 0.3 + n * step + 0.3;
+  },
+  compare(d, body) {
+    const split = s => String(s || "").split(/[；;]\s*/).filter(Boolean);
+    const [l, r] = [d.items[0] || {}, d.items[1] || {}];
+    body.innerHTML = `<div class="compare">
+      <div class="card left"><h3>${esc(l.primary)}</h3><ul>${split(l.secondary).map(p => `<li>${esc(p)}</li>`).join("")}</ul></div>
+      <div class="seal vs">VS</div>
+      <div class="card right"><h3>${esc(r.primary)}</h3><ul>${split(r.secondary).map(p => `<li>${esc(p)}</li>`).join("")}</ul></div></div>`;
+    appear(body.querySelector(".left"), 0.3, "left", 0.6);
+    appear(body.querySelector(".right"), 0.6, "right", 0.6);
+    appear(body.querySelector(".vs"), 1.0, "stamp", 0.45);
+    const lis = body.querySelectorAll("li");
+    const step = Math.min(0.6, (D * 0.5) / Math.max(1, lis.length));
+    body.querySelectorAll(".left li").forEach((el, i) => appear(el, 1.2 + i * 2 * step, "up", 0.45));
+    body.querySelectorAll(".right li").forEach((el, i) => appear(el, 1.2 + (i * 2 + 1) * step, "up", 0.45));
+  },
+  timeline(d, body) {
+    const portrait = document.body.classList.contains("portrait");
+    const n = d.items.length;
+    body.innerHTML = `<div class="timeline"><div class="axis"></div>${d.items.map(it =>
+      `<div class="ev"><div class="dot"></div><div><div class="yr">${esc(it.primary)}</div><div class="what">${esc(it.secondary)}</div></div></div>`).join("")}</div>`;
+    const axis = body.querySelector(".axis");
+    if (portrait) Object.assign(axis.style, { left: "8%", top: "4%", width: "6px", height: "92%" });
+    else Object.assign(axis.style, { left: "4%", top: "38%", height: "6px", width: "92%" });
+    const step = Math.min(1.0, (D * 0.6) / Math.max(1, n));
+    body.querySelectorAll(".ev").forEach((el, i) => {
+      const f = n === 1 ? 0.5 : 0.1 + (0.8 * i) / (n - 1);
+      if (portrait) Object.assign(el.style, { left: "calc(8% + 3px - var(--u) * 2)", top: `${f * 100}%` });
+      else Object.assign(el.style, { left: `${f * 100}%`, top: "calc(38% + 3px - var(--u) * 2)" });
+      appear(el, 0.6 + i * step, "pop", 0.5);
+    });
+    body.dataset.axisDur = 0.6 + n * step;
+  },
+  stat(d, body) {
+    const it = d.items[0] || {};
+    body.innerHTML = `<div class="stat"><div class="num"></div><div class="lbl">${esc(it.secondary)}</div></div>`;
+    const raw = String(it.primary || "");
+    const m = raw.match(/-?\d[\d,]*(\.\d+)?/);
+    body.dataset.raw = raw;
+    if (m) { body.dataset.num = m[0].replace(/,/g, ""); body.dataset.idx = m.index; body.dataset.len = m[0].length; body.dataset.dec = (m[1] || "").length ? m[1].length - 1 : 0; }
+    appear(body.querySelector(".num"), 0.2, "pop", 0.6);
+    appear(body.querySelector(".lbl"), 1.4, "up", 0.6);
+  },
+};
+
+window.setup = function (data) {
+  D = data.duration;
+  document.documentElement.style.setProperty("--u", `${Math.min(data.width, data.height) / 100}px`);
+  document.body.classList.toggle("portrait", data.height > data.width);
+  document.getElementById("title").textContent = data.title || "";
+  anims = [];
+  appear(document.getElementById("title"), 0.05, "up", 0.6);
+  (builders[data.template] || builders.chapter)(data, document.getElementById("body"));
+  window.__data = data;
+};
+
+// Time after which no frame changes (lets the renderer reuse the last frame). Flow diagrams loop forever.
+window.settleTime = function () {
+  const d = window.__data, body = document.getElementById("body");
+  if (d.template === "flow") return Infinity;
+  let end = Math.max(1.0, ...anims.map(a => a.start + a.dur));
+  if (d.template === "timeline") end = Math.max(end, 0.2 + +body.dataset.axisDur);
+  if (d.template === "stat") end = Math.max(end, 0.2 + Math.min(2.2, D * 0.4));
+  return end + 0.05;
+};
+
+window.renderAt = function (t) {
+  pose(t);
+  const data = window.__data, body = document.getElementById("body");
+  document.getElementById("title").style.setProperty("--rule", easeOut(prog(t, 0.4, 0.6)));
+  if (data.template === "flow") {
+    body.querySelectorAll(".arrow path").forEach(p => {
+      const a = p.closest(".arrow");
+      const k = easeOut(prog(t, +a.dataset.start, +a.dataset.dur));
+      p.style.strokeDasharray = "1 1"; p.style.strokeDashoffset = 1 - k;
+    });
+    // A token travels the chain after it is built, looping, to show what flows where.
+    const token = body.querySelector(".token"), nodes = body.querySelectorAll(".node");
+    const start = +body.dataset.tokenStart, per = 1.1;
+    if (t < start || nodes.length < 2) { token.style.opacity = 0; }
+    else {
+      const total = per * (nodes.length - 1), x = ((t - start) % (total + 0.6));
+      const seg = Math.min(nodes.length - 2, Math.floor(x / per)), f = easeOut(clamp((x - seg * per) / per));
+      const r0 = nodes[seg].getBoundingClientRect(), r1 = nodes[seg + 1].getBoundingClientRect(), rb = body.getBoundingClientRect();
+      const cx = r0.left + r0.width / 2 + (r1.left + r1.width / 2 - r0.left - r0.width / 2) * f - rb.left;
+      const cy = r0.top + r0.height / 2 + (r1.top + r1.height / 2 - r0.top - r0.height / 2) * f - rb.top;
+      token.style.opacity = x > total ? 0 : 1;
+      token.style.left = `${cx - token.offsetWidth / 2}px`; token.style.top = `${cy - token.offsetHeight / 2}px`;
+    }
+  }
+  if (data.template === "timeline") {
+    const axis = body.querySelector(".axis"), k = easeOut(prog(t, 0.2, +body.dataset.axisDur));
+    const portrait = document.body.classList.contains("portrait");
+    axis.style.transformOrigin = portrait ? "top" : "left";
+    axis.style.transform = portrait ? `scaleY(${k})` : `scaleX(${k})`;
+  }
+  if (data.template === "stat") {
+    const el = body.querySelector(".num"), raw = body.dataset.raw;
+    if (body.dataset.num === undefined) { el.textContent = raw; }
+    else {
+      const k = easeOut(prog(t, 0.2, Math.min(2.2, D * 0.4))), dec = +body.dataset.dec;
+      const v = (+body.dataset.num * k).toLocaleString("en-US", { minimumFractionDigits: dec, maximumFractionDigits: dec });
+      const i = +body.dataset.idx;
+      el.textContent = raw.slice(0, i) + v + raw.slice(i + +body.dataset.len);
+    }
+  }
+};
+</script>
+</body>
+</html>

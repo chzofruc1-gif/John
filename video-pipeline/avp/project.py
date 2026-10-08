@@ -1,15 +1,19 @@
-"""A project is a folder holding the brief, storyboard, generated assets and build outputs.
+"""On-disk layout of a series and its episodes.
 
-    projects/<name>/
-      brief.txt            the original request
-      config.json          resolved config snapshot (reused by `avp run`)
-      storyboard.json      editable shot list — edit and re-run to regenerate changed shots
-      state.json           fingerprints of generated assets (drives incremental re-runs)
-      scenes/01/image.png  key frame
-      scenes/01/clip.mp4   optional image-to-video motion clip
-      scenes/01/voice.wav  narration
-      build/               intermediate renders
-      final.mp4  subtitles.srt  cover.jpg
+    <series>/
+      series.toml                 series bible (style, cast, voices, outputs)
+      cast/<id>.png               character reference sheets, shared by all episodes
+      episodes/<NN-slug>/
+        brief.md                  what this episode is about
+        research.md               research dossier with sources
+        outline.md                beat sheet
+        script.json               bilingual master script (edit this, then `avp approve`)
+        script.md                 human-readable script with footnotes, for fact-checking
+        state.json                fingerprints of generated assets (drives incremental re-runs)
+        assets/<scene>/image.png  illustrations
+        assets/<scene>/<lang>_<n>.wav  voice lines
+        build/                    intermediate renders
+        out/                      final videos, subtitles, publish metadata, QC sheets
 """
 
 from __future__ import annotations
@@ -18,16 +22,15 @@ import hashlib
 import json
 import re
 import threading
-from datetime import datetime
 from pathlib import Path
 
-from .config import Config
-from .models import Scene, Storyboard
+from .config import CharacterSpec, SeriesConfig, Voice, load_series_config
+from .models import CastMember, Episode, Scene
 
 
 def slugify(text: str, max_len: int = 40) -> str:
     slug = re.sub(r"[^\w一-鿿-]+", "-", text.strip().lower()).strip("-")
-    return slug[:max_len].strip("-") or "video"
+    return slug[:max_len].strip("-") or "episode"
 
 
 def fingerprint(*parts: object) -> str:
@@ -38,74 +41,123 @@ def fingerprint(*parts: object) -> str:
     return h.hexdigest()[:16]
 
 
-class Project:
+def _mkdir(path: Path) -> Path:
+    path.mkdir(parents=True, exist_ok=True)
+    return path
+
+
+class Series:
     def __init__(self, root: Path):
         self.root = Path(root)
+        if not self.config_path.exists():
+            raise FileNotFoundError(f"not a series folder (missing series.toml): {root}")
+        self.config: SeriesConfig = load_series_config(self.config_path)
+
+    @property
+    def config_path(self) -> Path: return self.root / "series.toml"
+    @property
+    def cast_dir(self) -> Path: return _mkdir(self.root / "cast")
+    @property
+    def episodes_dir(self) -> Path: return _mkdir(self.root / "episodes")
+
+    def cast_sheet(self, cid: str) -> Path:
+        return self.cast_dir / f"{cid}.png"
+
+    def cast_library(self) -> dict[str, CharacterSpec]:
+        """Recurring characters: series.toml entries win over ones registered by earlier episodes."""
+        library: dict[str, CharacterSpec] = {}
+        for path in sorted(self.cast_dir.glob("*.json")):
+            d = json.loads(path.read_text(encoding="utf-8"))
+            library[d["id"]] = CharacterSpec(id=d["id"], name_zh=d["name_zh"], name_en=d["name_en"],
+                                             look=d["look"], gender=d.get("gender", "male"), voice=Voice(**d.get("voice", {})))
+        for spec in self.config.characters:
+            library[spec.id] = spec
+        return library
+
+    def register_cast(self, member: CastMember) -> CharacterSpec:
+        """Add an episode's new character to the library so later episodes draw it the same way."""
+        library = self.cast_library()
+        if member.id in library:
+            return library[member.id]
+        spec = CharacterSpec(id=member.id, name_zh=member.name["zh"], name_en=member.name["en"],
+                             look=member.look, gender=member.gender)
+        (self.cast_dir / f"{member.id}.json").write_text(json.dumps({
+            "id": spec.id, "name_zh": spec.name_zh, "name_en": spec.name_en, "look": spec.look,
+            "gender": spec.gender, "voice": {"zh": "", "en": "", "style_zh": "", "style_en": ""},
+        }, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        return spec
+
+    def episodes(self) -> list[Path]:
+        return sorted(p for p in self.episodes_dir.iterdir() if (p / "brief.md").exists())
+
+    def next_number(self) -> int:
+        numbers = [int(m.group(1)) for p in self.episodes() if (m := re.match(r"(\d+)", p.name))]
+        return max(numbers, default=0) + 1
+
+    def create_episode(self, brief: str, slug: str | None = None, number: int | None = None) -> "EpisodeDir":
+        number = number or self.next_number()
+        first_line = brief.strip().splitlines()[0] if brief.strip() else "episode"
+        root = self.episodes_dir / f"{number:02d}-{slugify(slug or first_line)}"
+        if root.exists():
+            raise FileExistsError(f"episode folder already exists: {root}")
+        root.mkdir(parents=True)
+        (root / "brief.md").write_text(brief.strip() + "\n", encoding="utf-8")
+        (root / "meta.json").write_text(json.dumps({"number": number}) + "\n", encoding="utf-8")
+        return EpisodeDir(root)
+
+
+class EpisodeDir:
+    def __init__(self, root: Path):
+        self.root = Path(root)
+        if not self.brief_path.exists():
+            raise FileNotFoundError(f"not an episode folder (missing brief.md): {root}")
         self._lock = threading.Lock()
 
-    # ----- creation / loading -------------------------------------------------
-    @classmethod
-    def create(cls, workspace: Path, brief: str, config: Config, name: str | None = None) -> "Project":
-        base = slugify(name or brief)
-        root = Path(workspace) / base
-        if root.exists():
-            root = Path(workspace) / f"{base}-{datetime.now():%Y%m%d-%H%M%S}"
-        root.mkdir(parents=True)
-        project = cls(root)
-        project.brief_path.write_text(brief.strip() + "\n", encoding="utf-8")
-        project.save_config(config)
-        return project
+    @property
+    def series(self) -> Series:
+        return Series(self.root.parent.parent)
 
-    @classmethod
-    def open(cls, root: Path) -> "Project":
-        project = cls(Path(root))
-        if not project.config_path.exists():
-            raise FileNotFoundError(f"not a project folder (missing config.json): {root}")
-        return project
-
-    # ----- paths --------------------------------------------------------------
     @property
-    def brief_path(self) -> Path: return self.root / "brief.txt"
-    @property
-    def config_path(self) -> Path: return self.root / "config.json"
-    @property
-    def storyboard_path(self) -> Path: return self.root / "storyboard.json"
-    @property
-    def state_path(self) -> Path: return self.root / "state.json"
-    @property
-    def build_dir(self) -> Path: return self._dir(self.root / "build")
-    @property
-    def final_path(self) -> Path: return self.root / "final.mp4"
-    @property
-    def srt_path(self) -> Path: return self.root / "subtitles.srt"
-    @property
-    def cover_path(self) -> Path: return self.root / "cover.jpg"
-
-    def scene_dir(self, scene: Scene) -> Path: return self._dir(self.root / "scenes" / scene.key)
-    def image_path(self, scene: Scene) -> Path: return self.scene_dir(scene) / "image.png"
-    def clip_path(self, scene: Scene) -> Path: return self.scene_dir(scene) / "clip.mp4"
-    def voice_path(self, scene: Scene) -> Path: return self.scene_dir(scene) / "voice.wav"
-
-    @staticmethod
-    def _dir(path: Path) -> Path:
-        path.mkdir(parents=True, exist_ok=True)
-        return path
+    def number(self) -> int:
+        meta = self.root / "meta.json"
+        return json.loads(meta.read_text())["number"] if meta.exists() else 1
 
     # ----- documents ----------------------------------------------------------
+    @property
+    def brief_path(self) -> Path: return self.root / "brief.md"
+    @property
+    def research_path(self) -> Path: return self.root / "research.md"
+    @property
+    def outline_path(self) -> Path: return self.root / "outline.md"
+    @property
+    def script_path(self) -> Path: return self.root / "script.json"
+    @property
+    def script_md_path(self) -> Path: return self.root / "script.md"
+    @property
+    def state_path(self) -> Path: return self.root / "state.json"
+
     @property
     def brief(self) -> str:
         return self.brief_path.read_text(encoding="utf-8").strip()
 
-    def load_config(self) -> Config:
-        return Config.from_dict(json.loads(self.config_path.read_text(encoding="utf-8")))
+    def read(self, path: Path) -> str:
+        return path.read_text(encoding="utf-8").strip() if path.exists() else ""
 
-    def save_config(self, config: Config) -> None:
-        self.config_path.write_text(json.dumps(config.to_dict(), ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    def load_script(self) -> Episode:
+        if not self.script_path.exists():
+            raise FileNotFoundError("no script.json yet — run the 'script' stage first")
+        return Episode.load(self.script_path)
 
-    def load_storyboard(self) -> Storyboard:
-        if not self.storyboard_path.exists():
-            raise FileNotFoundError("no storyboard yet — run the 'script' stage first")
-        return Storyboard.load(self.storyboard_path)
+    # ----- asset paths --------------------------------------------------------
+    @property
+    def build_dir(self) -> Path: return _mkdir(self.root / "build")
+    @property
+    def out_dir(self) -> Path: return _mkdir(self.root / "out")
+
+    def scene_dir(self, scene: Scene) -> Path: return _mkdir(self.root / "assets" / scene.id)
+    def image_path(self, scene: Scene) -> Path: return self.scene_dir(scene) / "image.png"
+    def voice_path(self, scene: Scene, lang: str, index: int) -> Path:
+        return self.scene_dir(scene) / f"{lang}_{index + 1:02d}.wav"
 
     # ----- incremental build state -------------------------------------------
     def _state(self) -> dict:
@@ -114,7 +166,6 @@ class Project:
         return {}
 
     def is_fresh(self, key: str, fp: str, path: Path) -> bool:
-        """True if `path` exists and was produced from inputs with fingerprint `fp`."""
         with self._lock:
             return path.exists() and self._state().get(key) == fp
 

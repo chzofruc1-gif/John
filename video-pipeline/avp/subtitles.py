@@ -19,7 +19,10 @@ class Cue:
 
 
 def is_cjk(text: str) -> bool:
-    return bool(_CJK.search(text))
+    """Mostly-Chinese text (an English line quoting 管仲 still wraps on words)."""
+    cjk = len(_CJK.findall(text))
+    latin = len(re.findall(r"[A-Za-z]", text))
+    return cjk > 0 and cjk >= latin / 3
 
 
 def split_narration(text: str) -> list[str]:
