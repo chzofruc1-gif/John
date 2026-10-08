@@ -1,0 +1,44 @@
+# Copy to config.toml and pass with `avp --config config.toml ...`.
+# Every key is optional; anything omitted falls back to the defaults shown here.
+
+[project]
+workspace = "projects"   # where project folders are created
+language = "zh"          # zh | en — narration / subtitle language
+aspect = "16:9"          # 16:9 | 9:16 | 1:1
+duration = 60            # target length in seconds (the voice-over decides the real length)
+scenes = 6               # number of shots in the storyboard
+style = "cinematic"      # preset name (see `avp styles`) or free-form art direction
+
+[providers]
+# gemini | mock.  `mock` runs fully offline (placeholder frames, synthetic voice) for testing.
+llm = "gemini"
+image = "gemini"
+tts = "gemini"
+# none | gemini (Veo image-to-video) | mock
+video = "none"
+
+[gemini]
+api_key_env = "GEMINI_API_KEY"
+script_model = "gemini-2.5-pro"
+image_model = "gemini-2.5-flash-image"   # or imagen-4.0-generate-001
+tts_model = "gemini-2.5-flash-preview-tts"
+voice = "Kore"                           # Kore, Puck, Charon, Aoede, Fenrir, Zephyr, ...
+tts_style = "Read this as a warm, engaging documentary narrator:"
+veo_model = "veo-3.1-fast-generate-preview"
+
+[render]
+height = 1080            # short side in pixels: 720 | 1080
+fps = 30
+transition = 0.5         # crossfade seconds between shots (0 = hard cut)
+transition_style = "fade"  # any ffmpeg xfade transition: fade, smoothleft, circleopen, dissolve, ...
+subtitles = "burn"       # burn | soft | both | none   (an .srt file is always written)
+title_card = true        # show title + logline over the first shot
+font = ""                # path to a .ttf/.ttc with CJK glyphs; auto-detected when empty
+bgm = ""                 # optional background music file, looped and ducked under the voice
+bgm_volume = 0.15
+crf = 20                 # x264 quality (lower = better/larger)
+loudnorm = true          # normalise to -16 LUFS for social platforms
+
+[runtime]
+max_workers = 2          # parallel API calls per stage (keep 1 on free-tier keys)
+retries = 3
