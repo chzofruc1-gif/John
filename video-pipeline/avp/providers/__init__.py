@@ -25,6 +25,18 @@ KINDS = {
 }
 
 
+class _Lazy:
+    """Builds a provider on first use, so a run that only voices lines never needs image or LLM keys."""
+
+    def __init__(self, factory):
+        self._factory, self._obj = factory, None
+
+    def __getattr__(self, attr):
+        if self._obj is None:
+            self._obj = self._factory()
+        return getattr(self._obj, attr)
+
+
 class Providers:
     def __init__(self, research: LLMProvider, llm: LLMProvider, image: ImageProvider, tts: TTSProvider,
                  tts_en: TTSProvider | None = None):
@@ -78,10 +90,15 @@ def build_providers(config: SeriesConfig) -> Providers:
             return oc.SDWebUIImage(config.sdwebui, retries)
         return oc.CommandTTS(config.command_tts)
 
+    def lazy(kind: str, name: str):
+        if name not in KINDS[kind]:  # fail fast on typos, even for providers this run won't use
+            raise ValueError(f"unknown {kind} provider {name!r}; choose one of {', '.join(KINDS[kind])}")
+        return _Lazy(lambda: pick(kind, name))
+
     return Providers(
-        research=pick("research", names.research or names.llm),
-        llm=pick("llm", names.llm),
-        image=pick("image", names.image),
-        tts=pick("tts", names.tts),
-        tts_en=pick("tts", names.tts_en) if names.tts_en and names.tts_en != names.tts else None,
+        research=lazy("research", names.research or names.llm),
+        llm=lazy("llm", names.llm),
+        image=lazy("image", names.image),
+        tts=lazy("tts", names.tts),
+        tts_en=lazy("tts", names.tts_en) if names.tts_en and names.tts_en != names.tts else None,
     )

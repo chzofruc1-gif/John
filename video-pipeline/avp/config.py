@@ -143,11 +143,13 @@ class CosyVoiceConfig:
     api_key_env: str = "DASHSCOPE_API_KEY"
     model: str = "cosyvoice-v2"
     region: str = "cn"             # cn = 北京地域 · intl = 国际站 (Singapore)
+    base_url: str = ""             # override the endpoint (proxies, tests); "" = by region
     speech_rate: float = 1.0       # 0.5 – 2.0
     use_instruction: bool = False  # pass the delivery note as an instruction (only some models/voices support it)
     # When the key is not in the environment because a network proxy adds the Authorization header itself
     # (e.g. Claude Code cloud "network secrets"), send a placeholder and let the proxy supply the real key.
     auth_via_proxy: bool = False
+    timeout: float = 120.0
 
 
 @dataclass

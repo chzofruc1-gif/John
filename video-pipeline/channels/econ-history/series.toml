@@ -35,8 +35,8 @@ zh_parts = 3            # Chinese vertical cut = 3 shorts, split at act breaks
 
 [narrator]
 # CosyVoice 音色 id（请在百炼控制台“音色列表”里试听确认，可随时替换）
-en = "longxiaochun_v2"   # 待确认：选一个英文发音自然的音色
-zh = "longcheng_v2"      # 待确认
+en = "loongstella_v2"    # 已验证可用；英文旁白，可在百炼控制台试听后替换
+zh = "longcheng_v2"      # 已验证可用
 style_en = "Narrate like a warm, witty British documentary presenter with good comic timing"
 style_zh = "用轻松幽默、略带吐槽的知识区博主口吻讲述，语速适中，抑扬顿挫"
 
@@ -93,7 +93,7 @@ web_search_max_uses = 15
 
 # Voices handed to characters without an assigned voice. Names depend on the TTS provider.
 [voices]
-# CosyVoice 音色 id（待确认）
+# CosyVoice 音色 id（均已验证可用）
 male = ["longshu_v2", "longhua_v2", "longshuo_v2"]
 female = ["longwan_v2", "longxiaoxia_v2"]
 
