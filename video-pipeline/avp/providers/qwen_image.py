@@ -70,6 +70,24 @@ class QwenImage:
                     return part["image"]
         raise RuntimeError(f"Qwen-Image returned no image: {str(data)[:300]}")
 
+    def _download(self, url: str, attempts: int = 4) -> httpx.Response:
+        """Fetch the signed result URL; transient resets are retried, a blocked host is reported clearly."""
+        host = httpx.URL(url).host
+        for attempt in range(attempts):
+            try:
+                img = self.download.get(url)
+                if img.status_code == 403 and "oss" not in img.headers.get("server", "").lower():
+                    raise RuntimeError(f"generated, but downloading from {host} was refused — allow that host "
+                                       "in your network settings")
+                img.raise_for_status()
+                return img
+            except httpx.TransportError as exc:
+                if attempt == attempts - 1:
+                    raise RuntimeError(f"generated, but could not download the image from {host} ({exc}); if this "
+                                       "keeps happening, allow that host in your network settings") from exc
+                time.sleep(2 ** attempt + random.random())
+        raise AssertionError("unreachable")
+
     def generate(self, prompt: str, aspect: str, out_path: Path, references: list[Path]) -> None:
         payload = self._payload(prompt, aspect, references)
         last_error: Exception | None = None
@@ -80,13 +98,7 @@ class QwenImage:
                     raise RuntimeError(f"Qwen-Image HTTP {resp.status_code}: {resp.text[:400]}")
                 if resp.status_code < 400:
                     url = self.image_url(resp.json())
-                    try:
-                        img = self.download.get(url)
-                        img.raise_for_status()
-                    except httpx.HTTPError as exc:
-                        host = httpx.URL(url).host
-                        raise RuntimeError(f"generated, but could not download the image from {host} — allow that "
-                                           f"host in your network settings ({exc})") from exc
+                    img = self._download(url)
                     from PIL import Image
 
                     Image.open(io.BytesIO(img.content)).convert("RGB").save(out_path, "PNG")

@@ -5,7 +5,6 @@ __pycache__/
 .venv/
 .env
 # generated media (text artifacts like research/script stay versioned)
-channels/*/cast/*.png
 channels/*/episodes/*/assets/
 channels/*/episodes/*/build/
 channels/*/episodes/*/out/

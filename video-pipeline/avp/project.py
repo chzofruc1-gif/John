@@ -63,10 +63,19 @@ class Series:
     def cast_sheet(self, cid: str) -> Path:
         return self.cast_dir / f"{cid}.png"
 
+    def sheet_record(self, cid: str) -> dict:
+        """Who drew a character sheet: {"provider", "model", "look"} (empty if unknown)."""
+        meta = self.cast_dir / f"{cid}.sheet.json"
+        return json.loads(meta.read_text(encoding="utf-8")) if meta.exists() else {}
+
+    def record_sheet(self, cid: str, provider: str, model: str, look: str) -> None:
+        (self.cast_dir / f"{cid}.sheet.json").write_text(json.dumps(
+            {"provider": provider, "model": model, "look": look}, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+
     def cast_library(self) -> dict[str, CharacterSpec]:
         """Recurring characters: series.toml entries win over ones registered by earlier episodes."""
         library: dict[str, CharacterSpec] = {}
-        for path in sorted(self.cast_dir.glob("*.json")):
+        for path in sorted(p for p in self.cast_dir.glob("*.json") if not p.name.endswith(".sheet.json")):
             d = json.loads(path.read_text(encoding="utf-8"))
             library[d["id"]] = CharacterSpec(id=d["id"], name_zh=d["name_zh"], name_en=d["name_en"],
                                              look=d["look"], gender=d.get("gender", "male"), voice=Voice(**d.get("voice", {})))

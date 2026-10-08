@@ -43,14 +43,21 @@ def cast(ctx: Context) -> None:
         path = ctx.series.cast_sheet(spec.id)
         prompt = sheet_prompt(spec, ctx.config.series.art_style)
         key = f"cast:{spec.id}"
-        # Sheets live at series level and are kept once drawn (unless forced), so characters stay stable
-        # across episodes even if the look text is later tweaked.
-        if path.exists() and not ctx.forced(spec.id):
+        # Sheets live at series level and are kept once drawn, so a character looks the same in every episode
+        # even if the look text is tweaked later (use --force --scenes <id> to redraw one). Placeholders drawn
+        # by the offline mock, or sheets of unknown origin, are always replaced by a real provider.
+        record = ctx.series.sheet_record(spec.id)
+        placeholder = not record or (record.get("provider") == "mock" and provider.name != "mock")
+        if path.exists() and not placeholder and not ctx.forced(spec.id):
+            if record.get("look") != spec.look:
+                log.warning("  [cast] %s: look text changed since the sheet was drawn; keeping the sheet "
+                            "(redraw with --force --scenes %s)", spec.id, spec.id)
             return "cached"
         fp = fingerprint(provider.name, provider.model, prompt)
         tmp = path.with_suffix(".tmp.png")
         provider.generate(prompt, MASTER_ASPECT, tmp, [])
         tmp.replace(path)
+        ctx.series.record_sheet(spec.id, provider.name, provider.model, spec.look)
         ctx.episode.mark(key, fp)
         return "made"
 

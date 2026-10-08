@@ -3,7 +3,7 @@
 > 两千六百年前，齐国宰相管仲（或者说托名管仲的经济学家）发明了一种“看不见的税”：把盐和铁收归官营，把税藏进价格里。它让齐国称霸，也在中国历史上反复上演了两千年。  
 > Twenty-six centuries ago, the chancellor of Qi (or the economists who wrote in his name) invented a tax nobody could see: put salt and iron under state control and hide the tax inside the price. It made Qi a superpower, and it echoed through two thousand years of Chinese history.
 
-Revision 1 · DRAFT — needs review · 29 scenes · 21 claims · 古人怎么搞钱 / The Emperor's Ledger
+Revision 2 · DRAFT — needs review · 29 scenes · 21 claims · 古人怎么搞钱 / The Emperor's Ledger
 
 <details><summary>Fact-check prompt (paste this plus the whole document into another model)</summary>
 
@@ -24,11 +24,11 @@ Say explicitly when a claim checks out. Do not rewrite the jokes; only flag them
 
 | id | 名字 | Name | Role | Look |
 |---|---|---|---|---|
-| `guan_zhong` | 管仲 | Guan Zhong | Chancellor of Qi | chibi middle-aged chancellor of the State of Qi (Spring and Autumn period, 7th century BC): slim, clever narrow eyes, long thin black moustache and short pointed beard, black cylindrical official cap, deep green wide-sleeved robe with red trim and a black sash, often holding a bamboo-slip ledger |
-| `duke_huan` | 齐桓公 | Duke Huan | Ruler of Qi | chibi young ruler of Qi: round face, thick eyebrows, small goatee, flat-topped black ceremonial crown with hanging bead strings at front and back, crimson robe with gold-embroidered borders, jade pendant at the belt |
-| `bao_shuya` | 鲍叔牙 | Bao Shuya | Guan Zhong's loyal friend | chibi kind-faced official: plump, rosy cheeks, neat grey beard, square black cap, simple brown robe, warm smile |
-| `confucius` | 孔子 | Confucius | Philosopher | chibi elderly teacher: tall, high forehead, long grey beard, plain off-white scholar's robe, holding a bamboo scroll |
-| `sang_hongyang` | 桑弘羊 | Sang Hongyang | Han finance minister | chibi Western Han finance official: thin, sharp features, neatly trimmed black beard, black Han court cap with tied ribbons, dark blue robe, holding a bundle of bamboo counting rods |
+| `guan_zhong` | 管仲 | Guan Zhong | Chancellor of Qi | chibi middle-aged chancellor of the State of Qi in the Spring and Autumn period (7th century BC): slim, clever narrow eyes, long thin black moustache and short pointed beard, hair in a topknot held by a small black lacquered crown-cap (guan) and a hairpin, cap tied with a cord under the chin, no brim, no side flaps, deep green cross-collared robe closing right-over-left (shenyi) with wide sleeves, red trim and a black sash, holding a bamboo-slip ledger. Pre-imperial Zhou dynasty clothing |
+| `duke_huan` | 齐桓公 | Duke Huan | Ruler of Qi | chibi young ruler of Qi in the Spring and Autumn period: round face, thick eyebrows, small goatee, flat-topped black mian crown with strings of jade beads hanging at front and back, crimson cross-collared robe closing right-over-left with gold-embroidered borders, jade pendant at the belt. Pre-imperial Zhou dynasty clothing |
+| `bao_shuya` | 鲍叔牙 | Bao Shuya | Guan Zhong's loyal friend | chibi kind-faced official of Qi in the Spring and Autumn period: plump, rosy cheeks, neat grey beard, hair in a topknot under a small black cap tied under the chin, simple brown cross-collared robe closing right-over-left, warm smile. Pre-imperial Zhou dynasty clothing |
+| `confucius` | 孔子 | Confucius | Philosopher | chibi elderly teacher of the late Spring and Autumn period: tall, high forehead, long grey beard, hair in a topknot under a plain black cloth cap, plain off-white cross-collared scholar's robe, holding a bamboo-slip scroll. Pre-imperial Zhou dynasty clothing |
+| `sang_hongyang` | 桑弘羊 | Sang Hongyang | Han finance minister | chibi Western Han dynasty finance official (1st century BC): thin, sharp features, neatly trimmed black beard, hair in a topknot wrapped by a black cloth headband-cap, with a small upright black lacquered crown-cap on top tied under the chin with thin ribbons, dark blue cross-collared robe closing right-over-left, holding a bundle of bamboo counting rods. Han dynasty clothing |
 
 ## Script / 脚本
 
@@ -45,7 +45,7 @@ Say explicitly when a claim checks out. Do not rewrite the jokes; only flag them
 
 **s02** · illustration
 
-- 🎨 zoom-in: Extreme close-up of a hand taking a pinch of coarse white sea salt from a clay jar, crystals sparkling, warm side light, shallow depth of field.
+- 🎨 zoom-in: Illustration in the series' ink-and-wash style, not a photograph: a large close-up of a hand taking a pinch of coarse white sea salt from a rough clay jar of the Zhou period, salt crystals drawn as sparkling white flecks, warm rice-paper background.
 - 🏷 盐 / Salt
 
 | | 中文 | English |
@@ -63,7 +63,7 @@ Say explicitly when a claim checks out. Do not rewrite the jokes; only flag them
 
 **s04** · illustration
 
-- 🎨 pan-right (cast: guan_zhong, duke_huan): Dusty road through hills: Guan Zhong on a chariot draws a bow; his arrow strikes the bronze belt hook of Prince Xiaobai (the future Duke Huan) riding a rival chariot; dynamic action, comedic freeze-frame energy.
+- 🎨 pan-right (cast: guan_zhong, duke_huan): On a dusty road between hills, Guan Zhong stands on a speeding two-wheeled war chariot and shoots an arrow; in a second chariot ahead, Prince Xiaobai (Duke Huan) jolts as the arrow hits the bronze hook of his belt; motion lines, comic freeze-frame energy.
 
 | | 中文 | English |
 |---|---|---|
@@ -121,12 +121,12 @@ Claims: [c5]
 
 **s09** · illustration
 
-- 🎨 pan-left (cast: guan_zhong): Guan Zhong shaking his head and waving a bamboo-slip ledger while, behind him, villagers hide pigs and cows behind fences and glare at a tax collector.
+- 🎨 pan-left (cast: guan_zhong): Guan Zhong shaking his head and waving a bamboo-slip ledger while, behind him, a comic village scene: a farmer hurriedly roasting his pig before the tax man arrives, and a family hiding children inside a big basket; no text.
 
 | | 中文 | English |
 |---|---|---|
-| 管仲 / Guan Zhong _(smug, matter-of-fact)_ | 直接收税，百姓会恨你，还会把牲口藏起来。 | Tax people directly and they'll hate you. And hide their pigs. |
-| 旁白 / Narrator _(explaining)_ | 书里的管仲全都否了。直接收税，老百姓看得清清楚楚，心里就有怨气。 | In the text, Guan Zhong says no to all of them. A direct tax is visible. People can see exactly what you take, and they resent it. |
+| 管仲 / Guan Zhong _(smug, matter-of-fact)_ | 收牲口税，百姓就把牲口宰了；收人头税，大家就瞒报人口。 | Tax livestock and they'll slaughter it. Tax heads and they'll hide them. |
+| 旁白 / Narrator _(explaining)_ | 书里的管仲全都否了：直接收税，老百姓看得清清楚楚，一定会嚷嚷起来。 | In the text, Guan Zhong rejects every one. A direct tax is visible: people see exactly what you take, and they'll howl about it. |
 
 Claims: [c5]
 
@@ -155,7 +155,7 @@ Claims: [c5]
 
 **s12** · illustration
 
-- 🎨 zoom-in: A Han dynasty scholar in a lamp-lit library sorting heaps of bamboo-slip bundles into a book, a large label-less seal of authority on the desk; dust in the air; magnifying-glass comedic framing.
+- 🎨 zoom-in: A Han dynasty scholar (Liu Xiang) at a low wooden desk in a lamp-lit archive, sorting heaps of bamboo-slip bundles tied with cords and stacked on wooden shelves into one big book of bamboo slips; only bamboo slips and silk scrolls, no paper books; comic framing as if seen through a large round magnifying lens.
 - 🏷 托名之作 / Fine print
 
 | | 中文 | English |
@@ -167,7 +167,7 @@ Claims: [c6]
 
 **s13** · illustration
 
-- 🎨 static: Cutaway infographic-style illustration of a family of Qi: father, mother and child each beside a small measuring cup of salt sized 5, 3 and 2 units, arranged like a chart (no numbers or text).
+- 🎨 static: A Spring-and-Autumn period family of Qi (father, mother, small child) each standing beside a clay salt bowl of a different size: the father's bowl is large, the mother's medium, the child's small; simple, clear, chart-like composition on a plain background.
 
 | | 中文 | English |
 |---|---|---|
@@ -377,7 +377,7 @@ Claims: [c16]
 - EN: During the succession race Guan Zhong shot Prince Xiaobai's belt hook; the prince feigned death and reached Qi first.
 - Source: 《史记·齐太公世家》
 - 原文: 管仲别将兵遮莒道，射中小白带钩。小白详死。
-- Note: 成书晚于事件数百年；原文需核对中华书局本。 / Recorded centuries later; check quotation against a printed edition.
+- Note: 成书晚于事件约五百年。（已核对维基文库原文） / Written about five centuries later. (verified against the Wikisource text)
 
 **[c3]** 📜 traditional / 传统说法，证据较弱
 
@@ -385,7 +385,7 @@ Claims: [c16]
 - EN: Bao Shuya told the duke: to govern Qi he would suffice; to become hegemon he needed Guan Zhong.
 - Source: 《史记·齐太公世家》
 - 原文: 君将治齐，即高傒与叔牙足也。君且欲霸王，非管夷吾不可。
-- Note: 台词为意译；原文待核对。 / Dialogue paraphrased; quotation to be verified.
+- Note: 台词为意译。（已核对维基文库原文） / Dialogue paraphrased. (verified against the Wikisource text)
 
 **[c4]** ✅ established / 学界共识
 
@@ -396,11 +396,11 @@ Claims: [c16]
 
 **[c5]** ⚠️ debated / 存在争议
 
-- 中: 《管子·海王》中，管仲否定对房屋、树木、牲畜、人口直接征税，主张“唯官山海为可耳”。
-- EN: In Guanzi 'King of the Sea', Guan Zhong rejects direct taxes on buildings, trees, livestock and people, and argues only state control of mountains and seas will do.
+- 中: 《管子·海王》中，桓公提出向台雉（房屋）、树木、六畜、人口征税，管子分别以“毁成”“伐生”“杀生”“隐情”否定，主张“唯官山海为可耳”。
+- EN: In Guanzi 'King of the Sea', the duke proposes taxing buildings, trees, livestock and people; Guan Zhong rejects each (destroys buildings, fells trees, kills livestock, people conceal themselves) and says only state control of mountains and seas will do.
 - Source: 《管子·海王》
-- 原文: 唯官山海为可耳。
-- Note: 篇章作者与年代存疑，见c6。 / Authorship and date disputed, see c6.
+- 原文: 吾欲藉於六畜……此殺生也。吾欲藉於人……此隱情也。……唯官山海爲可耳。
+- Note: 篇章作者与年代存疑，见c6。（已核对维基文库原文） / Authorship and date disputed, see c6. (verified against the Wikisource text)
 
 **[c6]** ⚠️ debated / 存在争议
 
@@ -415,7 +415,7 @@ Claims: [c16]
 - EN: 'King of the Sea': per month an adult man eats 5⅓ sheng of salt, a woman 3⅓, a child 2⅓.
 - Source: 《管子·海王》
 - 原文: 终月，大男食盐五升少半，大女食盐三升少半，吾子食盐二升少半。
-- Note: 这是文本记载，数字为示意性。 / Accurately quoted text; numbers are schematic.
+- Note: 这是文本记载，数字为示意性。（已核对维基文库原文） / Accurately quoted text; numbers are schematic. (verified against the Wikisource text)
 
 **[c8]** ⚠️ debated / 存在争议
 
@@ -423,15 +423,15 @@ Claims: [c16]
 - EN: 'King of the Sea' arithmetic: a small markup per sheng across ten million mouths yields 60 million coins a month, versus 30 million from a 30-coin monthly head tax.
 - Source: 《管子·海王》
 - 原文: 万乘之国，人数开口千万也……月人三十钱之籍，为钱三千万。今吾非籍之诸君吾子，而有二国之籍者六千万。
-- Note: 论证性数字，不是财政记录。 / Rhetorical figures, not fiscal records.
+- Note: 论证性数字，不是财政记录。（已核对维基文库原文） / Rhetorical figures, not fiscal records. (verified against the Wikisource text)
 
 **[c9]** ✅ established / 学界共识
 
 - 中: 《海王》称每个女子需针刀、每个农夫需耒耜铫，铁器加价即可遍及全民。
 - EN: 'King of the Sea' says every woman needs a needle and knife and every farmer plough tools, so a markup on iron reaches everyone.
 - Source: 《管子·海王》
-- 原文: 今铁官之数曰：一女必有一针一刀……耕者必有一耒一耜一铫……
-- Note: 原文字句需核对校本。 / Verify exact wording against a critical edition.
+- 原文: 今鐵官之數曰：一女必有一鍼一刀，若其事立。耕者必有一耒一耜一銚，若其事立。
+- Note: 原文字句需核对校本。（已核对维基文库原文） / Verify exact wording against a critical edition. (verified against the Wikisource text)
 
 **[c10]** ✅ established / 学界共识
 
@@ -439,6 +439,7 @@ Claims: [c16]
 - EN: The Shiji says Guan Zhong 'circulated goods and accumulated wealth, enriched the state and strengthened the army'.
 - Source: 《史记·管晏列传》
 - 原文: 通货积财，富国强兵，与俗同好恶。
+- Note: 已核对维基文库原文 / verified against the Wikisource text
 
 **[c11]** ✅ established / 学界共识
 
@@ -446,7 +447,7 @@ Claims: [c16]
 - EN: The Shiji says Guan Zhong used price management and the profits of fish and salt to relieve the poor and reward the able.
 - Source: 《史记·齐太公世家》
 - 原文: 设轻重鱼盐之利，以赡贫穷，禄贤能。
-- Note: 引文未能在线核对，需对照中华书局本。史记支持管仲经营盐利，但不能证明完整的“加价专营”制度出自他本人。 / Quotation not verified online — check a printed edition. Supports state profit from salt, not that the full markup monopoly was his own design.
+- Note: 已核对维基文库原文。史记支持管仲经营盐利，但不能证明完整的“加价专营”制度出自他本人。 / Verified against the Wikisource text. Supports state profit from salt, not that the full markup monopoly was his own design.
 
 **[c13]** ✅ established / 学界共识
 
@@ -463,11 +464,11 @@ Claims: [c16]
 
 **[c15]** ✅ established / 学界共识
 
-- 中: 唐乾元元年（758年）第五琦行榷盐法；后盐利约占国家赋税一半。
-- EN: In 758 the Tang reimposed a salt monopoly under Diwu Qi; later salt reportedly supplied about half of state revenue.
+- 中: 唐乾元元年（758年）第五琦变盐法、榷天下盐；刘晏主持后，到大历末年盐利由每年四十万缗增至六百余万缗，“天下之赋，盐利居半”。
+- EN: In 758 Diwu Qi imposed a salt monopoly; under Liu Yan, salt revenue rose from 400,000 to over 6 million strings a year by the late 770s, 'half of all the empire's revenue'.
 - Source: 《新唐书·食货志》
-- 原文: 天下之赋，盐利居半。
-- Note: “盐利居半”为史书概括说法，引文待核对。 / 'Half of revenue' is the official history's summary; quotation to be verified.
+- 原文: 晏之始至也，鹽利歲纔四十萬緡，至大曆末，六百餘萬緡。天下之賦，鹽利居半。
+- Note: 已核对维基文库原文（《新唐书·食货志四》）。 / Verified against the Wikisource text (New Tang History, Treatise on Food and Money 4).
 
 **[c16]** ✅ established / 学界共识
 

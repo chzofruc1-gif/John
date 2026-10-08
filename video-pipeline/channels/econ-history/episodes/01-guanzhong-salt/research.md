@@ -1,9 +1,8 @@
 # Research dossier — EP01 Guan Zhong and the salt monopoly (管仲与“官山海”)
 
-> Written by Claude (in-session, with web search). Classical texts could only be checked through search
-> excerpts, because ctext.org and Wikisource were not reachable from the research environment. Every
-> quotation marked **[verify]** must be checked against a printed edition (中华书局点校本《史记》, 黎翔凤《管子校注》)
-> before publication.
+> Written by Claude (in-session, with web search). All classical quotations marked ✅ were checked word for word
+> against the Wikisource editions of 《史记》《新唐书》《管子》 (2026-10-08). For publication-grade citation, a printed
+> critical edition (中华书局点校本《史记》, 黎翔凤《管子校注》) remains the reference.
 
 ## 1. Context — who, when, where
 
@@ -16,7 +15,7 @@
   universally repeated).
 - **Bao Shuya 鲍叔牙** persuaded the new duke to spare and employ Guan Zhong. 《史记·齐太公世家》 has Bao say, in
   substance: to govern Qi, Gao Xi and I suffice; to become hegemon, you need Guan Yiwu
-  (“君将治齐，即高傒与叔牙足也。君且欲霸王，非管夷吾不可。” **[verify]**). TRADITIONAL.
+  (“君将治齐，即高傒与叔牙足也。君且欲霸王，非管夷吾不可。” ✅ verified (Wikisource)). TRADITIONAL.
 - **Results**: Duke Huan became the first of the “Five Hegemons” 春秋五霸; 667 BC interstate covenant with Qi as
   leader. 《论语·宪问》: “桓公九合诸侯，不以兵车，管仲之力也” and “微管仲，吾其被发左衽矣”. ESTABLISHED (text).
 - Confucius also criticised Guan Zhong's extravagance and lack of ritual propriety (《论语·八佾》 “管仲之器小哉…焉得俭？…
@@ -38,7 +37,7 @@ fragments:
   per person per month) would raise 30 million, whereas the salt markup brings in “二国之籍者六千万” — the revenue of
   two such states, 60 million — without taxing anyone directly.
 - Iron: “今铁官之数曰：一女必有一针一刀…耕者必有一耒一耜一铫…” — every woman needs a needle and a knife, every
-  farmer a plough, a spade and a hoe; a small markup on each tool reaches the whole population. **[verify wording]**
+  farmer a plough, a spade and a hoe; a small markup on each tool reaches the whole population. ✅ verified (Wikisource)
 
 Mechanism (in modern terms): a state trading monopoly on a necessity with **price-inelastic demand**, collecting a
 hidden markup — functionally a consumption tax, levied through the price rather than by a tax collector. The text's
@@ -53,7 +52,7 @@ own selling point is political: people resent visible taxes, not prices.
   reign; written by a group of economic advisers (“轻重家”). Rickett's translation notes centuries of accretion.
   DEBATED (exact date), but scholars agree they are not Guan Zhong's own words.
 - Therefore: **did the historical Guan Zhong run a salt monopoly?** The *Shiji* credits him with exploiting
-  “the profits of fish and salt” (《齐太公世家》 “设轻重鱼盐之利，以赡贫穷，禄贤能” **[verify]**) and with
+  “the profits of fish and salt” (《齐太公世家》 “设轻重鱼盐之利，以赡贫穷，禄贤能” ✅ verified (Wikisource)) and with
   “通货积财，富国强兵，与俗同好恶” (《管晏列传》, search-verified). That supports state involvement in salt; the
   full monopoly-by-markup design is best presented as the *Guanzi* school's model attributed to him. DEBATED.
 
@@ -64,7 +63,7 @@ own selling point is political: people resent visible taxes, not prices.
 | 5⅓ / 3⅓ / 2⅓ sheng per month | salt eaten by man / woman / child | 海王 | text, schematic |
 | 10,000,000 mouths | a “ten-thousand-chariot” state | 海王 | rhetorical |
 | 30,000,000 vs 60,000,000 coins / month | head tax vs salt markup | 海王 | rhetorical |
-| c. 50% | share of late-Tang state revenue from salt (“天下之赋，盐利居半”) | 《新唐书·食货志》 **[verify]** | traditional statistic |
+| c. 50% | share of late-Tang state revenue from salt (“天下之赋，盐利居半”) | 《新唐书·食货志》 ✅ verified (Wikisource) | traditional statistic |
 | 2017 | China ends salt price controls and regional sales limits | State Council plan 2016 | established |
 
 ## 5. Consequences and legacy
