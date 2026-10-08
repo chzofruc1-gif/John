@@ -44,6 +44,7 @@ def _context(episode: EpisodeDir, args) -> Context:
             cfg.providers.research = cfg.providers.llm = "anthropic"
         else:
             cfg.providers.research = cfg.providers.llm = cfg.providers.image = cfg.providers.tts = args.provider
+            cfg.providers.tts_en = ""
     if getattr(args, "draft", False):
         cfg.render.height = 540  # fast low-res preview; full-res renders are cached separately
     if getattr(args, "workers", None):

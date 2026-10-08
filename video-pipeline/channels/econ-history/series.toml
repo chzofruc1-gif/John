@@ -34,8 +34,9 @@ seconds_per_scene = 18
 zh_parts = 3            # Chinese vertical cut = 3 shorts, split at act breaks
 
 [narrator]
-en = "Sadaltager"
-zh = "Charon"
+# CosyVoice 音色 id（请在百炼控制台“音色列表”里试听确认，可随时替换）
+en = "longxiaochun_v2"   # 待确认：选一个英文发音自然的音色
+zh = "longcheng_v2"      # 待确认
 style_en = "Narrate like a warm, witty British documentary presenter with good comic timing"
 style_zh = "用轻松幽默、略带吐槽的知识区博主口吻讲述，语速适中，抑扬顿挫"
 
@@ -74,7 +75,8 @@ platform = "douyin"     # same files work for 视频号 / 小红书
 research = "anthropic"
 llm = "anthropic"
 image = "gemini"
-tts = "gemini"
+tts = "cosyvoice"
+tts_en = ""             # 英文想换别的引擎时填这里
 
 [gemini]
 api_key_env = "GEMINI_API_KEY"
@@ -91,8 +93,9 @@ web_search_max_uses = 15
 
 # Voices handed to characters without an assigned voice. Names depend on the TTS provider.
 [voices]
-male = ["Charon", "Fenrir", "Puck", "Orus", "Iapetus"]
-female = ["Kore", "Aoede", "Zephyr", "Leda", "Despina"]
+# CosyVoice 音色 id（待确认）
+male = ["longshu_v2", "longhua_v2", "longshuo_v2"]
+female = ["longwan_v2", "longxiaoxia_v2"]
 
 # ---- OpenAI-compatible endpoints (used when a job is set to "openai") -------------------------------
 # Examples for [openai.llm]:
@@ -118,6 +121,12 @@ size = "1536x1024"
 base_url = "http://localhost:8880/v1"
 api_key_env = ""
 model = "kokoro"
+
+[cosyvoice]             # 阿里云百炼 CosyVoice；key 放在环境变量 DASHSCOPE_API_KEY
+model = "cosyvoice-v2"
+region = "cn"           # cn = 北京地域；intl = 国际站
+speech_rate = 1.0
+use_instruction = false
 
 [sdwebui]               # local AUTOMATIC1111 / Forge started with --api
 base_url = "http://127.0.0.1:7860"

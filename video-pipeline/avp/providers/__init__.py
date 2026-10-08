@@ -4,6 +4,7 @@
     gemini   Google Gemini API (research with Google Search grounding, Nano Banana / Imagen, Gemini TTS)
     openai   any OpenAI-compatible endpoint — cloud (OpenAI, DeepSeek, Qwen, Kimi, OpenRouter, Claude …)
              or local (Ollama, LM Studio, vLLM, llama.cpp, Kokoro-FastAPI …); see [openai.*] in series.toml
+    cosyvoice  CosyVoice speech on Alibaba Cloud Model Studio (百炼, DASHSCOPE_API_KEY)
     sdwebui  local Stable Diffusion WebUI (AUTOMATIC1111 / Forge) for illustrations
     command  any local TTS program (Piper, CosyVoice, F5-TTS, sherpa-onnx …) for voices
     mock     offline placeholders, for testing the pipeline at zero cost
@@ -20,13 +21,18 @@ KINDS = {
     "research": ("anthropic", "gemini", "openai", "mock"),
     "llm": ("anthropic", "gemini", "openai", "mock"),
     "image": ("gemini", "openai", "sdwebui", "mock"),
-    "tts": ("gemini", "openai", "command", "mock"),
+    "tts": ("gemini", "cosyvoice", "openai", "command", "mock"),
 }
 
 
 class Providers:
-    def __init__(self, research: LLMProvider, llm: LLMProvider, image: ImageProvider, tts: TTSProvider):
+    def __init__(self, research: LLMProvider, llm: LLMProvider, image: ImageProvider, tts: TTSProvider,
+                 tts_en: TTSProvider | None = None):
         self.research, self.llm, self.image, self.tts = research, llm, image, tts
+        self._tts_en = tts_en
+
+    def tts_for(self, language: str) -> TTSProvider:
+        return self._tts_en if language == "en" and self._tts_en else self.tts
 
 
 def build_providers(config: SeriesConfig) -> Providers:
@@ -63,6 +69,11 @@ def build_providers(config: SeriesConfig) -> Providers:
             if kind == "image":
                 return oc.OpenAICompatImage(config.openai.image, retries)
             return oc.OpenAICompatTTS(config.openai.tts, retries)
+        if name == "cosyvoice":
+            from .cosyvoice import CosyVoiceTTS
+            if "cosyvoice" not in cache:
+                cache["cosyvoice"] = CosyVoiceTTS(config.cosyvoice, retries)
+            return cache["cosyvoice"]
         if name == "sdwebui":
             return oc.SDWebUIImage(config.sdwebui, retries)
         return oc.CommandTTS(config.command_tts)
@@ -72,4 +83,5 @@ def build_providers(config: SeriesConfig) -> Providers:
         llm=pick("llm", names.llm),
         image=pick("image", names.image),
         tts=pick("tts", names.tts),
+        tts_en=pick("tts", names.tts_en) if names.tts_en and names.tts_en != names.tts else None,
     )

@@ -109,7 +109,10 @@ def voice_for(ctx: Context, speaker: str, lang: str, specs: dict[str, CharacterS
         style = spec.voice.style_zh if lang == "zh" else spec.voice.style_en
         if chosen:
             return chosen, style
-    pool = cfg.voices.female if spec and spec.gender == "female" else cfg.voices.male
+    female = bool(spec and spec.gender == "female")
+    by_lang = {("zh", True): cfg.voices.female_zh, ("zh", False): cfg.voices.male_zh,
+               ("en", True): cfg.voices.female_en, ("en", False): cfg.voices.male_en}[(lang, female)]
+    pool = by_lang or (cfg.voices.female if female else cfg.voices.male)
     narrator_voice = cfg.narrator.zh if lang == "zh" else cfg.narrator.en
     pool = [v for v in pool if v != narrator_voice] or pool  # never share the narrator's voice
     index = int(hashlib.md5(speaker.encode()).hexdigest(), 16) % len(pool)
@@ -119,7 +122,7 @@ def voice_for(ctx: Context, speaker: str, lang: str, specs: dict[str, CharacterS
 def voice(ctx: Context) -> None:
     ctx.require_approval("voice")
     ep = ctx.episode.load_script()
-    provider = ctx.providers.tts
+    tts_for = ctx.providers.tts_for
     specs = _cast_specs(ctx, ep)
     jobs: list[tuple[Scene, int, Line, str]] = []
     for lang in ctx.config.languages:
@@ -129,11 +132,12 @@ def voice(ctx: Context) -> None:
             for i, line in enumerate(scene.lines):
                 if line.text.get(lang):
                     jobs.append((scene, i, line, lang))
-    log.info("  [voice] %d line(s) in %s with %s/%s", len(jobs), "+".join(ctx.config.languages),
-             provider.name, provider.model)
+    log.info("  [voice] %d line(s) in %s with %s%s", len(jobs), "+".join(ctx.config.languages),
+             "/".join(sorted({f"{tts_for(l).name}:{tts_for(l).model}" for l in ctx.config.languages})), "")
 
     def work(job: tuple[Scene, int, Line, str]) -> str:
         scene, i, line, lang = job
+        provider = tts_for(lang)
         voice_name, base_style = voice_for(ctx, line.speaker, lang, specs)
         style = ", ".join(x for x in (base_style, line.delivery and f"delivery: {line.delivery}") if x)
         path = ctx.episode.voice_path(scene, lang, i)

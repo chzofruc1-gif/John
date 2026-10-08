@@ -79,7 +79,8 @@ class ProvidersConfig:
     research: str = ""   # "" = same as llm.  anthropic | gemini | openai | mock
     llm: str = "gemini"  # anthropic | gemini | openai | mock
     image: str = "gemini"  # gemini | openai | sdwebui | mock
-    tts: str = "gemini"  # gemini | openai | command | mock
+    tts: str = "gemini"  # gemini | cosyvoice | openai | command | mock
+    tts_en: str = ""     # optional different engine for English lines ("" = same as tts)
 
 
 @dataclass
@@ -137,6 +138,16 @@ class SDWebUIConfig:
 
 
 @dataclass
+class CosyVoiceConfig:
+    """CosyVoice on Alibaba Cloud Model Studio (百炼). Voice ids go in [narrator] / [voices] / characters."""
+    api_key_env: str = "DASHSCOPE_API_KEY"
+    model: str = "cosyvoice-v2"
+    region: str = "cn"             # cn = 北京地域 · intl = 国际站 (Singapore)
+    speech_rate: float = 1.0       # 0.5 – 2.0
+    use_instruction: bool = False  # pass the delivery note as an instruction (only some models/voices support it)
+
+
+@dataclass
 class CommandTTSConfig:
     """Shell command per language; text arrives on stdin and in {text_file}; write a WAV to {out}."""
     zh: str = ""
@@ -149,6 +160,11 @@ class VoicePool:
     """Voices handed to characters that have none assigned (names are provider-specific)."""
     male: list[str] = field(default_factory=lambda: ["Charon", "Fenrir", "Puck", "Orus", "Iapetus"])
     female: list[str] = field(default_factory=lambda: ["Kore", "Aoede", "Zephyr", "Leda", "Despina"])
+    # Per-language pools, used when the two languages go to different TTS engines.
+    male_zh: list[str] = field(default_factory=list)
+    female_zh: list[str] = field(default_factory=list)
+    male_en: list[str] = field(default_factory=list)
+    female_en: list[str] = field(default_factory=list)
 
 
 @dataclass
@@ -189,6 +205,7 @@ class SeriesConfig:
     anthropic: AnthropicConfig = field(default_factory=AnthropicConfig)
     openai: OpenAIConfig = field(default_factory=OpenAIConfig)
     sdwebui: SDWebUIConfig = field(default_factory=SDWebUIConfig)
+    cosyvoice: CosyVoiceConfig = field(default_factory=CosyVoiceConfig)
     command_tts: CommandTTSConfig = field(default_factory=CommandTTSConfig)
     render: RenderConfig = field(default_factory=RenderConfig)
     runtime: RuntimeConfig = field(default_factory=RuntimeConfig)

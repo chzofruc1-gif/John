@@ -70,11 +70,12 @@ platform = "douyin"     # same files work for 视频号 / 小红书
 #   research: anthropic | gemini (both search the web and cite sources) | openai | mock   ("" = same as llm)
 #   llm:      anthropic | gemini | openai | mock   (openai = ANY OpenAI-compatible server, cloud or local)
 #   image:    gemini | openai | sdwebui | mock
-#   tts:      gemini | openai | command | mock
+#   tts:      gemini | cosyvoice | openai | command | mock      (tts_en: optional other engine for English)
 research = ""
 llm = "gemini"
 image = "gemini"
 tts = "gemini"
+tts_en = ""
 
 [gemini]
 api_key_env = "GEMINI_API_KEY"
@@ -118,6 +119,15 @@ size = "1536x1024"
 base_url = "http://localhost:8880/v1"
 api_key_env = ""
 model = "kokoro"
+
+[cosyvoice]             # 阿里云百炼 CosyVoice；key 放在环境变量 DASHSCOPE_API_KEY
+model = "cosyvoice-v2"
+region = "cn"           # cn = 北京地域；intl = 国际站
+speech_rate = 1.0
+use_instruction = false
+# 用 CosyVoice 时，把 [narrator] 和 [voices] 里的音色换成百炼音色 id（以控制台音色列表为准），例如：
+#   [narrator] zh = "longcheng_v2"
+#   [voices]   male_zh = ["longshu_v2", "longhua_v2"]   female_zh = ["longxiaochun_v2", "longwan_v2"]
 
 [sdwebui]               # local AUTOMATIC1111 / Forge started with --api
 base_url = "http://127.0.0.1:7860"
