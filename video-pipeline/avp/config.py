@@ -78,7 +78,7 @@ class ProvidersConfig:
     Qwen via Ollama, art on a local Stable Diffusion, voices with Piper."""
     research: str = ""   # "" = same as llm.  anthropic | gemini | openai | mock
     llm: str = "gemini"  # anthropic | gemini | openai | mock
-    image: str = "gemini"  # gemini | openai | sdwebui | mock
+    image: str = "gemini"  # gemini | qwen | openai | sdwebui | mock
     tts: str = "gemini"  # gemini | cosyvoice | openai | command | mock
     tts_en: str = ""     # optional different engine for English lines ("" = same as tts)
 
@@ -153,6 +153,20 @@ class CosyVoiceConfig:
 
 
 @dataclass
+class QwenImageConfig:
+    """Qwen-Image (千问图像) on Alibaba Cloud Model Studio (百炼); same key as CosyVoice."""
+    api_key_env: str = "DASHSCOPE_API_KEY"
+    model: str = "qwen-image-2.0"
+    region: str = "cn"
+    base_url: str = ""
+    prompt_extend: bool = False    # let the service rewrite prompts (off: our prompts are already detailed)
+    negative_prompt: str = "text, letters, watermark, signature, logo, blurry, deformed hands, extra fingers"
+    max_references: int = 3        # character sheets sent with each illustration
+    auth_via_proxy: bool = False
+    timeout: float = 300.0
+
+
+@dataclass
 class CommandTTSConfig:
     """Shell command per language; text arrives on stdin and in {text_file}; write a WAV to {out}."""
     zh: str = ""
@@ -211,6 +225,7 @@ class SeriesConfig:
     openai: OpenAIConfig = field(default_factory=OpenAIConfig)
     sdwebui: SDWebUIConfig = field(default_factory=SDWebUIConfig)
     cosyvoice: CosyVoiceConfig = field(default_factory=CosyVoiceConfig)
+    qwen_image: QwenImageConfig = field(default_factory=QwenImageConfig)
     command_tts: CommandTTSConfig = field(default_factory=CommandTTSConfig)
     render: RenderConfig = field(default_factory=RenderConfig)
     runtime: RuntimeConfig = field(default_factory=RuntimeConfig)

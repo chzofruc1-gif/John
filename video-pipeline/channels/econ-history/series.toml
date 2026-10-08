@@ -74,7 +74,7 @@ platform = "douyin"     # same files work for 视频号 / 小红书
 #   tts:      gemini | openai | command | mock
 research = "anthropic"
 llm = "anthropic"
-image = "gemini"
+image = "qwen"           # 千问图像（百炼），与 CosyVoice 共用 key
 tts = "cosyvoice"
 tts_en = ""             # 英文想换别的引擎时填这里
 
@@ -121,6 +121,12 @@ size = "1536x1024"
 base_url = "http://localhost:8880/v1"
 api_key_env = ""
 model = "kokoro"
+
+[qwen_image]            # 千问图像（百炼）；结果图从阿里云 OSS 下载，需放行 *.oss-accelerate.aliyuncs.com 等域名
+model = "qwen-image-2.0"
+region = "cn"
+auth_via_proxy = true
+max_references = 3
 
 [cosyvoice]             # 阿里云百炼 CosyVoice；key 放在环境变量 DASHSCOPE_API_KEY
 model = "cosyvoice-v2"

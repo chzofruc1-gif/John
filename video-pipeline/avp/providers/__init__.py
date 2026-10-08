@@ -4,6 +4,7 @@
     gemini   Google Gemini API (research with Google Search grounding, Nano Banana / Imagen, Gemini TTS)
     openai   any OpenAI-compatible endpoint — cloud (OpenAI, DeepSeek, Qwen, Kimi, OpenRouter, Claude …)
              or local (Ollama, LM Studio, vLLM, llama.cpp, Kokoro-FastAPI …); see [openai.*] in series.toml
+    qwen     Qwen-Image illustrations on Alibaba Cloud Model Studio (百炼, DASHSCOPE_API_KEY)
     cosyvoice  CosyVoice speech on Alibaba Cloud Model Studio (百炼, DASHSCOPE_API_KEY)
     sdwebui  local Stable Diffusion WebUI (AUTOMATIC1111 / Forge) for illustrations
     command  any local TTS program (Piper, CosyVoice, F5-TTS, sherpa-onnx …) for voices
@@ -20,7 +21,7 @@ __all__ = ["Providers", "ResearchResult", "Source", "build_providers", "KINDS"]
 KINDS = {
     "research": ("anthropic", "gemini", "openai", "mock"),
     "llm": ("anthropic", "gemini", "openai", "mock"),
-    "image": ("gemini", "openai", "sdwebui", "mock"),
+    "image": ("gemini", "qwen", "openai", "sdwebui", "mock"),
     "tts": ("gemini", "cosyvoice", "openai", "command", "mock"),
 }
 
@@ -81,6 +82,9 @@ def build_providers(config: SeriesConfig) -> Providers:
             if kind == "image":
                 return oc.OpenAICompatImage(config.openai.image, retries)
             return oc.OpenAICompatTTS(config.openai.tts, retries)
+        if name == "qwen":
+            from .qwen_image import QwenImage
+            return QwenImage(config.qwen_image, retries)
         if name == "cosyvoice":
             from .cosyvoice import CosyVoiceTTS
             if "cosyvoice" not in cache:
