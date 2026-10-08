@@ -127,6 +127,7 @@ model = "cosyvoice-v2"
 region = "cn"           # cn = 北京地域；intl = 国际站
 speech_rate = 1.0
 use_instruction = false
+auth_via_proxy = true   # 云端会话里 key 由网络代理注入；本地运行时设置 DASHSCOPE_API_KEY 即可（优先使用）
 
 [sdwebui]               # local AUTOMATIC1111 / Forge started with --api
 base_url = "http://127.0.0.1:7860"

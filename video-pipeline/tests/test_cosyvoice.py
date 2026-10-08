@@ -59,3 +59,12 @@ def test_per_language_tts_routing(fake_dashscope):
     providers = build_providers(cfg)
     assert providers.tts_for("zh").name == "cosyvoice"
     assert providers.tts_for("en").name == "mock"
+
+
+def test_cosyvoice_auth_via_proxy(fake_dashscope, monkeypatch):
+    from avp.providers.cosyvoice import CosyVoiceTTS
+
+    mod, _ = fake_dashscope
+    monkeypatch.delenv("DASHSCOPE_API_KEY")
+    CosyVoiceTTS(CosyVoiceConfig(auth_via_proxy=True), retries=0)
+    assert mod.api_key == "injected-by-proxy"

@@ -33,8 +33,12 @@ class CosyVoiceTTS:
         except ImportError as exc:  # pragma: no cover
             raise RuntimeError("CosyVoice needs `pip install 'avp[cosyvoice]'` (dashscope SDK)") from exc
         key = os.environ.get(cfg.api_key_env, "")
+        if not key and cfg.auth_via_proxy:
+            key = "injected-by-proxy"  # the proxy replaces the Authorization header with the real key
+            log.info("cosyvoice: no %s set; relying on the network proxy to add credentials", cfg.api_key_env)
         if not key:
-            raise RuntimeError(f"set the {cfg.api_key_env} environment variable for CosyVoice")
+            raise RuntimeError(f"set the {cfg.api_key_env} environment variable for CosyVoice "
+                               "(or [cosyvoice] auth_via_proxy = true if a proxy injects the key)")
         if cfg.region not in ENDPOINTS:
             raise ValueError(f"[cosyvoice].region must be one of {', '.join(ENDPOINTS)}")
         with self._setup_lock:  # the SDK reads these module globals
