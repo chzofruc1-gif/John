@@ -13,12 +13,16 @@ audience_en = "curious English-speaking viewers (history, economics, geopolitics
 tone = """Witty and irreverent, never sloppy. A smart friend who loves this stuff: modern analogies
 (Guan Zhong as a finance minister running a state enterprise), deadpan narrator asides, short comic skits
 where historical figures speak for themselves. But every joke serves the explanation, and every mechanism
-is explained so concretely that a teenager could re-explain it."""
+is explained so concretely that a teenager could re-explain it. The spine of every episode is economics:
+the measures, how they work, what modern economics calls them, and why they matter in world history."""
 art_style = """Modern Chinese editorial illustration: clean ink outlines, flat mineral-pigment colours
 (cinnabar red, malachite green, azurite blue, ochre, ink black) on warm rice-paper texture; chibi-proportioned
 characters with big expressive faces in historically accurate clothing of their era; simple readable
 backgrounds; soft cinematic lighting; playful, comedic body language."""
 rules = [
+  "Economics first: every episode is built around concrete measures. For each one say WHAT was done (with the primary source), HOW it works mechanically (who pays, what moves, prices and incentives), and WHAT it means in modern economics, naming the concept, its originator and year (e.g. Ramsey rule 1927, tax salience 2009, buffer stocks, Keynes 1936).",
+  "Historical significance: say where the idea stands in WORLD economic thought, comparing it with contemporaries elsewhere (e.g. Xenophon, Aristotle) and with later Western formulations. Phrase 'firsts' precisely ('the earliest known written statement', 'among the earliest') and source them; never claim a bare 'world first' without evidence.",
+  "Modern comparisons must say where the analogy stops (an echo is not the same theory).",
   "Separate evidence from tradition: texts like the Guanzi (esp. the Qingzhong chapters) were compiled centuries after Guan Zhong — say so when quoting them.",
   "Every number, date, quote and attribution needs a claim with a precise source (book and chapter, or scholar and work).",
   "Quote classical Chinese exactly; give a faithful modern paraphrase, never a made-up quote.",

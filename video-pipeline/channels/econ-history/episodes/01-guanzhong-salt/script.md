@@ -1,9 +1,9 @@
-# EP01 管仲：不加税，也能让国库暴富？ / The Tax Nobody Noticed: Guan Zhong and the Salt Monopoly
+# EP01 管仲：两千年前的经济学家？盐铁专营与“看不见的税” / The Tax Nobody Noticed: Guan Zhong and the World's First Economic Toolkit
 
-> 两千六百年前，齐国宰相管仲（或者说托名管仲的经济学家）发明了一种“看不见的税”：把盐和铁收归官营，把税藏进价格里。它让齐国称霸，也在中国历史上反复上演了两千年。  
-> Twenty-six centuries ago, the chancellor of Qi (or the economists who wrote in his name) invented a tax nobody could see: put salt and iron under state control and hide the tax inside the price. It made Qi a superpower, and it echoed through two thousand years of Chinese history.
+> 托名管仲的《管子》，把盐铁专营、隐形税、平抑物价、刺激消费写成了一套“国家经济工具箱”，比亚当·斯密早近两千年。用现代经济学重读它，你会发现很多道理今天还在争论。  
+> The Guanzi, written in Guan Zhong's name, set out a whole state economic toolkit: salt monopolies, hidden taxes, price stabilisation and spending to create jobs, nearly two thousand years before Adam Smith. Read with modern economics, many of its ideas are still argued over today.
 
-Revision 2 · DRAFT — needs review · 29 scenes · 21 claims · 古人怎么搞钱 / The Emperor's Ledger
+Revision 3 · DRAFT — needs review · 33 scenes · 30 claims · 古人怎么搞钱 / The Emperor's Ledger
 
 <details><summary>Fact-check prompt (paste this plus the whole document into another model)</summary>
 
@@ -40,8 +40,10 @@ Say explicitly when a claim checks out. Do not rewrite the jokes; only flag them
 
 | | 中文 | English |
 |---|---|---|
-| 旁白 / Narrator _(intriguing, conspiratorial)_ | 如果有个政府说：我要从你兜里多拿钱，但保证一分税都不加——你信吗？ | Imagine a government that wants more of your money, but promises never to raise your taxes. Sounds like a campaign slogan, right? |
-| 旁白 / Narrator _(intriguing)_ | 两千六百多年前的齐国，真有人做到了。秘密，就藏在你家厨房里。 | Twenty-six centuries ago, in the state of Qi, someone actually pulled it off. And the secret was hiding in your kitchen. |
+| 旁白 / Narrator _(intriguing, conspiratorial)_ | 你每天都在交一种税，却几乎感觉不到。经济学家管这叫“低显著性税收”。 | You pay a tax every single day, and you barely notice it. Economists call it a low-salience tax. |
+| 旁白 / Narrator _(intriguing)_ | 而最早把这套门道写下来、算清楚的，要追溯到两千六百多年前齐国的一位宰相。秘密，就藏在你家厨房里。 | And the earliest written playbook for it traces back to a chancellor in ancient China, twenty-six centuries ago. The secret was hiding in your kitchen. |
+
+Claims: [c33] [c6]
 
 **s02** · illustration
 
@@ -222,10 +224,23 @@ Claims: [c8]
 
 | | 中文 | English |
 |---|---|---|
-| 旁白 / Narrator _(teaching)_ | 用今天的经济学说，盐的需求“缺乏弹性”：涨价了，大家还得买差不多的量。 | Economists today would call salt 'price-inelastic': raise the price, and people still buy almost the same amount. |
-| 旁白 / Narrator _(ominous)_ | 这正是它最完美、也最危险的地方。 | That's what makes it the perfect source of revenue. And a dangerous one. |
+| 旁白 / Narrator _(teaching)_ | 用现代经济学来说，这是对“需求缺乏弹性”的商品征税：盐涨价了，大家还得买差不多的量，所以税收稳，对经济的扭曲也小。 | In modern terms, this is taxing a good with price-inelastic demand: raise the price of salt and people still buy almost the same amount. So the revenue is steady, and the economy barely bends. |
+| 旁白 / Narrator _(impressed)_ | 1927年，英国数学家拉姆齐证明：想让征税造成的效率损失最小，就该对需求弹性小的商品多征税。《海王》篇的思路，和这条“拉姆齐法则”惊人地相似。 | In 1927 the British mathematician Frank Ramsey showed that to minimise the damage a tax does, you should tax most heavily the goods whose demand responds least to price. The 'King of the Sea' chapter is a strikingly close ancestor of that Ramsey rule. |
 
-Claims: [c19]
+Claims: [c19] [c32]
+
+**s17b** · diagram
+
+- 🖼 diagram `quote`: 高明的君主，让百姓看得见给予，看不见拿走。 / Wise rulers let the people see what is given, never what is taken.
+  - 原文: 先王知其然，故見予之形，不見奪之理。 — 《管子·國蓄》
+
+| | 中文 | English |
+|---|---|---|
+| 旁白 / Narrator _(conspiratorial)_ | 还有更绝的。《国蓄》篇写道：高明的君主，要让百姓看得见给予，看不见拿走。 | It gets better. Another chapter, 'State Reserves', says a wise ruler lets people see what he gives, but never what he takes. |
+| 旁白 / Narrator _(explaining)_ | 2009年，经济学家切蒂在美国超市做了个实验：把含税价直接印在价签上，这些商品的销量就掉了大约8%。税一被看见，人就有反应，这叫“税收显著性”。 | In 2009, economist Raj Chetty and colleagues tested this in American supermarkets: when shelf tags showed the price including tax, sales of those items fell by about eight percent. Make a tax visible, and people react. Economists call it tax salience. |
+| 旁白 / Narrator _(emphatic)_ | 两千多年前的这句话，可能是世界上最早写下这个道理的文字之一。 | That line, over two thousand years old, may be among the earliest written statements of the idea anywhere. |
+
+Claims: [c24] [c33]
 
 **s18** · illustration
 
@@ -243,19 +258,103 @@ Claims: [c9]
 
 | | 中文 | English |
 |---|---|---|
-| 旁白 / Narrator _(upbeat, then pause)_ | 听起来是不是很完美？国家有钱，百姓不闹。 | Brilliant, right? Painless revenue, a stronger state, no angry crowds. |
-| 旁白 / Narrator _(ominous cliffhanger)_ | 可是，把这样一台印钞机交给政府——如果有一天，它被拧到最大挡呢？ | But hand a government a money machine like that, and you have to ask: what happens when someone turns it all the way up? |
+| 旁白 / Narrator _(upbeat, then pause)_ | 听起来已经很厉害了？可盐，只是这部书经济工具箱里的第一件。 | Impressive already? But salt was only the first tool in the Guanzi's economic toolkit. |
+| 旁白 / Narrator _(cliffhanger)_ | 接下来的几件里，有一件在两千年后，被美国农业部长借去救了大萧条。 | One of the others would be borrowed, two thousand years later, by an American agriculture secretary fighting the Great Depression. |
 
 ### Part 3 / 第3集
 
-**s20** · diagram · 📑 盐的两千年 / 2,000 Years of Salt
+**s20** · diagram · 📑 经济工具箱 / The Toolkit
 
-- 🖼 diagram `chapter`: 盐的两千年 / Two Thousand Years of Salt
+- 🖼 diagram `chapter`: 《管子》的经济工具箱 / The Guanzi's Economic Toolkit
   - 第三幕 —  / Act 3 — 
 
 | | 中文 | English |
 |---|---|---|
-| 旁白 / Narrator _(playful announcement)_ | 第三幕：盐的两千年。 | Act three: two thousand years of salt. |
+| 旁白 / Narrator _(playful announcement)_ | 第三幕：《管子》的经济工具箱。 | Act three: the Guanzi's economic toolkit. |
+
+**s30** · diagram
+
+- 🖼 diagram `compare`: 敛之以轻，散之以重 / Buy when cheap, sell when dear
+  - 丰年：粮多价贱 — 官府收购；托住农民收入 / Good harvest: grain is cheap — The state buys; Farm incomes are protected
+  - 荒年：粮少价贵 — 官府放粮；压住粮价、断了囤积者的财路 / Bad harvest: grain is dear — The state sells; Prices are capped, hoarders lose out
+
+| | 中文 | English |
+|---|---|---|
+| 旁白 / Narrator _(explaining)_ | 第二件工具，叫“轻重之术”。《国蓄》篇说：东西多了就便宜，官府趁便宜收进来；东西少了就贵，官府再拿出去卖。 | Tool two: 'the art of light and heavy'. When goods are plentiful they're cheap, so the state buys them up. When they're scarce they're dear, so the state sells them back. |
+| 旁白 / Narrator _(teaching)_ | 目的不是赚差价，而是把物价稳住，让囤积居奇的商人无利可图。今天的说法叫“缓冲储备”，国家粮食储备、平准基金，用的都是这个逻辑。 | The point isn't profit. It's stable prices, and it squeezes out the hoarders. Today we'd call it a buffer stock, the same logic behind national grain reserves and market stabilisation funds. |
+
+Claims: [c23]
+
+**s31** · illustration
+
+- 🎨 pan-right (cast: guan_zhong): A Qi state granary shown in two halves: on the left a bumper harvest, officials buying heaps of cheap grain from smiling farmers; on the right a lean year, the same officials selling grain to a queue of relieved villagers while a fat grain hoarder sulks behind his locked storehouse.
+- 🏷 轻重之术 / Buy cheap, sell dear
+
+| | 中文 | English |
+|---|---|---|
+| 管仲 / Guan Zhong _(smug, playful)_ | 粮贱我收，粮贵我卖。囤粮的那位，您先歇会儿。 | Cheap, I buy. Dear, I sell. Hoarders, please take a seat. |
+
+Claims: [c23]
+
+**s32** · illustration
+
+- 🎨 zoom-in: 1930s American Midwest drawn in the series' ink-and-wash illustration style: a Depression-era agriculture official in a suit and hat stands before rows of grain silos, holding an open book showing an ancient Chinese granary; farmers in overalls listen; warm sepia light.
+- 🏷 常平仓 / Ever-Normal Granary
+
+| | 中文 | English |
+|---|---|---|
+| 旁白 / Narrator _(storytelling)_ | 这个思路后来在汉朝变成了制度：公元前54年，耿寿昌奏请设立“常平仓”。 | In the Han dynasty the idea became an institution: in 54 BC, the official Geng Shouchang set up the 'ever-normal granary'. |
+| 旁白 / Narrator _(building)_ | 两千年后，美国大萧条，农产品价格暴跌。农业部长华莱士推出“常平仓”计划，写进了1938年的农业调整法。学者考证，他的灵感正来自中国的常平仓传统。 | Two thousand years later, in the Great Depression, US Agriculture Secretary Henry Wallace championed an 'Ever-Normal Granary' to steady crashing farm prices. It went into the Agricultural Adjustment Act of 1938, and historians have traced his inspiration to China's ever-normal granaries. |
+
+Claims: [c25] [c26]
+
+**s34** · illustration
+
+- 🎨 pan-left: An extravagant ancient funeral of a wealthy Qi family: a huge carved coffin and piles of fine burial robes, while carpenters, weavers and labourers work busily and are paid in bronze coins; comic contrast between the solemn rich family and the cheerful busy workers.
+- 🏷 富者靡之 / Spending makes jobs
+
+| | 中文 | English |
+|---|---|---|
+| 旁白 / Narrator _(amused)_ | 第三件工具最反直觉：《侈靡》篇竟然鼓励有钱人花钱，“富者靡之，贫者为之”，富人挥霍，穷人才有活干。 | Tool three is the most counter-intuitive. The chapter 'On Extravagance' actually encourages the rich to spend: the rich splurge, and the poor get work. |
+| 旁白 / Narrator _(measured)_ | 它举的例子是办丧事：大棺椁让木匠有活干，多衣衾让织女有活干。这和1936年凯恩斯讲的“有效需求”有几分神似，当然只是神似，背景完全不同。 | Its example is lavish funerals: big coffins employ carpenters, fine burial clothes employ weavers. It echoes Keynes's 1936 argument that spending creates jobs. An echo, not the same theory, but a remarkable one. |
+
+Claims: [c30] [c34]
+
+**s35** · illustration
+
+- 🎨 pan-right: Comic scene on the Qi-Chu border: farmers of Chu abandon their rice fields to chase deer with nets, while Qi merchants hold out bags of bronze coins; behind the Qi side a granary is stacked high with grain sacks.
+- 🏷 买鹿制楚 / The deer gambit
+
+| | 中文 | English |
+|---|---|---|
+| 旁白 / Narrator _(storytelling, playful)_ | 书里还讲了一个传说：齐国高价收购楚国的鹿，楚国人纷纷丢下庄稼去抓鹿。等楚国粮食不够了，齐国一关边境，粮价飞涨，楚国只好服软。 | The book even tells a legend of economic warfare: Qi pays sky-high prices for Chu's deer, Chu's farmers abandon their fields to hunt them, and then Qi shuts the border. Grain prices soar, and Chu submits. |
+| 旁白 / Narrator _(wry)_ | 多半是寓言，但它讲的粮食安全和贸易依赖，放到今天也毫不过时。 | Almost certainly a parable, but its lessons about food security and trade dependence sound remarkably modern. |
+
+Claims: [c31]
+
+**s33** · diagram
+
+- 🖼 diagram `compare`: 两千年前的经济学 / Economics, two thousand years early
+  - 《管子》 — 盐铁专营；见予不见夺；敛轻散重；富者靡之 / The Guanzi — State salt monopoly; Hidden taxes; Buy cheap, sell dear; Spending makes jobs
+  - 现代经济学 — 拉姆齐法则 1927；税收显著性 2009；缓冲储备；凯恩斯 1936 / Modern economics — Ramsey rule, 1927; Tax salience, 2009; Buffer stocks; Keynes, 1936
+
+| | 中文 | English |
+|---|---|---|
+| 旁白 / Narrator _(building)_ | 再加上按土地好坏定税、关卡只检查不收税、士农工商分业聚居，这部书几乎是把国家当成市场里的一个参与者来思考。 | Add land taxed by its fertility, border posts that inspect but don't tax, and trades clustered by occupation, and you have a book that treats the state as a player in the market. |
+| 旁白 / Narrator _(emphatic)_ | 它和古希腊色诺芬讨论雅典财政的《论收入》差不多同时代，是世界上最早系统讨论国家与市场关系的著作之一。比亚当·斯密的《国富论》，早了将近两千年。 | Alongside Greek works like Xenophon's 'Ways and Means', it's among the world's earliest systematic writing on how a state should handle markets and money, nearly two thousand years before Adam Smith's Wealth of Nations. |
+
+Claims: [c27] [c28] [c29] [c35] [c36]
+
+### Part 4 / 第4集
+
+**s37** · diagram · 📑 两千年的回响 / Echoes
+
+- 🖼 diagram `chapter`: 两千年的回响 / Two Thousand Years of Echoes
+  - 第四幕 —  / Act 4 — 
+
+| | 中文 | English |
+|---|---|---|
+| 旁白 / Narrator _(playful announcement)_ | 第四幕：两千年的回响。 | Act four: two thousand years of echoes. |
 
 **s21** · illustration
 
@@ -268,16 +367,6 @@ Claims: [c9]
 
 Claims: [c10] [c11] [c4]
 
-**s22** · illustration
-
-- 🎨 pan-left (cast: confucius, guan_zhong): Confucius, an elderly teacher, standing with arms crossed, side-eyeing Guan Zhong's lavish mansion with a gilded gate, then grudgingly nodding to his students; split comedic composition.
-
-| | 中文 | English |
-|---|---|---|
-| 旁白 / Narrator _(amused)_ | 连孔子都纠结过：他嫌管仲奢侈、不守礼，但又说“微管仲，吾其被发左衽矣”——没有管仲，我们恐怕早就被外族同化了。 | Even Confucius was torn. He called Guan Zhong extravagant and careless about ritual, but also admitted that without him, 'we'd all be wearing our hair loose and our robes buttoned on the left'. In other words, conquered by outsiders. |
-
-Claims: [c20] [c21]
-
 **s23** · diagram
 
 - 🖼 diagram `timeline`: 盐专营两千年 / Two millennia of state salt
@@ -289,7 +378,7 @@ Claims: [c20] [c21]
 
 | | 中文 | English |
 |---|---|---|
-| 旁白 / Narrator _(sweeping)_ | 而这台机器，后来在中国历史上一次次被重新启动。 | And that machine kept getting switched back on, again and again. |
+| 旁白 / Narrator _(sweeping)_ | 这台盐的机器，此后一次次被重新启动：汉朝盐铁官营，唐朝榷盐，唐代盐利一度占到国家赋税的一半；一直到2017年，中国才放开食盐价格。 | And the salt machine kept getting switched back on: Han monopolies, Tang monopolies, with salt at one point supplying half of all Tang state revenue, all the way to 2017, when China finally freed salt prices. |
 
 Claims: [c13] [c14] [c15] [c16]
 
@@ -317,39 +406,6 @@ Claims: [c13]
 
 Claims: [c14]
 
-**s26** · illustration
-
-- 🎨 pan-left: Night scene in Tang dynasty China: smugglers with lanterns loading salt sacks onto a boat in reeds while a government patrol's torches appear on the far bank; tense, moody blue light.
-
-| | 中文 | English |
-|---|---|---|
-| 旁白 / Narrator _(serious)_ | 这个点子再也没消失过。唐朝安史之乱后税收体系崩了，758年重新实行盐专卖；据《新唐书》记载，后来“天下之赋，盐利居半”。 | The idea never died. In the Tang dynasty, after the An Lushan rebellion wrecked the tax system, the state brought back the salt monopoly in 758. According to the official history, salt eventually made up around half of all state revenue. |
-| 旁白 / Narrator _(ominous)_ | 副作用是私盐泛滥。出身私盐贩子世家的黄巢，后来掀起大起义，动摇了唐朝的根基。 | The side effect: salt smuggling became big business. Huang Chao, from a family of salt smugglers, went on to lead a rebellion that shook the dynasty to its foundations. |
-
-Claims: [c15] [c22]
-
-**s27** · illustration
-
-- 🎨 pan-right: Two-panel illustration: left, an 18th-century French salt-tax collector weighing salt as peasants glare; right, a lean Indian independence leader in white homespun cloth bending to pick up salt on a sunlit beach, followers behind him. No text.
-
-| | 中文 | English |
-|---|---|---|
-| 旁白 / Narrator _(comparative)_ | 这事不只中国有。法国人恨透了的盐税，大革命时被废，拿破仑又把它恢复了。 | And it's not just China. France's hated salt tax, the gabelle, was abolished in the Revolution, then brought back by Napoleon. |
-| 旁白 / Narrator _(building to a point)_ | 1930年，甘地步行三百多公里走到海边，捧起一把盐，公开对抗英国在印度的盐法。对盐收钱，就是对所有人收钱——所以它诱人，也危险。 | In 1930, Gandhi walked two hundred and forty miles to the sea and picked up a handful of salt in defiance of Britain's salt laws in India. Tax salt, and you're taxing everyone. That's exactly why it's so tempting, and so explosive. |
-
-Claims: [c17] [c18]
-
-**s28** · diagram
-
-- 🖼 diagram `stat`: 中国盐业改革 / China's salt reform
-  - 2017 — 食盐价格放开，可跨区销售 / 2017 — salt prices freed, cross-region sales allowed
-
-| | 中文 | English |
-|---|---|---|
-| 旁白 / Narrator _(matter-of-fact)_ | 至于中国，盐的国家管控以不同形式延续到了二十一世纪。直到2017年，食盐价格才放开，盐企才能跨区域销售。 | As for China, state control of salt survived, in one form or another, into the twenty-first century. Only in 2017 did reforms free salt prices and let companies sell across regional borders. |
-
-Claims: [c16]
-
 **s29** · illustration · 📑 结语 / The Big Idea
 
 - 🎨 zoom-in (cast: guan_zhong): Guan Zhong breaking the fourth wall: he leans toward the viewer from inside an ancient frame, eyebrow raised, holding a pinch of salt between two fingers; warm spotlight, dark background.
@@ -357,10 +413,10 @@ Claims: [c16]
 
 | | 中文 | English |
 |---|---|---|
-| 旁白 / Narrator _(reflective)_ | 所以管仲是天才，还是“隐形税”的鼻祖？大概两样都是。 | So was Guan Zhong a genius, or the inventor of the stealth tax? Probably both. |
-| 旁白 / Narrator _(emphatic, slow)_ | 这一期就记住一句话：对政府来说，最好收的钱，是老百姓察觉不到自己在交的钱。 | Here's the one idea to keep: for a government, the easiest money to collect is the money people don't notice they're paying. |
+| 旁白 / Narrator _(reflective)_ | 所以，管仲和他名下的这部书，留下的远不只是一个“盐铁专营”。 | So Guan Zhong, and the book that bears his name, left us far more than a salt monopoly. |
+| 旁白 / Narrator _(emphatic, slow)_ | 它提出的两个问题，经济学家到今天还在争论：政府最好收的钱，是不是老百姓察觉不到的钱？市场失衡的时候，国家该不该出手？ | It raised two questions economists still argue about: is the easiest money for a government the money people don't notice paying? And when markets wobble, should the state step in? |
 | 管仲 / Guan Zhong _(smug, teasing)_ | 别这么看我。盐，你们不也照样买？ | Don't look at me like that. You all still buy salt. |
-| 旁白 / Narrator _(teaser, upbeat)_ | 下一期：盐铁会议——一群儒生，把朝廷的“国企帝国”送上了审判席。 | Next time: the Salt and Iron Debate, when a room full of Confucian scholars put the empire's state businesses on trial. |
+| 旁白 / Narrator _(teaser, upbeat)_ | 下一期：盐铁会议，一群儒生把朝廷的“国营帝国”送上了审判席。 | Next time: the Salt and Iron Debate, when a room full of Confucian scholars put the empire's state businesses on trial. |
 
 ## Claims & sources / 史实与出处
 
@@ -477,19 +533,6 @@ Claims: [c16]
 - Source: 国务院《盐业体制改革方案》（2016）；国家发改委通告（2016年10月）
 - Note: 媒体称“终结两千年专营”为概括说法，历代制度并不连续。 / Headlines about ending a '2,000-year monopoly' are shorthand; the institution was not continuous.
 
-**[c17]** ✅ established / 学界共识
-
-- 中: 法国盐税gabelle于1790年大革命中废除，1806年拿破仑恢复，1945年最终废止。
-- EN: France's gabelle was abolished in 1790, restored by Napoleon in 1806 and finally ended in 1945.
-- Source: Encyclopaedia Britannica, 'Gabelle'; 法国经济财政部档案处
-- Note: 最终废止年份有1945/1946两说。 / Sources give 1945 or 1946 for the final abolition.
-
-**[c18]** ✅ established / 学界共识
-
-- 中: 1930年3月12日至4月6日，甘地徒步约387公里至丹迪海边取盐，抗议英国盐法。
-- EN: From 12 March to 6 April 1930 Gandhi marched about 387 km (240 miles) to Dandi to make salt in defiance of British salt laws.
-- Source: Encyclopaedia Britannica, 'Salt March'
-
 **[c19]** ✅ established / 学界共识
 
 - 中: 盐的需求缺乏价格弹性。
@@ -497,23 +540,104 @@ Claims: [c16]
 - Source: 标准经济学概念（以今释古的类比）
 - Note: 现代经济学解释，不是古人用语。 / Modern economic framing, not an ancient term.
 
-**[c20]** ✅ established / 学界共识
+**[c23]** ✅ established / 学界共识
 
-- 中: 孔子说：“微管仲，吾其被发左衽矣。”
-- EN: Confucius: without Guan Zhong we would wear our hair loose and fasten our robes on the left.
-- Source: 《论语·宪问》
-- 原文: 微管仲，吾其被发左衽矣。
+- 中: 《管子·国蓄》主张物多则贱时官府收购、物少则贵时官府抛售，以平物价，抑制“蓄贾”。
+- EN: Guanzi 'State Reserves' says the state should buy when goods are plentiful and cheap and sell when scarce and dear, to steady prices and curb hoarding merchants.
+- Source: 《管子·国蓄》
+- 原文: 民有餘則輕之，故人君斂之以輕；民不足則重之，故人君散之以重。
+- Note: 文本记载（已核对维基文库原文） / Text (verified against the Wikisource text)
 
-**[c21]** ✅ established / 学界共识
+**[c24]** ✅ established / 学界共识
 
-- 中: 孔子批评管仲器小、不俭、不知礼。
-- EN: Confucius criticised Guan Zhong as narrow, extravagant and ignorant of ritual.
-- Source: 《论语·八佾》
-- 原文: 管仲之器小哉！……管氏而知礼，孰不知礼？
+- 中: 《管子·国蓄》：先王“见予之形，不见夺之理”。
+- EN: Guanzi 'State Reserves': the former kings showed the form of giving but not the logic of taking.
+- Source: 《管子·国蓄》
+- 原文: 先王知其然，故見予之形，不見奪之理。
+- Note: “最早之一”为谨慎表述，非定论。（已核对维基文库原文） / 'Among the earliest' is a hedged claim, not a consensus. (verified against the Wikisource text)
 
-**[c22]** ✅ established / 学界共识
+**[c25]** ✅ established / 学界共识
 
-- 中: 黄巢出身贩盐世家，后领导唐末大起义。
-- EN: Huang Chao came from a salt-dealing family and led the great late-Tang rebellion.
-- Source: 《新唐书·黄巢传》《旧唐书·黄巢传》
-- Note: “私盐”为通行说法；史书称其家世代贩盐。 / Sources say his family traded salt for generations; 'smuggler' is the usual reading.
+- 中: 汉宣帝五凤四年（前54年），大司农中丞耿寿昌奏设常平仓。
+- EN: In 54 BC the Han official Geng Shouchang proposed and set up ever-normal granaries.
+- Source: 《汉书·食货志上》
+
+**[c26]** ✅ established / 学界共识
+
+- 中: 美国农业部长华莱士推动“常平仓”（Ever-Normal Granary）政策，体现于1938年农业调整法；Bodde考证其受中国常平仓传统启发。
+- EN: US Agriculture Secretary Henry A. Wallace promoted the Ever-Normal Granary, embodied in the Agricultural Adjustment Act of 1938; Derk Bodde traced its inspiration to China's ever-normal granaries.
+- Source: Derk Bodde, 'Henry A. Wallace and the Ever-Normal Granary', Far Eastern Quarterly 5.4 (1946); 李超民相关研究 (2014)
+- Note: 华莱士的具体灵感来源（如陈焕章《孔门理财学》）待查Bodde原文确认。 / The exact channel of Wallace's inspiration (e.g. Chen Huan-chang's 1911 book) is to be confirmed in Bodde's article.
+
+**[c27]** ✅ established / 学界共识
+
+- 中: 管仲主张按土地好坏征税（相地而衰其政/相地而衰征），使民不迁移。
+- EN: Guan Zhong is credited with grading land taxes by land quality so that people would not migrate.
+- Source: 《管子·小匡》；《国语·齐语》
+- 原文: 相地而衰其政，則民不移矣。
+- Note: 文本记载（已核对维基文库原文） / Text (verified against the Wikisource text)
+
+**[c28]** ✅ established / 学界共识
+
+- 中: 齐国“关市几而不正（征）”，关卡与市场只稽查、不征税，以利诸侯通商。
+- EN: Qi's border posts and markets inspected goods but did not tax them, to attract trade.
+- Source: 《管子·小匡》；《国语·齐语》
+- 原文: 使關市幾而不正，㙻而不稅，以爲諸侯之利。
+- Note: 文本记载（已核对维基文库原文） / Text (verified against the Wikisource text)
+
+**[c29]** ✅ established / 学界共识
+
+- 中: 管仲主张士农工商“四民”分业聚居，不可杂处。
+- EN: Guan Zhong is credited with keeping the four occupations (scholars, farmers, artisans, merchants) in separate quarters.
+- Source: 《管子·小匡》；《国语·齐语》
+- 原文: 士農工商，四民者，國之石民也，不可使雜處。
+- Note: 文本记载（已核对维基文库原文） / Text (verified against the Wikisource text)
+
+**[c30]** ⚠️ debated / 存在争议
+
+- 中: 《管子·侈靡》主张“富者靡之，贫者为之”，以厚葬等消费创造就业。
+- EN: Guanzi 'On Extravagance' argues that spending by the rich (e.g. lavish funerals) gives the poor work.
+- Source: 《管子·侈靡》
+- 原文: 富者靡之，貧者爲之。……巨棺槨，所以起木工也。多衣衾，所以起女工也。
+- Note: 文本残缺难读；与凯恩斯的比较只是类比（杨联陞《侈靡论》）。（已核对维基文库原文） / The chapter is corrupt; the Keynes comparison is an analogy only (Yang Lien-sheng). (verified against the Wikisource text)
+
+**[c31]** 📜 traditional / 传统说法，证据较弱
+
+- 中: 《管子·轻重戊》记“买鹿制楚”：齐高价买楚鹿，楚民弃耕，齐闭关，楚粮价飞涨而服。
+- EN: Guanzi 'Qingzhong Wu' tells how Qi bought Chu's deer at high prices, Chu farmers abandoned their fields, Qi closed the border and Chu submitted.
+- Source: 《管子·轻重戊》
+- 原文: 公貴買其鹿。……楚民即釋其耕農而田鹿。……因令人閉關，不與楚通使。……三年而楚服。
+- Note: 寓言性质，非信史。（已核对维基文库原文） / A parable, not reliable history. (verified against the Wikisource text)
+
+**[c32]** ✅ established / 学界共识
+
+- 中: 拉姆齐（1927）证明：为使超额负担最小，应对需求（与供给）弹性较小的商品课以较高税率。
+- EN: Ramsey (1927): to minimise excess burden, tax rates should be higher on goods with less elastic demand (and supply).
+- Source: F. P. Ramsey, 'A Contribution to the Theory of Taxation', Economic Journal 37 (1927)
+- Note: 与《管子》的对应是以今释古的类比。 / The link to the Guanzi is a modern analogy.
+
+**[c33]** ✅ established / 学界共识
+
+- 中: 切蒂等（2009）：超市价签显示含税价后，相关商品需求下降约8%，说明消费者对不显著的税反应不足。
+- EN: Chetty, Looney and Kroft (2009): posting tax-inclusive prices reduced demand for the products by about 8%, showing consumers under-react to non-salient taxes.
+- Source: R. Chetty, A. Looney, K. Kroft, 'Salience and Taxation: Theory and Evidence', American Economic Review 99.4 (2009)
+
+**[c34]** ✅ established / 学界共识
+
+- 中: 凯恩斯《就业、利息和货币通论》（1936）强调有效需求决定就业。
+- EN: Keynes's General Theory (1936) argued that effective demand determines employment.
+- Source: J. M. Keynes, The General Theory of Employment, Interest and Money (1936)
+- Note: 仅作类比。 / Used as an analogy only.
+
+**[c35]** ✅ established / 学界共识
+
+- 中: 色诺芬《论收入》（约前355年）讨论雅典的财政收入与经济政策。
+- EN: Xenophon's 'Ways and Means' (c. 355 BC) discusses Athenian state revenue and economic policy.
+- Source: Xenophon, Poroi (Ways and Means), c. 355 BC
+
+**[c36]** ✅ established / 学界共识
+
+- 中: 亚当·斯密《国富论》出版于1776年。
+- EN: Adam Smith's Wealth of Nations was published in 1776.
+- Source: A. Smith, An Inquiry into the Nature and Causes of the Wealth of Nations (1776)
+- Note: 《管子》轻重诸篇约成于战国至西汉（见c6），早于《国富论》约两千年。 / The Qingzhong chapters date from the Warring States to Western Han (see c6), roughly two thousand years earlier.

@@ -84,6 +84,9 @@ You are the head writer. Using the research dossier, write a beat-sheet outline 
 
 Structure:
 - COLD OPEN (≤30s): a surprising, concrete hook — a question, a paradox, or a vivid moment. No "In this video...".
+- The spine is ECONOMICS. Identify the concrete measures/policies/ideas of the topic. For each one plan:
+  what was done (primary source) → how it works mechanically → the modern economic concept that explains it
+  (name, originator, year) → its historical significance in world economic thought (with careful "earliest" claims).
 - {d.zh_parts} ACTS of roughly equal length. Each act must end on a mini-cliffhanger, because the Chinese
   version is cut into {d.zh_parts} separate short videos at these act breaks.
 - Inside the acts: story beats (people, conflict, decisions) alternate with explainer beats (the economic
@@ -229,6 +232,8 @@ def script(ctx: Context) -> None:
     prompt = f"""{series_brief(ctx)}
 
 You are the head writer. Turn the outline into the final bilingual shooting script.
+The story serves the economics: characters and comedy carry the viewer, but each act must leave them understanding
+specific measures, how they work, their modern economic meaning, and their place in world history.
 Make it genuinely entertaining AND genuinely illuminating: every comedic beat must also teach something,
 and every mechanism must be explained so concretely that a 15-year-old could re-explain it.
 
