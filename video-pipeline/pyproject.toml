@@ -12,6 +12,7 @@ dependencies = [
   "Pillow>=10.1",
   "playwright>=1.40",
   "httpx>=0.25",
+  "jieba>=0.42",          # Chinese word boundaries for subtitle line breaks
   "tomli>=2.0; python_version < '3.11'",
 ]
 

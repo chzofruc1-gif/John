@@ -3,7 +3,7 @@
 > 托名管仲的《管子》，把盐铁专营、隐形税、平抑物价、刺激消费写成了一套“国家经济工具箱”，比亚当·斯密早近两千年。用现代经济学重读它，你会发现很多道理今天还在争论。  
 > The Guanzi, written in Guan Zhong's name, set out a whole state economic toolkit: salt monopolies, hidden taxes, price stabilisation and spending to create jobs, nearly two thousand years before Adam Smith. Read with modern economics, many of its ideas are still argued over today.
 
-Revision 3 · DRAFT — needs review · 33 scenes · 30 claims · 古人怎么搞钱 / The Emperor's Ledger
+Revision 4 · DRAFT — needs review · 30 scenes · 26 claims · 古人怎么搞钱 / The Emperor's Ledger
 
 <details><summary>Fact-check prompt (paste this plus the whole document into another model)</summary>
 
@@ -27,8 +27,6 @@ Say explicitly when a claim checks out. Do not rewrite the jokes; only flag them
 | `guan_zhong` | 管仲 | Guan Zhong | Chancellor of Qi | chibi middle-aged chancellor of the State of Qi in the Spring and Autumn period (7th century BC): slim, clever narrow eyes, long thin black moustache and short pointed beard, hair in a topknot held by a small black lacquered crown-cap (guan) and a hairpin, cap tied with a cord under the chin, no brim, no side flaps, deep green cross-collared robe closing right-over-left (shenyi) with wide sleeves, red trim and a black sash, holding a bamboo-slip ledger. Pre-imperial Zhou dynasty clothing |
 | `duke_huan` | 齐桓公 | Duke Huan | Ruler of Qi | chibi young ruler of Qi in the Spring and Autumn period: round face, thick eyebrows, small goatee, flat-topped black mian crown with strings of jade beads hanging at front and back, crimson cross-collared robe closing right-over-left with gold-embroidered borders, jade pendant at the belt. Pre-imperial Zhou dynasty clothing |
 | `bao_shuya` | 鲍叔牙 | Bao Shuya | Guan Zhong's loyal friend | chibi kind-faced official of Qi in the Spring and Autumn period: plump, rosy cheeks, neat grey beard, hair in a topknot under a small black cap tied under the chin, simple brown cross-collared robe closing right-over-left, warm smile. Pre-imperial Zhou dynasty clothing |
-| `confucius` | 孔子 | Confucius | Philosopher | chibi elderly teacher of the late Spring and Autumn period: tall, high forehead, long grey beard, hair in a topknot under a plain black cloth cap, plain off-white cross-collared scholar's robe, holding a bamboo-slip scroll. Pre-imperial Zhou dynasty clothing |
-| `sang_hongyang` | 桑弘羊 | Sang Hongyang | Han finance minister | chibi Western Han dynasty finance official (1st century BC): thin, sharp features, neatly trimmed black beard, hair in a topknot wrapped by a black cloth headband-cap, with a small upright black lacquered crown-cap on top tied under the chin with thin ribbons, dark blue cross-collared robe closing right-over-left, holding a bundle of bamboo counting rods. Han dynasty clothing |
 
 ## Script / 脚本
 
@@ -332,6 +330,28 @@ Claims: [c30] [c34]
 
 Claims: [c31]
 
+### Part 4 / 第4集
+
+**s37** · diagram · 📑 历史地位 / Its Place in History
+
+- 🖼 diagram `chapter`: 它在世界经济思想史上的位置 / Its Place in World History
+  - 第四幕 —  / Act 4 — 
+
+| | 中文 | English |
+|---|---|---|
+| 旁白 / Narrator _(playful announcement)_ | 第四幕：它在世界经济思想史上的位置。 | Act four: its place in the world history of economic thought. |
+
+**s21** · illustration
+
+- 🎨 pan-right (cast: duke_huan, guan_zhong): Grand outdoor covenant of feudal lords: Duke Huan stands at the head of an altar as rulers of other states bow; Guan Zhong stands beside him; banners and bronze vessels; triumphant golden light.
+
+| | 中文 | English |
+|---|---|---|
+| 旁白 / Narrator _(measured)_ | 先说齐国管不管用。约五百年后，司马迁在《史记》里说管仲“通货积财，富国强兵”，还靠“鱼盐之利”接济穷人。 | First: did it work for Qi? Writing about five hundred years later, the historian Sima Qian credits Guan Zhong with circulating goods and piling up wealth, enriching the state and strengthening the army, partly through the profits of fish and salt. |
+| 旁白 / Narrator _(triumphant)_ | 齐国成了当时最强的诸侯国。 | Qi became the dominant power of its day. |
+
+Claims: [c10] [c11] [c4]
+
 **s33** · diagram
 
 - 🖼 diagram `compare`: 两千年前的经济学 / Economics, two thousand years early
@@ -345,67 +365,6 @@ Claims: [c31]
 
 Claims: [c27] [c28] [c29] [c35] [c36]
 
-### Part 4 / 第4集
-
-**s37** · diagram · 📑 两千年的回响 / Echoes
-
-- 🖼 diagram `chapter`: 两千年的回响 / Two Thousand Years of Echoes
-  - 第四幕 —  / Act 4 — 
-
-| | 中文 | English |
-|---|---|---|
-| 旁白 / Narrator _(playful announcement)_ | 第四幕：两千年的回响。 | Act four: two thousand years of echoes. |
-
-**s21** · illustration
-
-- 🎨 pan-right (cast: duke_huan, guan_zhong): Grand outdoor covenant of feudal lords: Duke Huan stands at the head of an altar as rulers of other states bow; Guan Zhong stands beside him; banners and bronze vessels; triumphant golden light.
-
-| | 中文 | English |
-|---|---|---|
-| 旁白 / Narrator _(measured)_ | 先说齐国管不管用。约五百年后，司马迁在《史记》里说管仲“通货积财，富国强兵”，还靠“鱼盐之利”接济穷人。 | First: did it work for Qi? Writing about five hundred years later, the historian Sima Qian credits Guan Zhong with circulating goods and piling up wealth, enriching the state and strengthening the army, partly through the profits of fish and salt. |
-| 旁白 / Narrator _(triumphant)_ | 齐国成了当时最强的诸侯国。 | Qi became the dominant power of its day. |
-
-Claims: [c10] [c11] [c4]
-
-**s23** · diagram
-
-- 🖼 diagram `timeline`: 盐专营两千年 / Two millennia of state salt
-  - 前685年 — 管仲相齐 / 685 BC — Guan Zhong in Qi
-  - 约前119年 — 汉武帝盐铁官营 / c. 119 BC — Han salt and iron monopoly
-  - 前81年 — 盐铁会议 / 81 BC — The Salt and Iron Debate
-  - 758年 — 唐朝榷盐 / AD 758 — Tang salt monopoly
-  - 2017年 — 食盐价格放开 / 2017 — Salt prices freed
-
-| | 中文 | English |
-|---|---|---|
-| 旁白 / Narrator _(sweeping)_ | 这台盐的机器，此后一次次被重新启动：汉朝盐铁官营，唐朝榷盐，唐代盐利一度占到国家赋税的一半；一直到2017年，中国才放开食盐价格。 | And the salt machine kept getting switched back on: Han monopolies, Tang monopolies, with salt at one point supplying half of all Tang state revenue, all the way to 2017, when China finally freed salt prices. |
-
-Claims: [c13] [c14] [c15] [c16]
-
-**s24** · illustration
-
-- 🎨 zoom-in (cast: sang_hongyang): Han dynasty court: Emperor Wu on his throne frowning at a war map of the northern steppe while Sang Hongyang, holding a bundle of counting rods, points at a cart loaded with salt sacks and iron tools.
-
-| | 中文 | English |
-|---|---|---|
-| 旁白 / Narrator _(storytelling)_ | 五百年后，汉武帝连年打匈奴，钱不够花。大约从公元前119年起，他起用大盐商东郭咸阳、大铁商孔仅，加上理财高手桑弘羊，把盐铁彻底收归官营。 | Five centuries later, Emperor Wu of Han was fighting endless wars against the Xiongnu and running out of money. From around 119 BC, he put a former salt tycoon, an iron magnate and a brilliant young finance official named Sang Hongyang in charge, and salt and iron became full state monopolies. |
-| 桑弘羊 / Sang Hongyang _(crisp, confident)_ | 打仗要钱，钱在盐里。就这么简单。 | Wars need money. Money is in salt. Simple. |
-
-Claims: [c13]
-
-**s25** · diagram
-
-- 🖼 diagram `compare`: 盐铁会议（前81年） / The Salt and Iron Debate (81 BC)
-  - 桑弘羊 — 充实国库；平抑物价；打压豪强 / Sang Hongyang — Fills the treasury; Steadies prices; Curbs the tycoons
-  - 贤良文学 — 与民争利；官盐又贵；官铁农具差 / The Confucian scholars — Competes with the people; State salt costs more; State tools are worse
-
-| | 中文 | English |
-|---|---|---|
-| 旁白 / Narrator _(dramatic)_ | 公元前81年，朝廷为此开了一场空前的大辩论。一边是桑弘羊，一边是几十位儒生，吵的正是：国家该不该做生意？ | In 81 BC, the court staged an extraordinary public debate. On one side, Sang Hongyang. On the other, dozens of Confucian scholars. The question: should the state be in business at all? |
-| 旁白 / Narrator _(teaser)_ | 这场辩论后来被整理成《盐铁论》。下一期，我们专门讲它。 | The record of that clash, the Discourses on Salt and Iron, is one of the great economic debates of the ancient world. It gets its own episode. |
-
-Claims: [c14]
-
 **s29** · illustration · 📑 结语 / The Big Idea
 
 - 🎨 zoom-in (cast: guan_zhong): Guan Zhong breaking the fourth wall: he leans toward the viewer from inside an ancient frame, eyebrow raised, holding a pinch of salt between two fingers; warm spotlight, dark background.
@@ -416,7 +375,7 @@ Claims: [c14]
 | 旁白 / Narrator _(reflective)_ | 所以，管仲和他名下的这部书，留下的远不只是一个“盐铁专营”。 | So Guan Zhong, and the book that bears his name, left us far more than a salt monopoly. |
 | 旁白 / Narrator _(emphatic, slow)_ | 它提出的两个问题，经济学家到今天还在争论：政府最好收的钱，是不是老百姓察觉不到的钱？市场失衡的时候，国家该不该出手？ | It raised two questions economists still argue about: is the easiest money for a government the money people don't notice paying? And when markets wobble, should the state step in? |
 | 管仲 / Guan Zhong _(smug, teasing)_ | 别这么看我。盐，你们不也照样买？ | Don't look at me like that. You all still buy salt. |
-| 旁白 / Narrator _(teaser, upbeat)_ | 下一期：盐铁会议，一群儒生把朝廷的“国营帝国”送上了审判席。 | Next time: the Salt and Iron Debate, when a room full of Confucian scholars put the empire's state businesses on trial. |
+| 旁白 / Narrator _(teaser, upbeat)_ | 下一期：商鞅。他用“农战”把一个国家改造成了一台机器，代价是什么？ | Next time: Shang Yang, the reformer who turned a whole state into a machine for farming and war. And what it cost. |
 
 ## Claims & sources / 史实与出处
 
@@ -504,34 +463,6 @@ Claims: [c14]
 - Source: 《史记·齐太公世家》
 - 原文: 设轻重鱼盐之利，以赡贫穷，禄贤能。
 - Note: 已核对维基文库原文。史记支持管仲经营盐利，但不能证明完整的“加价专营”制度出自他本人。 / Verified against the Wikisource text. Supports state profit from salt, not that the full markup monopoly was his own design.
-
-**[c13]** ✅ established / 学界共识
-
-- 中: 汉武帝时（约前119年起）盐铁官营，东郭咸阳、孔仅主持，桑弘羊参与谋划。
-- EN: Under Emperor Wu, from c. 119 BC, salt and iron became state monopolies, run by Dongguo Xianyang and Kong Jin with Sang Hongyang.
-- Source: 《史记·平准书》《汉书·食货志》
-- Note: 具体年份各书记载为前119—前117年。 / Accounts place it between 119 and 117 BC.
-
-**[c14]** ✅ established / 学界共识
-
-- 中: 前81年盐铁会议，桑弘羊与贤良文学辩论，桓宽整理为《盐铁论》；批评者指责与民争利、官器质次价高。
-- EN: In 81 BC Sang Hongyang debated the Confucian 'worthies and literati'; Huan Kuan edited the record as the Discourses on Salt and Iron; critics said the state competed with the people and sold poor, costly tools.
-- Source: 桓宽《盐铁论》（《本议》《水旱》等篇）；《汉书·昭帝纪》
-
-**[c15]** ✅ established / 学界共识
-
-- 中: 唐乾元元年（758年）第五琦变盐法、榷天下盐；刘晏主持后，到大历末年盐利由每年四十万缗增至六百余万缗，“天下之赋，盐利居半”。
-- EN: In 758 Diwu Qi imposed a salt monopoly; under Liu Yan, salt revenue rose from 400,000 to over 6 million strings a year by the late 770s, 'half of all the empire's revenue'.
-- Source: 《新唐书·食货志》
-- 原文: 晏之始至也，鹽利歲纔四十萬緡，至大曆末，六百餘萬緡。天下之賦，鹽利居半。
-- Note: 已核对维基文库原文（《新唐书·食货志四》）。 / Verified against the Wikisource text (New Tang History, Treatise on Food and Money 4).
-
-**[c16]** ✅ established / 学界共识
-
-- 中: 2016年国务院盐业体制改革方案自2017年1月1日起放开食盐价格、允许跨区经营，生产仍需许可。
-- EN: China's 2016 State Council salt reform, effective 1 Jan 2017, freed salt prices and cross-region sales; production still requires a licence.
-- Source: 国务院《盐业体制改革方案》（2016）；国家发改委通告（2016年10月）
-- Note: 媒体称“终结两千年专营”为概括说法，历代制度并不连续。 / Headlines about ending a '2,000-year monopoly' are shorthand; the institution was not continuous.
 
 **[c19]** ✅ established / 学界共识
 

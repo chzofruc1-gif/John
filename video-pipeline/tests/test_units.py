@@ -81,3 +81,11 @@ def test_youtube_chapters_rules():
     chapters = [{"start": 5.0, "title": "Act 1"}, {"start": 9.0, "title": "too close"}, {"start": 60, "title": "Act 2"}]
     assert youtube_chapters(chapters, "Intro") == ["0:00 Intro", "0:05 Act 1", "1:00 Act 2"]
     assert youtube_chapters([{"start": 0, "title": "only"}], "Intro") == []
+
+
+def test_cjk_cuts_respect_words_and_titles():
+    pytest.importorskip("jieba")
+    lines = split_narration("再加上按土地好坏定税、关卡只检查不收税、士农工商分业聚居，这部书几乎是把国家当成市场里的一个参与者来思考。")
+    assert not any(a.endswith("市") and b.startswith("场") for a, b in zip(lines, lines[1:]))
+    lines = split_narration("它和古希腊色诺芬讨论雅典财政的《论收入》差不多同时代，是世界上最早系统讨论国家与市场关系的著作之一。")
+    assert all(line.count("《") == line.count("》") for line in lines)

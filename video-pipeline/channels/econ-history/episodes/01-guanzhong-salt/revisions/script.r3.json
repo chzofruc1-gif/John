@@ -47,6 +47,32 @@
         "en": "Guan Zhong's loyal friend"
       },
       "look": "chibi kind-faced official of Qi in the Spring and Autumn period: plump, rosy cheeks, neat grey beard, hair in a topknot under a small black cap tied under the chin, simple brown cross-collared robe closing right-over-left, warm smile. Pre-imperial Zhou dynasty clothing"
+    },
+    {
+      "id": "confucius",
+      "name": {
+        "zh": "孔子",
+        "en": "Confucius"
+      },
+      "gender": "male",
+      "role": {
+        "zh": "思想家",
+        "en": "Philosopher"
+      },
+      "look": "chibi elderly teacher of the late Spring and Autumn period: tall, high forehead, long grey beard, hair in a topknot under a plain black cloth cap, plain off-white cross-collared scholar's robe, holding a bamboo-slip scroll. Pre-imperial Zhou dynasty clothing"
+    },
+    {
+      "id": "sang_hongyang",
+      "name": {
+        "zh": "桑弘羊",
+        "en": "Sang Hongyang"
+      },
+      "gender": "male",
+      "role": {
+        "zh": "西汉理财大臣",
+        "en": "Han finance minister"
+      },
+      "look": "chibi Western Han dynasty finance official (1st century BC): thin, sharp features, neatly trimmed black beard, hair in a topknot wrapped by a black cloth headband-cap, with a small upright black lacquered crown-cap on top tied under the chin with thin ribbons, dark blue cross-collared robe closing right-over-left, holding a bundle of bamboo counting rods. Han dynasty clothing"
     }
   ],
   "scenes": [
@@ -1244,98 +1270,8 @@
       "diagram": null
     },
     {
-      "id": "s37",
-      "part": 4,
-      "kind": "diagram",
-      "visual_prompt": "",
-      "characters": [],
-      "camera": "static",
-      "diagram": {
-        "template": "chapter",
-        "title": {
-          "zh": "它在世界经济思想史上的位置",
-          "en": "Its Place in World History"
-        },
-        "items": [
-          {
-            "primary": {
-              "zh": "第四幕",
-              "en": "Act 4"
-            },
-            "secondary": {
-              "zh": "",
-              "en": ""
-            }
-          }
-        ],
-        "original": "",
-        "source": ""
-      },
-      "lines": [
-        {
-          "speaker": "narrator",
-          "delivery": "playful announcement",
-          "text": {
-            "zh": "第四幕：它在世界经济思想史上的位置。",
-            "en": "Act four: its place in the world history of economic thought."
-          }
-        }
-      ],
-      "on_screen": {
-        "zh": "",
-        "en": ""
-      },
-      "claims": [],
-      "chapter": {
-        "zh": "历史地位",
-        "en": "Its Place in History"
-      }
-    },
-    {
-      "id": "s21",
-      "part": 4,
-      "kind": "illustration",
-      "visual_prompt": "Grand outdoor covenant of feudal lords: Duke Huan stands at the head of an altar as rulers of other states bow; Guan Zhong stands beside him; banners and bronze vessels; triumphant golden light.",
-      "characters": [
-        "duke_huan",
-        "guan_zhong"
-      ],
-      "camera": "pan-right",
-      "lines": [
-        {
-          "speaker": "narrator",
-          "delivery": "measured",
-          "text": {
-            "zh": "先说齐国管不管用。约五百年后，司马迁在《史记》里说管仲“通货积财，富国强兵”，还靠“鱼盐之利”接济穷人。",
-            "en": "First: did it work for Qi? Writing about five hundred years later, the historian Sima Qian credits Guan Zhong with circulating goods and piling up wealth, enriching the state and strengthening the army, partly through the profits of fish and salt."
-          }
-        },
-        {
-          "speaker": "narrator",
-          "delivery": "triumphant",
-          "text": {
-            "zh": "齐国成了当时最强的诸侯国。",
-            "en": "Qi became the dominant power of its day."
-          }
-        }
-      ],
-      "on_screen": {
-        "zh": "",
-        "en": ""
-      },
-      "claims": [
-        "c10",
-        "c11",
-        "c4"
-      ],
-      "chapter": {
-        "zh": "",
-        "en": ""
-      }
-    },
-    {
       "id": "s33",
-      "part": 4,
+      "part": 3,
       "kind": "diagram",
       "visual_prompt": "",
       "characters": [],
@@ -1406,6 +1342,296 @@
       }
     },
     {
+      "id": "s37",
+      "part": 4,
+      "kind": "diagram",
+      "visual_prompt": "",
+      "characters": [],
+      "camera": "static",
+      "diagram": {
+        "template": "chapter",
+        "title": {
+          "zh": "两千年的回响",
+          "en": "Two Thousand Years of Echoes"
+        },
+        "items": [
+          {
+            "primary": {
+              "zh": "第四幕",
+              "en": "Act 4"
+            },
+            "secondary": {
+              "zh": "",
+              "en": ""
+            }
+          }
+        ],
+        "original": "",
+        "source": ""
+      },
+      "lines": [
+        {
+          "speaker": "narrator",
+          "delivery": "playful announcement",
+          "text": {
+            "zh": "第四幕：两千年的回响。",
+            "en": "Act four: two thousand years of echoes."
+          }
+        }
+      ],
+      "on_screen": {
+        "zh": "",
+        "en": ""
+      },
+      "claims": [],
+      "chapter": {
+        "zh": "两千年的回响",
+        "en": "Echoes"
+      }
+    },
+    {
+      "id": "s21",
+      "part": 4,
+      "kind": "illustration",
+      "visual_prompt": "Grand outdoor covenant of feudal lords: Duke Huan stands at the head of an altar as rulers of other states bow; Guan Zhong stands beside him; banners and bronze vessels; triumphant golden light.",
+      "characters": [
+        "duke_huan",
+        "guan_zhong"
+      ],
+      "camera": "pan-right",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "delivery": "measured",
+          "text": {
+            "zh": "先说齐国管不管用。约五百年后，司马迁在《史记》里说管仲“通货积财，富国强兵”，还靠“鱼盐之利”接济穷人。",
+            "en": "First: did it work for Qi? Writing about five hundred years later, the historian Sima Qian credits Guan Zhong with circulating goods and piling up wealth, enriching the state and strengthening the army, partly through the profits of fish and salt."
+          }
+        },
+        {
+          "speaker": "narrator",
+          "delivery": "triumphant",
+          "text": {
+            "zh": "齐国成了当时最强的诸侯国。",
+            "en": "Qi became the dominant power of its day."
+          }
+        }
+      ],
+      "on_screen": {
+        "zh": "",
+        "en": ""
+      },
+      "claims": [
+        "c10",
+        "c11",
+        "c4"
+      ],
+      "chapter": {
+        "zh": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "s23",
+      "part": 4,
+      "kind": "diagram",
+      "visual_prompt": "",
+      "characters": [],
+      "camera": "static",
+      "diagram": {
+        "template": "timeline",
+        "title": {
+          "zh": "盐专营两千年",
+          "en": "Two millennia of state salt"
+        },
+        "items": [
+          {
+            "primary": {
+              "zh": "前685年",
+              "en": "685 BC"
+            },
+            "secondary": {
+              "zh": "管仲相齐",
+              "en": "Guan Zhong in Qi"
+            }
+          },
+          {
+            "primary": {
+              "zh": "约前119年",
+              "en": "c. 119 BC"
+            },
+            "secondary": {
+              "zh": "汉武帝盐铁官营",
+              "en": "Han salt and iron monopoly"
+            }
+          },
+          {
+            "primary": {
+              "zh": "前81年",
+              "en": "81 BC"
+            },
+            "secondary": {
+              "zh": "盐铁会议",
+              "en": "The Salt and Iron Debate"
+            }
+          },
+          {
+            "primary": {
+              "zh": "758年",
+              "en": "AD 758"
+            },
+            "secondary": {
+              "zh": "唐朝榷盐",
+              "en": "Tang salt monopoly"
+            }
+          },
+          {
+            "primary": {
+              "zh": "2017年",
+              "en": "2017"
+            },
+            "secondary": {
+              "zh": "食盐价格放开",
+              "en": "Salt prices freed"
+            }
+          }
+        ],
+        "original": "",
+        "source": ""
+      },
+      "lines": [
+        {
+          "speaker": "narrator",
+          "delivery": "sweeping",
+          "text": {
+            "zh": "这台盐的机器，此后一次次被重新启动：汉朝盐铁官营，唐朝榷盐，唐代盐利一度占到国家赋税的一半；一直到2017年，中国才放开食盐价格。",
+            "en": "And the salt machine kept getting switched back on: Han monopolies, Tang monopolies, with salt at one point supplying half of all Tang state revenue, all the way to 2017, when China finally freed salt prices."
+          }
+        }
+      ],
+      "on_screen": {
+        "zh": "",
+        "en": ""
+      },
+      "claims": [
+        "c13",
+        "c14",
+        "c15",
+        "c16"
+      ],
+      "chapter": {
+        "zh": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "s24",
+      "part": 4,
+      "kind": "illustration",
+      "visual_prompt": "Han dynasty court: Emperor Wu on his throne frowning at a war map of the northern steppe while Sang Hongyang, holding a bundle of counting rods, points at a cart loaded with salt sacks and iron tools.",
+      "characters": [
+        "sang_hongyang"
+      ],
+      "camera": "zoom-in",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "delivery": "storytelling",
+          "text": {
+            "zh": "五百年后，汉武帝连年打匈奴，钱不够花。大约从公元前119年起，他起用大盐商东郭咸阳、大铁商孔仅，加上理财高手桑弘羊，把盐铁彻底收归官营。",
+            "en": "Five centuries later, Emperor Wu of Han was fighting endless wars against the Xiongnu and running out of money. From around 119 BC, he put a former salt tycoon, an iron magnate and a brilliant young finance official named Sang Hongyang in charge, and salt and iron became full state monopolies."
+          }
+        },
+        {
+          "speaker": "sang_hongyang",
+          "delivery": "crisp, confident",
+          "text": {
+            "zh": "打仗要钱，钱在盐里。就这么简单。",
+            "en": "Wars need money. Money is in salt. Simple."
+          }
+        }
+      ],
+      "on_screen": {
+        "zh": "",
+        "en": ""
+      },
+      "claims": [
+        "c13"
+      ],
+      "chapter": {
+        "zh": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "s25",
+      "part": 4,
+      "kind": "diagram",
+      "visual_prompt": "",
+      "characters": [],
+      "camera": "static",
+      "diagram": {
+        "template": "compare",
+        "title": {
+          "zh": "盐铁会议（前81年）",
+          "en": "The Salt and Iron Debate (81 BC)"
+        },
+        "items": [
+          {
+            "primary": {
+              "zh": "桑弘羊",
+              "en": "Sang Hongyang"
+            },
+            "secondary": {
+              "zh": "充实国库；平抑物价；打压豪强",
+              "en": "Fills the treasury; Steadies prices; Curbs the tycoons"
+            }
+          },
+          {
+            "primary": {
+              "zh": "贤良文学",
+              "en": "The Confucian scholars"
+            },
+            "secondary": {
+              "zh": "与民争利；官盐又贵；官铁农具差",
+              "en": "Competes with the people; State salt costs more; State tools are worse"
+            }
+          }
+        ],
+        "original": "",
+        "source": ""
+      },
+      "lines": [
+        {
+          "speaker": "narrator",
+          "delivery": "dramatic",
+          "text": {
+            "zh": "公元前81年，朝廷为此开了一场空前的大辩论。一边是桑弘羊，一边是几十位儒生，吵的正是：国家该不该做生意？",
+            "en": "In 81 BC, the court staged an extraordinary public debate. On one side, Sang Hongyang. On the other, dozens of Confucian scholars. The question: should the state be in business at all?"
+          }
+        },
+        {
+          "speaker": "narrator",
+          "delivery": "teaser",
+          "text": {
+            "zh": "这场辩论后来被整理成《盐铁论》。下一期，我们专门讲它。",
+            "en": "The record of that clash, the Discourses on Salt and Iron, is one of the great economic debates of the ancient world. It gets its own episode."
+          }
+        }
+      ],
+      "on_screen": {
+        "zh": "",
+        "en": ""
+      },
+      "claims": [
+        "c14"
+      ],
+      "chapter": {
+        "zh": "",
+        "en": ""
+      }
+    },
+    {
       "id": "s29",
       "part": 4,
       "kind": "illustration",
@@ -1443,8 +1669,8 @@
           "speaker": "narrator",
           "delivery": "teaser, upbeat",
           "text": {
-            "zh": "下一期：商鞅。他用“农战”把一个国家改造成了一台机器，代价是什么？",
-            "en": "Next time: Shang Yang, the reformer who turned a whole state into a machine for farming and war. And what it cost."
+            "zh": "下一期：盐铁会议，一群儒生把朝廷的“国营帝国”送上了审判席。",
+            "en": "Next time: the Salt and Iron Debate, when a room full of Confucian scholars put the empire's state businesses on trial."
           }
         }
       ],
@@ -1612,6 +1838,62 @@
       "note": {
         "zh": "已核对维基文库原文。史记支持管仲经营盐利，但不能证明完整的“加价专营”制度出自他本人。",
         "en": "Verified against the Wikisource text. Supports state profit from salt, not that the full markup monopoly was his own design."
+      }
+    },
+    {
+      "id": "c13",
+      "statement": {
+        "zh": "汉武帝时（约前119年起）盐铁官营，东郭咸阳、孔仅主持，桑弘羊参与谋划。",
+        "en": "Under Emperor Wu, from c. 119 BC, salt and iron became state monopolies, run by Dongguo Xianyang and Kong Jin with Sang Hongyang."
+      },
+      "source": "《史记·平准书》《汉书·食货志》",
+      "quote": "",
+      "confidence": "established",
+      "note": {
+        "zh": "具体年份各书记载为前119—前117年。",
+        "en": "Accounts place it between 119 and 117 BC."
+      }
+    },
+    {
+      "id": "c14",
+      "statement": {
+        "zh": "前81年盐铁会议，桑弘羊与贤良文学辩论，桓宽整理为《盐铁论》；批评者指责与民争利、官器质次价高。",
+        "en": "In 81 BC Sang Hongyang debated the Confucian 'worthies and literati'; Huan Kuan edited the record as the Discourses on Salt and Iron; critics said the state competed with the people and sold poor, costly tools."
+      },
+      "source": "桓宽《盐铁论》（《本议》《水旱》等篇）；《汉书·昭帝纪》",
+      "quote": "",
+      "confidence": "established",
+      "note": {
+        "zh": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "c15",
+      "statement": {
+        "zh": "唐乾元元年（758年）第五琦变盐法、榷天下盐；刘晏主持后，到大历末年盐利由每年四十万缗增至六百余万缗，“天下之赋，盐利居半”。",
+        "en": "In 758 Diwu Qi imposed a salt monopoly; under Liu Yan, salt revenue rose from 400,000 to over 6 million strings a year by the late 770s, 'half of all the empire's revenue'."
+      },
+      "source": "《新唐书·食货志》",
+      "quote": "晏之始至也，鹽利歲纔四十萬緡，至大曆末，六百餘萬緡。天下之賦，鹽利居半。",
+      "confidence": "established",
+      "note": {
+        "zh": "已核对维基文库原文（《新唐书·食货志四》）。",
+        "en": "Verified against the Wikisource text (New Tang History, Treatise on Food and Money 4)."
+      }
+    },
+    {
+      "id": "c16",
+      "statement": {
+        "zh": "2016年国务院盐业体制改革方案自2017年1月1日起放开食盐价格、允许跨区经营，生产仍需许可。",
+        "en": "China's 2016 State Council salt reform, effective 1 Jan 2017, freed salt prices and cross-region sales; production still requires a licence."
+      },
+      "source": "国务院《盐业体制改革方案》（2016）；国家发改委通告（2016年10月）",
+      "quote": "",
+      "confidence": "established",
+      "note": {
+        "zh": "媒体称“终结两千年专营”为概括说法，历代制度并不连续。",
+        "en": "Headlines about ending a '2,000-year monopoly' are shorthand; the institution was not continuous."
       }
     },
     {
@@ -1863,5 +2145,5 @@
     ]
   },
   "approved": false,
-  "revision": 4
+  "revision": 3
 }
