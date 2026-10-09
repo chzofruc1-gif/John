@@ -11,6 +11,8 @@
     --sans: "Noto Sans CJK SC", "Source Han Sans SC", "PingFang SC", "Microsoft YaHei", "WenQuanYi Zen Hei", sans-serif;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
+  /* CJK lines break at punctuation, not mid-phrase; overflow-wrap is the safety net for long runs */
+  .lbl, .tr, .what, li, .node, h3 { word-break: keep-all; overflow-wrap: anywhere; }
   html, body { width: 100%; height: 100%; overflow: hidden; }
   body {
     background:
@@ -73,7 +75,8 @@
   .flow .arrow .lbl { position: absolute; bottom: 64%; left: calc(50% - var(--u)*9); width: calc(var(--u)*18); text-align: center;
                       font-size: calc(var(--u)*3); line-height: 1.15; color: var(--jade); font-weight: 700; }
   .flow .arrow .lbl:not(:empty) { background: rgba(241,227,196,.92); border-radius: calc(var(--u)*.6); padding: .15em .3em; }
-  body.portrait .flow .arrow .lbl { bottom: auto; top: 50%; left: 60%; width: calc(var(--u)*30); text-align: left; margin-top: -.6em; }
+  body.portrait .flow .arrow .lbl { bottom: auto; top: 50%; left: 60%; width: max-content; max-width: calc(var(--u)*30);
+                                    text-align: left; margin-top: -.6em; }
   /* the thing that flows: a bronze coin with a square hole */
   .flow .token { position: absolute; width: calc(var(--u)*3.4); height: calc(var(--u)*3.4); border-radius: 50%;
                  background: radial-gradient(circle at 35% 35%, #e0c06a, var(--gold) 55%, #8a6a22);
