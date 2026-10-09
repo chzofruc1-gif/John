@@ -218,6 +218,7 @@ class RenderConfig:
     line_gap: float = 0.25         # silence between consecutive lines inside a scene
     chromium: str = ""             # browser for diagram rendering; auto-detected when empty
     workers: int = 0               # parallel segment renders; 0 = half the CPU cores
+    animate: str = "all"           # which illustrations get image-to-video clips: all | marked (scenes with a motion line)
 
 
 @dataclass

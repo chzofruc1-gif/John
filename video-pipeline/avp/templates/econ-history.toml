@@ -131,7 +131,7 @@ model = "kokoro"
 
 [wan_video]             # 万相图生视频（阿里云百炼），key 同 DASHSCOPE_API_KEY；providers.video = "wan" 时使用
 model = "wan2.2-i2v-flash"
-resolution = "720P"
+resolution = "480P"           # 480P ≈ half the price of 720P; upscaled in compose
 motion_style = "Paper cut-out puppet animation with a stop-motion feel: flat paper pieces move with slight jitter, the background stays still, no new objects appear."
 
 [qwen_image]            # 千问图像（阿里云百炼），key 同 DASHSCOPE_API_KEY；结果图在阿里云 OSS 上下载
@@ -167,6 +167,7 @@ transition_style = "fade"
 bgm = ""                # e.g. "music/guqin_loop.mp3" (relative to the series folder); royalty-free only
 bgm_volume = 0.12
 loudnorm = true
+animate = "marked"      # image-to-video only for scenes with a motion line (all = every illustration)
 
 [runtime]
 max_workers = 2         # use 1 on a free-tier Gemini key

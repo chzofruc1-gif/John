@@ -14,7 +14,7 @@
    ├──── 审稿关卡：把 script.md 交给其他模型核查 → avp revise 改稿 → avp approve
    │  cast       人物设定图（栏目级，跨集复用，保证形象一致）
    │  art        插画（附人物设定图做参考，16:9 母版）
-   │  motion     图生视频：每张插画做成约 5 秒的纸偶动画（可选，providers.video）
+   │  motion     图生视频：把标了 motion 的插画做成约 5 秒纸偶动画（可选，providers.video；失败或欠费时自动退回静帧，不会卡住整集）
    │  voice      每句台词 × 每种语言一个 WAV（旁白 + 角色不同声音）
    │  compose    每个输出：推拉镜头/竖屏重构图、动态图解、烧录字幕、转场、配乐闪避、响度标准化
    │  publish    标题、简介、YouTube 章节、参考资料、话题标签
@@ -61,6 +61,7 @@ avp run    channels/econ/episodes/01-guanzhong --skip-review --draft --provider 
 | `--outputs youtube_en` | 只渲染某个输出 |
 | `--skip-review` | 不审稿先出草稿片（看效果用） |
 | `--draft` | 540p 低清快速预览（正式清晰度单独缓存，不冲突） |
+| `render.animate` | `marked`（默认，只给写了 motion 的镜头做动画，省钱）或 `all`（每张插画都动） |
 | `--provider anthropic` | 研究和写稿用 Claude（画图、配音仍按 series.toml 设置） |
 
 ## 换模型 / 完全本地运行

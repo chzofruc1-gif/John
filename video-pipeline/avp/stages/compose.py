@@ -193,7 +193,8 @@ def render_file(ctx: Context, ep: Episode, of: OutputFile, font: str | None) -> 
     def clip_for(scene: Scene) -> Path | None:
         """The animated clip for an illustration, when motion is on and the clip exists."""
         clip = ctx.episode.motion_path(scene)
-        return clip if ctx.providers.video is not None and clip.exists() else None
+        wanted = ctx.providers.video is not None and (scene.motion or r.animate != "marked")
+        return clip if wanted and clip.exists() else None
 
     def segment_key(index: int, shot: Shot) -> tuple[Path, str]:
         s = shot.scene

@@ -120,7 +120,9 @@ def motion(ctx: Context) -> None:
         return
     ep = ctx.episode.load_script()
     specs = _cast_specs(ctx, ep)
-    scenes = [s for s in ep.scenes if s.kind == "illustration" and (not ctx.only_scenes or s.id in ctx.only_scenes)]
+    marked_only = ctx.config.render.animate == "marked"
+    scenes = [s for s in ep.scenes if s.kind == "illustration" and (not ctx.only_scenes or s.id in ctx.only_scenes)
+              and (s.motion or not marked_only)]
     log.info("  [motion] %d clip(s) with %s/%s", len(scenes), provider.name, provider.model)
 
     def work(scene: Scene) -> str:
@@ -134,7 +136,12 @@ def motion(ctx: Context) -> None:
         if not ctx.forced(scene.id) and ctx.episode.is_fresh(key, fp, path):
             return "cached"
         tmp = path.with_suffix(".tmp.mp4")
-        provider.animate(image, prompt, tmp)
+        try:
+            provider.animate(image, prompt, tmp)
+        except Exception as exc:  # motion is an enhancement: a failed clip leaves the still, never blocks the episode
+            tmp.unlink(missing_ok=True)
+            log.warning("  [motion] %s: %s — keeping the still image", scene.id, str(exc).splitlines()[0][:300])
+            return "skipped"
         tmp.replace(path)
         ctx.episode.mark(key, fp)
         return "made"

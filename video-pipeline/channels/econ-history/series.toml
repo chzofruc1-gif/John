@@ -142,7 +142,7 @@ negative_prompt = "futou hat, Tang dynasty hat with long side flaps, Song dynast
 [wan_video]             # 万相图生视频（百炼）：把插画做成 5 秒纸偶动画，key 同 DASHSCOPE_API_KEY
 model = "wan2.2-i2v-flash"
 region = "cn"
-resolution = "720P"
+resolution = "480P"           # 480P ≈ half the price of 720P; upscaled in compose
 auth_via_proxy = true
 motion_style = "Paper cut-out puppet animation with a stop-motion feel: flat paper pieces move with slight jitter, the ledger-paper background stays still, no new objects appear."
 negative_prompt = "camera cut, scene change, morphing faces, text, letters, photorealistic, 3D render"
@@ -174,6 +174,7 @@ transition_style = "fade"
 bgm = ""                # e.g. "music/guqin_loop.mp3" (relative to the series folder); royalty-free only
 bgm_volume = 0.12
 loudnorm = true
+animate = "marked"      # image-to-video only for scenes with a motion line (all = every illustration)
 
 [runtime]
 max_workers = 2         # use 1 on a free-tier Gemini key

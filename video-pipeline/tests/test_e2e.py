@@ -12,13 +12,34 @@ from avp.cli import main
 pytestmark = pytest.mark.skipif(not shutil.which("ffmpeg"), reason="ffmpeg not installed")
 
 
-def test_mock_episode_end_to_end(tmp_path: Path):
+def _series(tmp_path: Path) -> Path:
     series = tmp_path / "show"
     main(["init", str(series)])
     toml = (series / "series.toml").read_text(encoding="utf-8")
     toml = re.sub(r"^minutes = .*$", "minutes = 1", toml, flags=re.M)
     toml = re.sub(r"^height = .*$", "height = 360", toml, flags=re.M)
     (series / "series.toml").write_text(toml, encoding="utf-8")
+    return series
+
+
+def test_failed_animation_falls_back_to_stills(tmp_path: Path, monkeypatch):
+    """Running out of video credit must not block the episode: clips are skipped, stills are used."""
+    from avp.providers import mock
+
+    def broke(self, image, prompt, out_path):
+        raise RuntimeError("Wan HTTP 400: Arrearage")
+
+    monkeypatch.setattr(mock.MockVideo, "animate", broke)
+    series = _series(tmp_path)
+    main(["new", str(series), "管仲与盐铁专营", "--slug", "salt"])
+    ep = series / "episodes" / "01-salt"
+    main(["run", str(ep), "--provider", "mock", "--skip-review"])
+    assert (ep / "out" / "youtube_en.mp4").exists()
+    assert not list(ep.glob("assets/*/motion.mp4"))
+
+
+def test_mock_episode_end_to_end(tmp_path: Path):
+    series = _series(tmp_path)
     main(["new", str(series), "管仲与盐铁专营", "--slug", "salt"])
     ep = series / "episodes" / "01-salt"
 

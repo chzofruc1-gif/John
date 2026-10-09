@@ -43,22 +43,25 @@ class Context:
 
 
 def parallel(ctx: Context, items: Iterable[T], label: str, work: Callable[[T], str], name: Callable[[T], str]) -> None:
-    """Run `work` over items with the configured concurrency. `work` returns 'made' or 'cached'."""
+    """Run `work` over items with the configured concurrency. `work` returns 'made', 'cached' or 'skipped'."""
     errors: list[str] = []
-    made = cached = 0
+    made = cached = skipped = 0
     with ThreadPoolExecutor(max_workers=max(1, ctx.config.runtime.max_workers)) as pool:
         futures = {pool.submit(work, item): item for item in items}
         for fut in as_completed(futures):
             item = futures[fut]
             try:
-                if fut.result() == "cached":
+                result = fut.result()
+                if result == "cached":
                     cached += 1
+                elif result == "skipped":
+                    skipped += 1
                 else:
                     made += 1
                     log.info("  [%s] %s", label, name(item))
             except Exception as exc:  # keep going; report every failure at the end
                 errors.append(f"{name(item)}: {exc}")
                 log.error("  [%s] %s failed: %s", label, name(item), exc)
-    log.info("  [%s] %d generated, %d up to date", label, made, cached)
+    log.info("  [%s] %d generated, %d up to date%s", label, made, cached, f", {skipped} skipped" if skipped else "")
     if errors:
         raise RuntimeError(f"{label}: {len(errors)} item(s) failed — fix and re-run:\n  " + "\n  ".join(errors))

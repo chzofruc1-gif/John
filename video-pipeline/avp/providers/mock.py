@@ -65,11 +65,12 @@ class MockLLM:
                 "id": f"s{i + 1:02d}", "part": part, "lines": lines, "claims": ["c1"] if i % 2 == 0 else [],
                 "on_screen": _bi(f"要点{i + 1}", f"Point {i + 1}"),
                 "chapter": _bi(f"第{part}章", f"Chapter {part}") if i == 0 or part != part_of[i - 1] else _bi("", ""),
-                "camera": CAMERAS[i % len(CAMERAS)], "characters": [], "visual_prompt": "", "diagram": None,
+                "camera": CAMERAS[i % len(CAMERAS)], "characters": [], "visual_prompt": "", "motion": "", "diagram": None,
             }
             if i % 2 == 0:
                 scene.update(kind="illustration", visual_prompt=f"Placeholder illustration {i + 1} about {topic}",
-                             characters=["sage"] if i % 3 == 1 else [])
+                             characters=["sage"] if i % 3 == 1 else [],
+                             motion="The sage waves" if i % 4 == 0 else "")
             else:
                 template = TEMPLATES[(i // 2) % len(TEMPLATES)]
                 items = [{"primary": _bi(f"项目{k + 1}", f"Item {k + 1}"), "secondary": _bi(f"说明{k + 1}", f"Detail {k + 1}")}

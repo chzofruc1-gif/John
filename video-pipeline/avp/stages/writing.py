@@ -172,7 +172,8 @@ SCRIPT_RULES = """FORMAT RULES (the output is parsed by a production pipeline):
   Put cast ids in "characters" and describe them by name in the prompt (their look is added automatically).
   Never ask for text, letters, captions or calligraphy inside illustrations. Omit "diagram".
   motion is ONE short English sentence: what moves when this frame is animated for ~5 seconds (gestures,
-  expressions, a prop, falling coins) — small, readable, comic actions; "" for diagrams.
+  expressions, a prop, falling coins) — small, readable, comic actions. Animation is paid per second, so give
+  motion only to the 6-8 shots that matter most (the hook and the comic beats); "" for all other scenes.
 - kind "diagram": explains a mechanism. Use the templates:
   * chapter — act title card. title = act title; items[0].primary = kicker like "Act 1" / "第一幕".
   * quote — a classical passage. original = exact classical Chinese text; source = book·chapter;
