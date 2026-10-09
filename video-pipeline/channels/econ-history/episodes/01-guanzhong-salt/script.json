@@ -170,7 +170,7 @@
       "id": "s04",
       "part": 1,
       "kind": "illustration",
-      "visual_prompt": "On a dusty road between hills, Guan Zhong stands on a speeding two-wheeled war chariot and shoots an arrow; in a second chariot ahead, Prince Xiaobai (Duke Huan) jolts as the arrow hits the bronze hook of his belt; motion lines, comic freeze-frame energy.",
+      "visual_prompt": "Action scene on a dusty road between low hills: two horse-drawn two-wheeled war chariots race side by side. In the rear chariot Guan Zhong draws a bow and looses an arrow; in the front chariot Prince Xiaobai (Duke Huan) jolts backwards as the arrow strikes the bronze hook of his belt. Galloping horses, flying dust, comic speed lines.",
       "characters": [
         "guan_zhong",
         "duke_huan"
@@ -366,7 +366,7 @@
       "id": "s08",
       "part": 1,
       "kind": "illustration",
-      "visual_prompt": "Duke Huan peering into an almost empty treasury storeroom: a few lonely bronze spade-coins, cobwebs, an echoing dark room; comedic despair.",
+      "visual_prompt": "Inside a dim treasury storeroom: tall empty wooden shelves, open empty chests, cobwebs in the corners and a few lonely bronze spade-shaped coins on the floor. Duke Huan stands in the middle holding an empty chest lid, mouth open in comic despair.",
       "characters": [
         "duke_huan"
       ],
@@ -1322,7 +1322,7 @@
       "id": "s21",
       "part": 4,
       "kind": "illustration",
-      "visual_prompt": "Grand outdoor covenant of feudal lords: Duke Huan stands at the head of an altar as rulers of other states bow; Guan Zhong stands beside him; banners and bronze vessels; triumphant golden light.",
+      "visual_prompt": "Wide shot of an outdoor covenant of feudal lords: Duke Huan stands on top of a raised rammed-earth altar holding up a bronze wine vessel; below him a row of six small rulers of other states in robes of different colours bow deeply toward him; Guan Zhong stands one step behind the duke; tall banners on poles and bronze ritual vessels around the altar.",
       "characters": [
         "duke_huan",
         "guan_zhong"

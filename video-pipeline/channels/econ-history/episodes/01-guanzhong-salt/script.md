@@ -65,7 +65,7 @@ Claims: [c33] [c6]
 
 **s04** · illustration
 
-- 🎨 pan-right (cast: guan_zhong, duke_huan): On a dusty road between hills, Guan Zhong stands on a speeding two-wheeled war chariot and shoots an arrow; in a second chariot ahead, Prince Xiaobai (Duke Huan) jolts as the arrow hits the bronze hook of his belt; motion lines, comic freeze-frame energy.
+- 🎨 pan-right (cast: guan_zhong, duke_huan): Action scene on a dusty road between low hills: two horse-drawn two-wheeled war chariots race side by side. In the rear chariot Guan Zhong draws a bow and looses an arrow; in the front chariot Prince Xiaobai (Duke Huan) jolts backwards as the arrow strikes the bronze hook of his belt. Galloping horses, flying dust, comic speed lines.
 - 🎞 Guan Zhong releases the arrow, it zips forward and thunks into the duke's belt hook; the duke jolts, the chariots bounce.
 
 | | 中文 | English |
@@ -114,7 +114,7 @@ Claims: [c1] [c4]
 
 **s08** · illustration
 
-- 🎨 zoom-in (cast: duke_huan): Duke Huan peering into an almost empty treasury storeroom: a few lonely bronze spade-coins, cobwebs, an echoing dark room; comedic despair.
+- 🎨 zoom-in (cast: duke_huan): Inside a dim treasury storeroom: tall empty wooden shelves, open empty chests, cobwebs in the corners and a few lonely bronze spade-shaped coins on the floor. Duke Huan stands in the middle holding an empty chest lid, mouth open in comic despair.
 - 🎞 The duke peers around the empty storeroom, a cobweb sways, a single coin wobbles and falls over; he slumps.
 - 🏷 国库：空 / Treasury: empty
 
@@ -359,7 +359,7 @@ Claims: [c31]
 
 **s21** · illustration
 
-- 🎨 pan-right (cast: duke_huan, guan_zhong): Grand outdoor covenant of feudal lords: Duke Huan stands at the head of an altar as rulers of other states bow; Guan Zhong stands beside him; banners and bronze vessels; triumphant golden light.
+- 🎨 pan-right (cast: duke_huan, guan_zhong): Wide shot of an outdoor covenant of feudal lords: Duke Huan stands on top of a raised rammed-earth altar holding up a bronze wine vessel; below him a row of six small rulers of other states in robes of different colours bow deeply toward him; Guan Zhong stands one step behind the duke; tall banners on poles and bronze ritual vessels around the altar.
 - 🎞 The lords bow in a wave one after another, banners flutter, Duke Huan puffs out his chest; Guan Zhong nods.
 
 | | 中文 | English |
