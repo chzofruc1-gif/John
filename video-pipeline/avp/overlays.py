@@ -12,7 +12,7 @@ from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageFont
 
-from .subtitles import is_cjk
+from .subtitles import _balanced_cuts, is_cjk
 
 log = logging.getLogger(__name__)
 
@@ -57,7 +57,24 @@ def _font(path: str | None, size: int) -> ImageFont.FreeTypeFont | ImageFont.Ima
 
 
 def wrap(text: str, font, max_width: int, draw: ImageDraw.ImageDraw) -> list[str]:
-    """Greedy wrap: per character for CJK, per word otherwise."""
+    """Wrap to max_width. CJK text that needs several lines is cut into balanced lines at word boundaries,
+    never inside 《》 or quotes; otherwise (and as a fallback) greedy per character / per word."""
+    lines = _greedy(text, font, max_width, draw)
+    if len(lines) == 2 and is_cjk(text):  # prefer the punctuation break nearest the middle
+        fits = lambda a, b: all(draw.textlength(x, font=font) <= max_width for x in (a, b))  # noqa: E731
+        breaks = [i + 1 for i, ch in enumerate(text[:-1]) if ch in "，。！？；：、,.!?;:"]
+        breaks = [i for i in breaks if fits(text[:i], text[i:])]
+        if breaks:
+            i = min(breaks, key=lambda i: abs(len(text) - 2 * i))
+            return [text[:i], text[i:]]
+    if len(lines) > 1 and is_cjk(text):
+        pieces = _balanced_cuts(text, -(-len(text) // len(lines)), True)
+        if len(pieces) == len(lines) and all(draw.textlength(p, font=font) <= max_width for p in pieces):
+            return pieces
+    return lines
+
+
+def _greedy(text: str, font, max_width: int, draw: ImageDraw.ImageDraw) -> list[str]:
     tokens = list(text) if is_cjk(text) else text.split(" ")
     sep = "" if is_cjk(text) else " "
     lines, current = [], ""

@@ -204,7 +204,7 @@ def render_file(ctx: Context, ep: Episode, of: OutputFile, font: str | None) -> 
             content = ctx.episode.recorded(f"image:{s.id}") or str(ctx.episode.image_path(s).stat().st_mtime)
             if clip_for(s):
                 content = ["motion", ctx.episode.recorded(f"motion:{s.id}") or str(clip_for(s).stat().st_mtime)]
-        fp = fingerprint("seg-v2", s.kind, s.camera, content, shot.duration, [(c.start, c.end, c.text) for c in shot.cues],
+        fp = fingerprint("seg-v3", s.kind, s.camera, content, shot.duration, [(c.start, c.end, c.text) for c in shot.cues],
                          w, h, r.fps, r.crf, burn, banner if index == 0 else "", s.on_screen.get(lang), font, r.transition,
                          index == len(timeline.shots) - 1)
         return work / f"{index:03d}_{s.id}.mp4", fp

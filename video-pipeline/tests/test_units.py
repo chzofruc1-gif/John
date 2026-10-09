@@ -89,3 +89,17 @@ def test_cjk_cuts_respect_words_and_titles():
     assert not any(a.endswith("市") and b.startswith("场") for a, b in zip(lines, lines[1:]))
     lines = split_narration("它和古希腊色诺芬讨论雅典财政的《论收入》差不多同时代，是世界上最早系统讨论国家与市场关系的著作之一。")
     assert all(line.count("《") == line.count("》") for line in lines)
+
+
+def test_subtitle_wrap_keeps_titles_and_prefers_punctuation():
+    from PIL import Image, ImageDraw
+
+    from avp.overlays import _font, find_font_path, wrap
+
+    draw = ImageDraw.Draw(Image.new("RGBA", (10, 10)))
+    font = _font(find_font_path(""), 66)
+    narrow = int(draw.textlength("今天看到的《管子》一二", font=font))
+    assert wrap("先插一句严肃的。今天看到的《管子》", font, narrow, draw) == ["先插一句严肃的。", "今天看到的《管子》"]
+    lines = wrap("汉代的“轻重家”之手写成的经济学文献合集", font, narrow, draw)
+    assert "".join(lines) == "汉代的“轻重家”之手写成的经济学文献合集"
+    assert all(line.count("“") == line.count("”") for line in lines)

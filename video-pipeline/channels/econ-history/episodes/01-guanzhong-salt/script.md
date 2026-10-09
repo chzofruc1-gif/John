@@ -203,7 +203,7 @@ Claims: [c8]
 **s15** · diagram
 
 - 🖼 diagram `stat`: 《海王》篇的算账 / By the Guanzi's own maths
-  - 6000万 — 钱 / 月：盐利；人头税只有3000万 / 60,000,000 — coins a month from salt, vs 30,000,000 from a head tax
+  - 6000万 — 每月盐利（单位：钱），人头税只有3000万 / 60,000,000 — coins a month from salt, vs 30,000,000 from a head tax
 
 | | 中文 | English |
 |---|---|---|
