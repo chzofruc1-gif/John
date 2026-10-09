@@ -35,6 +35,7 @@ def test_mock_episode_end_to_end(tmp_path: Path):
     assert "✅" in (out / "qc.md").read_text() and "❌" not in (out / "qc.md").read_text()
     assert (out / "youtube_en.publish.md").exists() and (out / "cover_en.jpg").exists()
     assert json.loads((out / "youtube_en.timeline.json").read_text())["duration"] > 5
+    assert list(ep.glob("assets/*/motion.mp4")), "mock video provider should animate illustrations"
 
     # Second run is fully incremental: nothing regenerated.
     state_before = (ep / "state.json").read_text()

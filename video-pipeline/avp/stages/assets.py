@@ -102,6 +102,46 @@ def art(ctx: Context) -> None:
     parallel(ctx, scenes, "art", work, lambda s: s.id)
 
 
+# ----- motion (image-to-video) --------------------------------------------------
+
+def motion_prompt(scene: Scene, specs: dict[str, CharacterSpec]) -> str:
+    """What moves in the clip; falls back to the frame description when the script gives no motion."""
+    names = {c: specs[c].name_en for c in scene.characters if c in specs}
+    action = scene.motion or f"Gentle lively animation of this scene: {scene.visual_prompt}"
+    who = f" Characters: {', '.join(names.values())}." if names else ""
+    return f"{action}{who} Keep every face, costume and the background exactly as in the image; no camera cuts."
+
+
+def motion(ctx: Context) -> None:
+    ctx.require_approval("motion")
+    provider = ctx.providers.video
+    if provider is None:
+        log.info("  [motion] no video provider set — illustrations stay stills")
+        return
+    ep = ctx.episode.load_script()
+    specs = _cast_specs(ctx, ep)
+    scenes = [s for s in ep.scenes if s.kind == "illustration" and (not ctx.only_scenes or s.id in ctx.only_scenes)]
+    log.info("  [motion] %d clip(s) with %s/%s", len(scenes), provider.name, provider.model)
+
+    def work(scene: Scene) -> str:
+        image = ctx.episode.image_path(scene)
+        if not image.exists():
+            raise FileNotFoundError(f"missing illustration for {scene.id} — run the art stage")
+        path = ctx.episode.motion_path(scene)
+        prompt = motion_prompt(scene, specs)
+        fp = fingerprint(provider.name, provider.model, prompt, ctx.episode.recorded(f"image:{scene.id}"))
+        key = f"motion:{scene.id}"
+        if not ctx.forced(scene.id) and ctx.episode.is_fresh(key, fp, path):
+            return "cached"
+        tmp = path.with_suffix(".tmp.mp4")
+        provider.animate(image, prompt, tmp)
+        tmp.replace(path)
+        ctx.episode.mark(key, fp)
+        return "made"
+
+    parallel(ctx, scenes, "motion", work, lambda s: s.id)
+
+
 # ----- voice -------------------------------------------------------------------
 
 def voice_for(ctx: Context, speaker: str, lang: str, specs: dict[str, CharacterSpec]) -> tuple[str, str]:

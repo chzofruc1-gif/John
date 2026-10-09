@@ -15,10 +15,14 @@ tone = """Witty and irreverent, never sloppy. A smart friend who loves this stuf
 where historical figures speak for themselves. But every joke serves the explanation, and every mechanism
 is explained so concretely that a teenager could re-explain it. The spine of every episode is economics:
 the measures, how they work, what modern economics calls them, and why they matter in world history."""
-art_style = """Modern Chinese editorial illustration: clean ink outlines, flat mineral-pigment colours
-(cinnabar red, malachite green, azurite blue, ochre, ink black) on warm rice-paper texture; chibi-proportioned
-characters with big expressive faces in historically accurate clothing of their era; simple readable
-backgrounds; soft cinematic lighting; playful, comedic body language."""
+art_style = """ART STYLE 'Cinnabar Ledger' (朱砂账本): mixed-media paper collage in risograph print style.
+Characters are chibi paper cut-out puppets with visible cut paper edges, a thin white paper border and a soft drop
+shadow; big expressive comic faces; flat colour shapes with grainy risograph texture and halftone dot shading,
+slight print misregistration. Background is an aged ledger page: warm cream paper with faint vertical ruled lines,
+a thin ruled border and tea stains. Strict limited palette of four spot inks: cinnabar red, ink black, verdigris
+green and metallic gold. Collage elements cut from real-looking artifacts (bronze coins, bamboo slips, red seal
+stamps, torn paper scraps) are layered in. Pre-imperial buildings use rammed-earth walls and timber halls.
+Bold, graphic, playful, contemporary editorial design; illustration, not a photograph."""
 rules = [
   "Economics first: every episode is built around concrete measures. For each one say WHAT was done (with the primary source), HOW it works mechanically (who pays, what moves, prices and incentives), and WHAT it means in modern economics, naming the concept, its originator and year (e.g. Ramsey rule 1927, tax salience 2009, buffer stocks, Keynes 1936).",
   "Historical significance: say where the idea stands in WORLD economic thought, comparing it with contemporaries elsewhere (e.g. Xenophon, Aristotle) and with later Western formulations. Phrase 'firsts' precisely ('the earliest known written statement', 'among the earliest') and source them; never claim a bare 'world first' without evidence.",
@@ -75,12 +79,14 @@ platform = "douyin"     # same files work for 视频号 / 小红书
 #   research: anthropic | gemini (both search the web and cite sources) | openai | mock   ("" = same as llm)
 #   llm:      anthropic | gemini | openai | mock   (openai = ANY OpenAI-compatible server, cloud or local)
 #   image:    gemini | openai | sdwebui | mock
-#   tts:      gemini | openai | command | mock
+#   tts:      gemini | cosyvoice | openai | command | mock
+#   video:    wan | mock | ""  (image-to-video for illustrations; "" = stills with camera moves)
 research = "anthropic"
 llm = "anthropic"
 image = "qwen"           # 千问图像（百炼），与 CosyVoice 共用 key
 tts = "cosyvoice"
 tts_en = ""             # 英文想换别的引擎时填这里
+video = "wan"           # 插画做成动画（图生视频）；留空 = 只用静帧推拉镜头
 
 [gemini]
 api_key_env = "GEMINI_API_KEY"
@@ -131,7 +137,15 @@ model = "qwen-image-2.0"
 region = "cn"
 auth_via_proxy = true
 max_references = 3
-negative_prompt = "futou hat, Tang dynasty hat with long side flaps, Song dynasty clothing, Qing dynasty clothing, text, letters, watermark, signature, logo, blurry, deformed hands, extra fingers"
+negative_prompt = "futou hat, Tang dynasty hat with long side flaps, Song dynasty clothing, Qing dynasty clothing, imperial mian crown with bead curtains, brick battlements, crenellated walls, Great Wall, readable text, letters, English words, signboard with writing, road sign, caption, watermark, signature, logo, photorealistic, photograph, 3D render, blurry, deformed hands, extra fingers"
+
+[wan_video]             # 万相图生视频（百炼）：把插画做成 5 秒纸偶动画，key 同 DASHSCOPE_API_KEY
+model = "wan2.2-i2v-flash"
+region = "cn"
+resolution = "720P"
+auth_via_proxy = true
+motion_style = "Paper cut-out puppet animation with a stop-motion feel: flat paper pieces move with slight jitter, the ledger-paper background stays still, no new objects appear."
+negative_prompt = "camera cut, scene change, morphing faces, text, letters, photorealistic, 3D render"
 
 [cosyvoice]             # 阿里云百炼 CosyVoice；key 放在环境变量 DASHSCOPE_API_KEY
 model = "cosyvoice-v2"

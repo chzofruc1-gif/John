@@ -11,6 +11,7 @@
         script.md                 human-readable script with footnotes, for fact-checking
         state.json                fingerprints of generated assets (drives incremental re-runs)
         assets/<scene>/image.png  illustrations
+        assets/<scene>/motion.mp4 the illustration animated (image-to-video), when a video provider is set
         assets/<scene>/<lang>_<n>.wav  voice lines
         build/                    intermediate renders
         out/                      final videos, subtitles, publish metadata, QC sheets
@@ -165,6 +166,7 @@ class EpisodeDir:
 
     def scene_dir(self, scene: Scene) -> Path: return _mkdir(self.root / "assets" / scene.id)
     def image_path(self, scene: Scene) -> Path: return self.scene_dir(scene) / "image.png"
+    def motion_path(self, scene: Scene) -> Path: return self.scene_dir(scene) / "motion.mp4"
     def voice_path(self, scene: Scene, lang: str, index: int) -> Path:
         return self.scene_dir(scene) / f"{lang}_{index + 1:02d}.wav"
 

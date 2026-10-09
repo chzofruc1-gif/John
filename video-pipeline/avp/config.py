@@ -81,6 +81,7 @@ class ProvidersConfig:
     image: str = "gemini"  # gemini | qwen | openai | sdwebui | mock
     tts: str = "gemini"  # gemini | cosyvoice | openai | command | mock
     tts_en: str = ""     # optional different engine for English lines ("" = same as tts)
+    video: str = ""      # image-to-video for illustrations: wan | mock ("" = stills with camera moves only)
 
 
 @dataclass
@@ -167,6 +168,23 @@ class QwenImageConfig:
 
 
 @dataclass
+class WanVideoConfig:
+    """Wan image-to-video (万相) on Alibaba Cloud Model Studio (百炼); same key as CosyVoice.
+    Each illustration becomes a short clip; compose plays it, then holds its last frame."""
+    api_key_env: str = "DASHSCOPE_API_KEY"
+    model: str = "wan2.2-i2v-flash"
+    region: str = "cn"
+    base_url: str = ""
+    resolution: str = "720P"
+    prompt_extend: bool = False
+    motion_style: str = ""         # appended to every motion prompt (the series' animation style)
+    negative_prompt: str = ""
+    auth_via_proxy: bool = False
+    timeout: float = 600.0         # how long to wait for one clip
+    poll_interval: float = 8.0
+
+
+@dataclass
 class CommandTTSConfig:
     """Shell command per language; text arrives on stdin and in {text_file}; write a WAV to {out}."""
     zh: str = ""
@@ -226,6 +244,7 @@ class SeriesConfig:
     sdwebui: SDWebUIConfig = field(default_factory=SDWebUIConfig)
     cosyvoice: CosyVoiceConfig = field(default_factory=CosyVoiceConfig)
     qwen_image: QwenImageConfig = field(default_factory=QwenImageConfig)
+    wan_video: WanVideoConfig = field(default_factory=WanVideoConfig)
     command_tts: CommandTTSConfig = field(default_factory=CommandTTSConfig)
     render: RenderConfig = field(default_factory=RenderConfig)
     runtime: RuntimeConfig = field(default_factory=RuntimeConfig)

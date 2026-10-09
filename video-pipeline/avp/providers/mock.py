@@ -128,6 +128,19 @@ class MockImage:
         img.save(out_path, "PNG")
 
 
+class MockVideo:
+    """A one-second slow zoom on the still, so compose's clip-then-hold path runs offline."""
+    name = "mock"
+    model = "zoom"
+
+    def animate(self, image: Path, prompt: str, out_path: Path) -> None:
+        from ..media import run_ffmpeg
+
+        run_ffmpeg(["-loop", "1", "-framerate", "12", "-t", "1", "-i", str(image),
+                    "-vf", "scale=640:-2,zoompan=z='1+0.002*on':d=1:s=640x360:fps=12",
+                    "-c:v", "libx264", "-preset", "ultrafast", "-pix_fmt", "yuv420p", str(out_path)])
+
+
 class MockTTS:
     name = "mock"
     model = "tone"

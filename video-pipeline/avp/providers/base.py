@@ -47,3 +47,11 @@ class TTSProvider(Protocol):
 
     def synthesize(self, text: str, voice: str, style: str, language: str, out_path: Path) -> None:
         """Write speech as a 16-bit mono WAV."""
+
+
+class VideoProvider(Protocol):
+    name: str
+    model: str
+
+    def animate(self, image: Path, prompt: str, out_path: Path) -> None:
+        """Turn a still into a short MP4 clip that starts on that frame."""

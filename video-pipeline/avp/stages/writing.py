@@ -130,6 +130,7 @@ SCRIPT_SCHEMA = {
                 "speaker": {"type": "string"}, "delivery": {"type": "string"}, "text": BI,
             }, "required": ["speaker", "delivery", "text"]}},
             "visual_prompt": {"type": "string"},
+            "motion": {"type": "string"},
             "characters": {"type": "array", "items": {"type": "string"}},
             "camera": {"type": "string", "enum": list(CAMERA_MOVES)},
             "diagram": {"type": "object", "properties": {
@@ -142,7 +143,7 @@ SCRIPT_SCHEMA = {
             }, "required": ["template", "title", "items", "original", "source"]},
             "on_screen": BI,
             "claims": {"type": "array", "items": {"type": "string"}},
-        }, "required": ["id", "part", "kind", "chapter", "lines", "visual_prompt", "characters", "camera",
+        }, "required": ["id", "part", "kind", "chapter", "lines", "visual_prompt", "motion", "characters", "camera",
                         "on_screen", "claims"]}},
         "claims": {"type": "array", "items": {"type": "object", "properties": {
             "id": {"type": "string"}, "statement": BI, "source": {"type": "string"}, "quote": {"type": "string"},
@@ -170,6 +171,8 @@ SCRIPT_RULES = """FORMAT RULES (the output is parsed by a production pipeline):
 - kind "illustration": visual_prompt is ONE frame in English: subject, action, setting, composition, lighting.
   Put cast ids in "characters" and describe them by name in the prompt (their look is added automatically).
   Never ask for text, letters, captions or calligraphy inside illustrations. Omit "diagram".
+  motion is ONE short English sentence: what moves when this frame is animated for ~5 seconds (gestures,
+  expressions, a prop, falling coins) — small, readable, comic actions; "" for diagrams.
 - kind "diagram": explains a mechanism. Use the templates:
   * chapter — act title card. title = act title; items[0].primary = kicker like "Act 1" / "第一幕".
   * quote — a classical passage. original = exact classical Chinese text; source = book·chapter;

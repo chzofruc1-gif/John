@@ -33,7 +33,7 @@
         "zh": "齐国国君",
         "en": "Ruler of Qi"
       },
-      "look": "chibi young ruler of Qi in the Spring and Autumn period: round face, thick eyebrows, small goatee, flat-topped black mian crown with strings of jade beads hanging at front and back, crimson cross-collared robe closing right-over-left with gold-embroidered borders, jade pendant at the belt. Pre-imperial Zhou dynasty clothing"
+      "look": "chibi young ruler of Qi in the Spring and Autumn period: round face, thick eyebrows, small goatee, hair in a topknot under a small black lacquered crown-cap (guan) with a gold band and a jade hairpin, tied with a cord under the chin, no bead curtains, crimson cross-collared robe closing right-over-left with gold-embroidered borders, jade pendant at the belt. Pre-imperial Zhou dynasty clothing"
     },
     {
       "id": "bao_shuya",
@@ -86,13 +86,14 @@
       "chapter": {
         "zh": "开场",
         "en": "Cold Open"
-      }
+      },
+      "motion": "The lamp flame flickers, the family slurps porridge and the child reaches toward the glowing salt jar."
     },
     {
       "id": "s02",
       "part": 1,
       "kind": "illustration",
-      "visual_prompt": "Illustration in the series' ink-and-wash style, not a photograph: a large close-up of a hand taking a pinch of coarse white sea salt from a rough clay jar of the Zhou period, salt crystals drawn as sparkling white flecks, warm rice-paper background.",
+      "visual_prompt": "Vertical-friendly central composition: a giant hand pinches coarse white sea salt from a rough clay jar of the Zhou period; the falling salt crystals turn into round bronze coins with square holes as they fall onto the ledger page below.",
       "characters": [],
       "camera": "zoom-in",
       "lines": [
@@ -113,7 +114,8 @@
       "chapter": {
         "zh": "",
         "en": ""
-      }
+      },
+      "motion": "The hand tilts the jar, salt crystals tumble down and flip into bronze coins as they fall."
     },
     {
       "id": "s03",
@@ -161,7 +163,8 @@
       "chapter": {
         "zh": "射过国君的宰相",
         "en": "The Man Who Shot a Duke"
-      }
+      },
+      "motion": ""
     },
     {
       "id": "s04",
@@ -201,7 +204,8 @@
       "chapter": {
         "zh": "",
         "en": ""
-      }
+      },
+      "motion": "Guan Zhong releases the arrow, it zips forward and thunks into the duke's belt hook; the duke jolts, the chariots bounce."
     },
     {
       "id": "s05",
@@ -241,7 +245,8 @@
       "chapter": {
         "zh": "",
         "en": ""
-      }
+      },
+      "motion": "The duke lies still with his tongue out, then one eye cracks open and darts left and right; the driver whips the horses."
     },
     {
       "id": "s06",
@@ -282,7 +287,8 @@
       "chapter": {
         "zh": "",
         "en": ""
-      }
+      },
+      "motion": "Bao Shuya bows twice and points eagerly at Guan Zhong; the duke folds his arms and frowns; Guan Zhong gives a sheepish little wave in his ropes."
     },
     {
       "id": "s07",
@@ -353,7 +359,8 @@
       "chapter": {
         "zh": "",
         "en": ""
-      }
+      },
+      "motion": ""
     },
     {
       "id": "s08",
@@ -392,7 +399,8 @@
       "chapter": {
         "zh": "",
         "en": ""
-      }
+      },
+      "motion": "The duke peers around the empty storeroom, a cobweb sways, a single coin wobbles and falls over; he slumps."
     },
     {
       "id": "s09",
@@ -431,7 +439,8 @@
       "chapter": {
         "zh": "",
         "en": ""
-      }
+      },
+      "motion": "Guan Zhong shakes his head and wags the ledger; behind him the farmer frantically fans the roasting pig and the basket lid pops up and down."
     },
     {
       "id": "s10",
@@ -478,7 +487,8 @@
       "chapter": {
         "zh": "",
         "en": ""
-      }
+      },
+      "motion": ""
     },
     {
       "id": "s11",
@@ -526,7 +536,8 @@
       "chapter": {
         "zh": "一粒盐里的财政学",
         "en": "The Economics of Salt"
-      }
+      },
+      "motion": ""
     },
     {
       "id": "s12",
@@ -563,7 +574,8 @@
       "chapter": {
         "zh": "",
         "en": ""
-      }
+      },
+      "motion": "The scholar shuffles bamboo slips from pile to pile, the stacks wobble, the lens glints."
     },
     {
       "id": "s13",
@@ -600,7 +612,8 @@
       "chapter": {
         "zh": "",
         "en": ""
-      }
+      },
+      "motion": "Each family member lifts their salt bowl in turn, father, then mother, then the child, like a bar chart rising."
     },
     {
       "id": "s14",
@@ -688,7 +701,8 @@
       "chapter": {
         "zh": "",
         "en": ""
-      }
+      },
+      "motion": ""
     },
     {
       "id": "s15",
@@ -738,7 +752,8 @@
       "chapter": {
         "zh": "",
         "en": ""
-      }
+      },
+      "motion": ""
     },
     {
       "id": "s16",
@@ -786,7 +801,8 @@
       "chapter": {
         "zh": "",
         "en": ""
-      }
+      },
+      "motion": "The duke's bronze-coin eyes spin and he drools, bobbing his head; Guan Zhong leans in, whispers behind his hand and shakes the salt bag."
     },
     {
       "id": "s17",
@@ -855,7 +871,8 @@
       "chapter": {
         "zh": "",
         "en": ""
-      }
+      },
+      "motion": ""
     },
     {
       "id": "s17b",
@@ -911,7 +928,8 @@
       "chapter": {
         "zh": "",
         "en": ""
-      }
+      },
+      "motion": ""
     },
     {
       "id": "s18",
@@ -940,7 +958,8 @@
       "chapter": {
         "zh": "",
         "en": ""
-      }
+      },
+      "motion": "The buyer hands over coins, the farmer hoists the plough, the official quietly slips coins into the chest and glances around."
     },
     {
       "id": "s19",
@@ -977,7 +996,8 @@
       "chapter": {
         "zh": "",
         "en": ""
-      }
+      },
+      "motion": "Salt pours into the top of the machine, gears turn and coins clink out at the bottom; the duke's hand creeps the dial upward."
     },
     {
       "id": "s20",
@@ -1025,7 +1045,8 @@
       "chapter": {
         "zh": "经济工具箱",
         "en": "The Toolkit"
-      }
+      },
+      "motion": ""
     },
     {
       "id": "s30",
@@ -1093,7 +1114,8 @@
       "chapter": {
         "zh": "",
         "en": ""
-      }
+      },
+      "motion": ""
     },
     {
       "id": "s31",
@@ -1125,13 +1147,14 @@
         "zh": "",
         "en": ""
       },
-      "diagram": null
+      "diagram": null,
+      "motion": "On the left grain sacks pile up as farmers hand them over; on the right villagers carry sacks away; the hoarder stamps his foot."
     },
     {
       "id": "s32",
       "part": 3,
       "kind": "illustration",
-      "visual_prompt": "1930s American Midwest drawn in the series' ink-and-wash illustration style: a Depression-era agriculture official in a suit and hat stands before rows of grain silos, holding an open book showing an ancient Chinese granary; farmers in overalls listen; warm sepia light.",
+      "visual_prompt": "1930s American Midwest as a paper collage: a Depression-era agriculture official in a suit and hat stands before rows of grain silos, holding an open book showing an ancient Chinese granary; farmers in overalls listen.",
       "characters": [],
       "camera": "zoom-in",
       "lines": [
@@ -1164,7 +1187,8 @@
         "zh": "",
         "en": ""
       },
-      "diagram": null
+      "diagram": null,
+      "motion": "The official taps the open book and the farmers nod; wind ripples the wheat."
     },
     {
       "id": "s34",
@@ -1203,7 +1227,8 @@
         "zh": "",
         "en": ""
       },
-      "diagram": null
+      "diagram": null,
+      "motion": "Workers hammer, weave and saw in quick rhythm and catch coins tossed to them; the rich family weeps theatrically."
     },
     {
       "id": "s35",
@@ -1241,7 +1266,8 @@
         "zh": "",
         "en": ""
       },
-      "diagram": null
+      "diagram": null,
+      "motion": "Chu farmers dash after deer with nets, Qi merchants jingle coin bags, the granary's sacks bulge."
     },
     {
       "id": "s37",
@@ -1289,7 +1315,8 @@
       "chapter": {
         "zh": "历史地位",
         "en": "Its Place in History"
-      }
+      },
+      "motion": ""
     },
     {
       "id": "s21",
@@ -1331,7 +1358,8 @@
       "chapter": {
         "zh": "",
         "en": ""
-      }
+      },
+      "motion": "The lords bow in a wave one after another, banners flutter, Duke Huan puffs out his chest; Guan Zhong nods."
     },
     {
       "id": "s33",
@@ -1403,7 +1431,8 @@
       "chapter": {
         "zh": "",
         "en": ""
-      }
+      },
+      "motion": ""
     },
     {
       "id": "s29",
@@ -1456,7 +1485,8 @@
       "chapter": {
         "zh": "结语",
         "en": "The Big Idea"
-      }
+      },
+      "motion": "Guan Zhong leans toward the viewer, raises one eyebrow and rubs the pinch of salt between his fingers; the salt sparkles."
     }
   ],
   "claims": [

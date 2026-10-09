@@ -25,7 +25,7 @@ Say explicitly when a claim checks out. Do not rewrite the jokes; only flag them
 | id | 名字 | Name | Role | Look |
 |---|---|---|---|---|
 | `guan_zhong` | 管仲 | Guan Zhong | Chancellor of Qi | chibi middle-aged chancellor of the State of Qi in the Spring and Autumn period (7th century BC): slim, clever narrow eyes, long thin black moustache and short pointed beard, hair in a topknot held by a small black lacquered crown-cap (guan) and a hairpin, cap tied with a cord under the chin, no brim, no side flaps, deep green cross-collared robe closing right-over-left (shenyi) with wide sleeves, red trim and a black sash, holding a bamboo-slip ledger. Pre-imperial Zhou dynasty clothing |
-| `duke_huan` | 齐桓公 | Duke Huan | Ruler of Qi | chibi young ruler of Qi in the Spring and Autumn period: round face, thick eyebrows, small goatee, flat-topped black mian crown with strings of jade beads hanging at front and back, crimson cross-collared robe closing right-over-left with gold-embroidered borders, jade pendant at the belt. Pre-imperial Zhou dynasty clothing |
+| `duke_huan` | 齐桓公 | Duke Huan | Ruler of Qi | chibi young ruler of Qi in the Spring and Autumn period: round face, thick eyebrows, small goatee, hair in a topknot under a small black lacquered crown-cap (guan) with a gold band and a jade hairpin, tied with a cord under the chin, no bead curtains, crimson cross-collared robe closing right-over-left with gold-embroidered borders, jade pendant at the belt. Pre-imperial Zhou dynasty clothing |
 | `bao_shuya` | 鲍叔牙 | Bao Shuya | Guan Zhong's loyal friend | chibi kind-faced official of Qi in the Spring and Autumn period: plump, rosy cheeks, neat grey beard, hair in a topknot under a small black cap tied under the chin, simple brown cross-collared robe closing right-over-left, warm smile. Pre-imperial Zhou dynasty clothing |
 
 ## Script / 脚本
@@ -35,6 +35,7 @@ Say explicitly when a claim checks out. Do not rewrite the jokes; only flag them
 **s01** · illustration · 📑 开场 / Cold Open
 
 - 🎨 zoom-in: Night interior of a humble farmhouse in ancient Qi (7th century BC): a family of three around a low table with millet porridge; a small clay jar of white salt glows in warm lamplight as the focal point.
+- 🎞 The lamp flame flickers, the family slurps porridge and the child reaches toward the glowing salt jar.
 
 | | 中文 | English |
 |---|---|---|
@@ -45,7 +46,8 @@ Claims: [c33] [c6]
 
 **s02** · illustration
 
-- 🎨 zoom-in: Illustration in the series' ink-and-wash style, not a photograph: a large close-up of a hand taking a pinch of coarse white sea salt from a rough clay jar of the Zhou period, salt crystals drawn as sparkling white flecks, warm rice-paper background.
+- 🎨 zoom-in: Vertical-friendly central composition: a giant hand pinches coarse white sea salt from a rough clay jar of the Zhou period; the falling salt crystals turn into round bronze coins with square holes as they fall onto the ledger page below.
+- 🎞 The hand tilts the jar, salt crystals tumble down and flip into bronze coins as they fall.
 - 🏷 盐 / Salt
 
 | | 中文 | English |
@@ -64,6 +66,7 @@ Claims: [c33] [c6]
 **s04** · illustration
 
 - 🎨 pan-right (cast: guan_zhong, duke_huan): On a dusty road between hills, Guan Zhong stands on a speeding two-wheeled war chariot and shoots an arrow; in a second chariot ahead, Prince Xiaobai (Duke Huan) jolts as the arrow hits the bronze hook of his belt; motion lines, comic freeze-frame energy.
+- 🎞 Guan Zhong releases the arrow, it zips forward and thunks into the duke's belt hook; the duke jolts, the chariots bounce.
 
 | | 中文 | English |
 |---|---|---|
@@ -75,6 +78,7 @@ Claims: [c2]
 **s05** · illustration
 
 - 🎨 zoom-out (cast: duke_huan): Prince Xiaobai (Duke Huan) lying dramatically on the floor of his chariot pretending to be dead, tongue out, one eye peeking open; the arrow stuck in his belt buckle; his driver whipping the horses forward.
+- 🎞 The duke lies still with his tongue out, then one eye cracks open and darts left and right; the driver whips the horses.
 
 | | 中文 | English |
 |---|---|---|
@@ -86,6 +90,7 @@ Claims: [c2] [c1]
 **s06** · illustration
 
 - 🎨 pan-left (cast: bao_shuya, duke_huan, guan_zhong): Palace hall of Qi: Bao Shuya bows earnestly before an annoyed Duke Huan on his throne, gesturing toward Guan Zhong who stands in the doorway in rope bonds looking sheepish.
+- 🎞 Bao Shuya bows twice and points eagerly at Guan Zhong; the duke folds his arms and frowns; Guan Zhong gives a sheepish little wave in his ropes.
 
 | | 中文 | English |
 |---|---|---|
@@ -110,6 +115,7 @@ Claims: [c1] [c4]
 **s08** · illustration
 
 - 🎨 zoom-in (cast: duke_huan): Duke Huan peering into an almost empty treasury storeroom: a few lonely bronze spade-coins, cobwebs, an echoing dark room; comedic despair.
+- 🎞 The duke peers around the empty storeroom, a cobweb sways, a single coin wobbles and falls over; he slumps.
 - 🏷 国库：空 / Treasury: empty
 
 | | 中文 | English |
@@ -122,6 +128,7 @@ Claims: [c5]
 **s09** · illustration
 
 - 🎨 pan-left (cast: guan_zhong): Guan Zhong shaking his head and waving a bamboo-slip ledger while, behind him, a comic village scene: a farmer hurriedly roasting his pig before the tax man arrives, and a family hiding children inside a big basket; no text.
+- 🎞 Guan Zhong shakes his head and wags the ledger; behind him the farmer frantically fans the roasting pig and the basket lid pops up and down.
 
 | | 中文 | English |
 |---|---|---|
@@ -156,6 +163,7 @@ Claims: [c5]
 **s12** · illustration
 
 - 🎨 zoom-in: A Han dynasty scholar (Liu Xiang) at a low wooden desk in a lamp-lit archive, sorting heaps of bamboo-slip bundles tied with cords and stacked on wooden shelves into one big book of bamboo slips; only bamboo slips and silk scrolls, no paper books; comic framing as if seen through a large round magnifying lens.
+- 🎞 The scholar shuffles bamboo slips from pile to pile, the stacks wobble, the lens glints.
 - 🏷 托名之作 / Fine print
 
 | | 中文 | English |
@@ -168,6 +176,7 @@ Claims: [c6]
 **s13** · illustration
 
 - 🎨 static: A Spring-and-Autumn period family of Qi (father, mother, small child) each standing beside a clay salt bowl of a different size: the father's bowl is large, the mother's medium, the child's small; simple, clear, chart-like composition on a plain background.
+- 🎞 Each family member lifts their salt bowl in turn, father, then mother, then the child, like a bar chart rising.
 
 | | 中文 | English |
 |---|---|---|
@@ -205,6 +214,7 @@ Claims: [c8]
 **s16** · illustration
 
 - 🎨 zoom-in (cast: duke_huan, guan_zhong): Comedy close-up: Duke Huan with eyes turned into round bronze coins and drooling, while Guan Zhong leans in and whispers with a sly smile, holding a small bag of salt.
+- 🎞 The duke's bronze-coin eyes spin and he drools, bobbing his head; Guan Zhong leans in, whispers behind his hand and shakes the salt bag.
 
 | | 中文 | English |
 |---|---|---|
@@ -243,6 +253,7 @@ Claims: [c24] [c33]
 **s18** · illustration
 
 - 🎨 pan-right: Bustling Qi market: a woman buying a bronze needle and knife, a farmer shouldering a new iron plough, a state official at a stall quietly dropping coins into a large state chest; no text.
+- 🎞 The buyer hands over coins, the farmer hoists the plough, the official quietly slips coins into the chest and glances around.
 
 | | 中文 | English |
 |---|---|---|
@@ -253,6 +264,7 @@ Claims: [c9]
 **s19** · illustration
 
 - 🎨 zoom-in (cast: duke_huan): A huge whimsical bronze machine: salt pours in at the top, coins stream out at the bottom into the treasury; Duke Huan's hand rests on a big dial, about to turn it to maximum; ominous lighting.
+- 🎞 Salt pours into the top of the machine, gears turn and coins clink out at the bottom; the duke's hand creeps the dial upward.
 
 | | 中文 | English |
 |---|---|---|
@@ -286,6 +298,7 @@ Claims: [c23]
 **s31** · illustration
 
 - 🎨 pan-right (cast: guan_zhong): A Qi state granary shown in two halves: on the left a bumper harvest, officials buying heaps of cheap grain from smiling farmers; on the right a lean year, the same officials selling grain to a queue of relieved villagers while a fat grain hoarder sulks behind his locked storehouse.
+- 🎞 On the left grain sacks pile up as farmers hand them over; on the right villagers carry sacks away; the hoarder stamps his foot.
 - 🏷 轻重之术 / Buy cheap, sell dear
 
 | | 中文 | English |
@@ -296,7 +309,8 @@ Claims: [c23]
 
 **s32** · illustration
 
-- 🎨 zoom-in: 1930s American Midwest drawn in the series' ink-and-wash illustration style: a Depression-era agriculture official in a suit and hat stands before rows of grain silos, holding an open book showing an ancient Chinese granary; farmers in overalls listen; warm sepia light.
+- 🎨 zoom-in: 1930s American Midwest as a paper collage: a Depression-era agriculture official in a suit and hat stands before rows of grain silos, holding an open book showing an ancient Chinese granary; farmers in overalls listen.
+- 🎞 The official taps the open book and the farmers nod; wind ripples the wheat.
 - 🏷 常平仓 / Ever-Normal Granary
 
 | | 中文 | English |
@@ -309,6 +323,7 @@ Claims: [c25] [c26]
 **s34** · illustration
 
 - 🎨 pan-left: An extravagant ancient funeral of a wealthy Qi family: a huge carved coffin and piles of fine burial robes, while carpenters, weavers and labourers work busily and are paid in bronze coins; comic contrast between the solemn rich family and the cheerful busy workers.
+- 🎞 Workers hammer, weave and saw in quick rhythm and catch coins tossed to them; the rich family weeps theatrically.
 - 🏷 富者靡之 / Spending makes jobs
 
 | | 中文 | English |
@@ -321,6 +336,7 @@ Claims: [c30] [c34]
 **s35** · illustration
 
 - 🎨 pan-right: Comic scene on the Qi-Chu border: farmers of Chu abandon their rice fields to chase deer with nets, while Qi merchants hold out bags of bronze coins; behind the Qi side a granary is stacked high with grain sacks.
+- 🎞 Chu farmers dash after deer with nets, Qi merchants jingle coin bags, the granary's sacks bulge.
 - 🏷 买鹿制楚 / The deer gambit
 
 | | 中文 | English |
@@ -344,6 +360,7 @@ Claims: [c31]
 **s21** · illustration
 
 - 🎨 pan-right (cast: duke_huan, guan_zhong): Grand outdoor covenant of feudal lords: Duke Huan stands at the head of an altar as rulers of other states bow; Guan Zhong stands beside him; banners and bronze vessels; triumphant golden light.
+- 🎞 The lords bow in a wave one after another, banners flutter, Duke Huan puffs out his chest; Guan Zhong nods.
 
 | | 中文 | English |
 |---|---|---|
@@ -368,6 +385,7 @@ Claims: [c27] [c28] [c29] [c35] [c36]
 **s29** · illustration · 📑 结语 / The Big Idea
 
 - 🎨 zoom-in (cast: guan_zhong): Guan Zhong breaking the fourth wall: he leans toward the viewer from inside an ancient frame, eyebrow raised, holding a pinch of salt between two fingers; warm spotlight, dark background.
+- 🎞 Guan Zhong leans toward the viewer, raises one eyebrow and rubs the pinch of salt between his fingers; the salt sparkles.
 - 🏷 最好收的钱 / The easiest money
 
 | | 中文 | English |

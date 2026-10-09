@@ -21,6 +21,11 @@ import httpx
 from ..config import QwenImageConfig
 
 log = logging.getLogger(__name__)
+
+
+def billing_hint(body: str) -> str:
+    return (" — the Model Studio (百炼) account is out of credit or overdue; top it up in the Alibaba Cloud console "
+            "and re-run" if "Arrearage" in body else "")
 ENDPOINTS = {
     "cn": "https://dashscope.aliyuncs.com",
     "intl": "https://dashscope-intl.aliyuncs.com",
@@ -95,7 +100,7 @@ class QwenImage:
             try:
                 resp = self.http.post(PATH, json=payload)
                 if resp.status_code >= 400 and resp.status_code not in RETRYABLE:
-                    raise RuntimeError(f"Qwen-Image HTTP {resp.status_code}: {resp.text[:400]}")
+                    raise RuntimeError(f"Qwen-Image HTTP {resp.status_code}: {resp.text[:400]}{billing_hint(resp.text)}")
                 if resp.status_code < 400:
                     url = self.image_url(resp.json())
                     img = self._download(url)

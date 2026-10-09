@@ -14,6 +14,7 @@
    ├──── 审稿关卡：把 script.md 交给其他模型核查 → avp revise 改稿 → avp approve
    │  cast       人物设定图（栏目级，跨集复用，保证形象一致）
    │  art        插画（附人物设定图做参考，16:9 母版）
+   │  motion     图生视频：每张插画做成约 5 秒的纸偶动画（可选，providers.video）
    │  voice      每句台词 × 每种语言一个 WAV（旁白 + 角色不同声音）
    │  compose    每个输出：推拉镜头/竖屏重构图、动态图解、烧录字幕、转场、配乐闪避、响度标准化
    │  publish    标题、简介、YouTube 章节、参考资料、话题标签
@@ -71,6 +72,7 @@ avp run    channels/econ/episodes/01-guanzhong --skip-review --draft --provider 
 | `research` 研究 | `anthropic`（Claude + 联网搜索，附来源）· `gemini`（Google 搜索溯源）· `openai`（任意兼容接口；无联网时会在资料顶部标注"需人工核实"）· 或者你自己写 `research.md` |
 | `llm` 大纲/脚本/改稿 | `anthropic`（Claude，官方 SDK，结构化输出）· `gemini` · `openai` = 任何 OpenAI 兼容接口：DeepSeek、通义千问、Kimi、GLM、OpenRouter、本地 **Ollama / LM Studio / vLLM / llama.cpp** |
 | `image` 插画 | `gemini`（支持人物参考图，形象最稳）· `openai`（gpt-image 等）· `sdwebui`（本地 **Stable Diffusion WebUI / Forge**）|
+| `video` 插画动起来 | `wan`（万相图生视频，百炼）· 留空 = 只用静帧推拉镜头 |
 | `tts` 配音 | `gemini` · `openai`（OpenAI TTS 或本地 **Kokoro-FastAPI** 等）· `command`（任意本地程序：**Piper、CosyVoice、F5-TTS、sherpa-onnx**…）|
 | 全部 | `mock`：离线占位，零成本测试流程 |
 
@@ -96,7 +98,7 @@ model = "qwen2.5:32b"
 ```
 episodes/01-guanzhong/
   research.md  outline.md  script.json  script.md  revisions/
-  assets/s05/image.png  assets/s05/en_01.wav  assets/s05/zh_01.wav
+  assets/s05/image.png  assets/s05/motion.mp4  assets/s05/en_01.wav  assets/s05/zh_01.wav
   out/youtube_en.mp4  youtube_en.srt  youtube_en.publish.md  youtube_en.sheet.jpg
   out/douyin_zh_part1.mp4 … part3.mp4  (+ .srt / .publish.md / .sheet.jpg)
   out/cover_en.jpg  cover_zh.jpg  qc.md
@@ -106,7 +108,7 @@ episodes/01-guanzhong/
 
 一份主脚本驱动所有输出：画面共用，每句台词同时有 `zh` 和 `en`（是两份各自地道的稿子，不是互译）。
 
-- `scenes[].kind`：`illustration`（AI 插画 + 推拉镜头）或 `diagram`（动态图解）
+- `scenes[].kind`：`illustration`（AI 插画 + 推拉镜头；`motion` 写一句“画面里什么在动”，有动画时先播动画再定格）或 `diagram`（动态图解）
 - 图解模板：`chapter` 幕标题 · `quote` 古文原句 + 译文 · `flow` 流程/资金流 · `compare` 正反方对比 · `timeline` 时间线 · `stat` 关键数字
 - `scenes[].part`：中文竖屏版按这个拆成几集短片（在每幕结尾的悬念处切）
 - `lines[].speaker`：`narrator` 或角色 id；角色台词在字幕里自动加「管仲：」前缀

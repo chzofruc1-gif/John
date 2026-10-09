@@ -59,6 +59,7 @@ class Scene:
     kind: str
     lines: list[Line]
     visual_prompt: str = ""       # illustration: English prompt for one frame
+    motion: str = ""              # illustration: what moves when the frame is animated (image-to-video)
     characters: list[str] = field(default_factory=list)
     camera: str = "zoom-in"
     diagram: Diagram | None = None
@@ -170,6 +171,7 @@ class Episode:
                 lines=[Line(str(l.get("speaker", NARRATOR)), bi(l.get("text")), str(l.get("delivery", "")))
                        for l in s.get("lines", [])],
                 visual_prompt=str(s.get("visual_prompt", "")).strip(),
+                motion=str(s.get("motion", "")).strip(),
                 characters=[str(c) for c in s.get("characters", [])],
                 camera=camera if camera in CAMERA_MOVES else "zoom-in",
                 diagram=diagram(s.get("diagram")) if kind == "diagram" else None,

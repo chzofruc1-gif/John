@@ -45,6 +45,7 @@ def _context(episode: EpisodeDir, args) -> Context:
         else:
             cfg.providers.research = cfg.providers.llm = cfg.providers.image = cfg.providers.tts = args.provider
             cfg.providers.tts_en = ""
+            cfg.providers.video = "mock" if args.provider == "mock" else ""  # only mock and wan animate
     if getattr(args, "draft", False):
         cfg.render.height = 540  # fast low-res preview; full-res renders are cached separately
     if getattr(args, "workers", None):

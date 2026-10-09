@@ -79,6 +79,8 @@ def render_script_md(ep: Episode, cfg: SeriesConfig) -> str:
         else:
             cast = f" (cast: {', '.join(s.characters)})" if s.characters else ""
             w(f"- 🎨 {s.camera}{cast}: {s.visual_prompt}")
+            if s.motion:
+                w(f"- 🎞 {s.motion}")
         if s.on_screen["en"] or s.on_screen["zh"]:
             w(f"- 🏷 {s.on_screen['zh']} / {s.on_screen['en']}")
         refs = " ".join(f"[{c}]" for c in s.claims)

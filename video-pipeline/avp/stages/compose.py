@@ -66,13 +66,19 @@ def ken_burns(camera: str, bw: int, bh: int, duration: float) -> str:
             f"crop={bw}:{bh}:x='{x}':y='(ih-oh)/2',setsar=1")
 
 
-def illustration_base(camera: str, w: int, h: int, duration: float) -> str:
-    """[0:v] -> [base]. Portrait frames show a square crop of the art over a blurred fill."""
+def illustration_base(camera: str, w: int, h: int, duration: float, clip_fps: int = 0) -> str:
+    """[0:v] -> [base]. Portrait frames show a square crop of the art over a blurred fill.
+
+    With `clip_fps`, input 0 is an animated clip of the art: it plays once, then its last frame holds
+    for the rest of the shot while the camera keeps moving."""
+    src = "[0:v]"
+    if clip_fps:
+        src = f"[0:v]fps={clip_fps},tpad=stop_mode=clone:stop_duration={duration:.3f},trim=duration={duration:.3f},setpts=PTS-STARTPTS,"
     if h <= w:
-        return f"[0:v]{ken_burns(camera, w, h, duration)},format=yuv420p[base]"
+        return f"{src}{ken_burns(camera, w, h, duration)},format=yuv420p[base]"
     box = w  # square foreground, art is composed with the subject in the centre
     top = round(h * 0.2)
-    return (f"[0:v]split[a][b];"
+    return (f"{src}split[a][b];"
             f"[a]scale={w}:{h}:force_original_aspect_ratio=increase,crop={w}:{h},boxblur=24:2,"
             f"eq=brightness=-0.12:saturation=0.8,setsar=1[bg];"
             f"[b]{ken_burns(camera, box, box, duration)}[fg];"
@@ -184,12 +190,19 @@ def render_file(ctx: Context, ep: Episode, of: OutputFile, font: str | None) -> 
                 layers.append(Layer(png, cue.start, min(cue.end, d)))
         return layers
 
+    def clip_for(scene: Scene) -> Path | None:
+        """The animated clip for an illustration, when motion is on and the clip exists."""
+        clip = ctx.episode.motion_path(scene)
+        return clip if ctx.providers.video is not None and clip.exists() else None
+
     def segment_key(index: int, shot: Shot) -> tuple[Path, str]:
         s = shot.scene
         if s.kind == "diagram":  # template edits must re-render diagrams too
             content = [diagram_data(s.diagram, lang), fingerprint(TEMPLATE.read_text(encoding="utf-8"))]
         else:
             content = ctx.episode.recorded(f"image:{s.id}") or str(ctx.episode.image_path(s).stat().st_mtime)
+            if clip_for(s):
+                content = ["motion", ctx.episode.recorded(f"motion:{s.id}") or str(clip_for(s).stat().st_mtime)]
         fp = fingerprint("seg-v2", s.kind, s.camera, content, shot.duration, [(c.start, c.end, c.text) for c in shot.cues],
                          w, h, r.fps, r.crf, burn, banner if index == 0 else "", s.on_screen.get(lang), font, r.transition,
                          index == len(timeline.shots) - 1)
@@ -214,6 +227,9 @@ def render_file(ctx: Context, ep: Episode, of: OutputFile, font: str | None) -> 
             with DiagramRenderer(r.chromium) as renderer:  # one browser per job: Playwright is thread-bound
                 renderer.render(s.diagram, lang, w, h, shot.duration, r.fps, clip, r.crf)
             base_input, base_filter = ["-i", str(clip)], "[0:v]setsar=1,format=yuv420p[base]"
+        elif clip_for(s):
+            base_input = ["-i", str(clip_for(s))]
+            base_filter = illustration_base(s.camera, w, h, shot.duration, clip_fps=r.fps)
         else:
             image = ctx.episode.image_path(s)
             base_input = ["-loop", "1", "-framerate", str(r.fps), "-t", f"{shot.duration:.3f}", "-i", str(image)]

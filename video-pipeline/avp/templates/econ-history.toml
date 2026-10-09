@@ -15,10 +15,14 @@ tone = """Witty and irreverent, never sloppy. A smart friend who loves this stuf
 where historical figures speak for themselves. But every joke serves the explanation, and every mechanism
 is explained so concretely that a teenager could re-explain it. The spine of every episode is economics:
 the measures, how they work, what modern economics calls them, and why they matter in world history."""
-art_style = """Modern Chinese editorial illustration: clean ink outlines, flat mineral-pigment colours
-(cinnabar red, malachite green, azurite blue, ochre, ink black) on warm rice-paper texture; chibi-proportioned
-characters with big expressive faces in historically accurate clothing of their era; simple readable
-backgrounds; soft cinematic lighting; playful, comedic body language."""
+art_style = """ART STYLE 'Cinnabar Ledger' (朱砂账本): mixed-media paper collage in risograph print style.
+Characters are chibi paper cut-out puppets with visible cut paper edges, a thin white paper border and a soft drop
+shadow; big expressive comic faces; flat colour shapes with grainy risograph texture and halftone dot shading,
+slight print misregistration. Background is an aged ledger page: warm cream paper with faint vertical ruled lines,
+a thin ruled border and tea stains. Strict limited palette of four spot inks: cinnabar red, ink black, verdigris
+green and metallic gold. Collage elements cut from real-looking artifacts (bronze coins, bamboo slips, red seal
+stamps, torn paper scraps) are layered in. Pre-imperial buildings use rammed-earth walls and timber halls.
+Bold, graphic, playful, contemporary editorial design; illustration, not a photograph."""
 rules = [
   "Economics first: every episode is built around concrete measures. For each one say WHAT was done (with the primary source), HOW it works mechanically (who pays, what moves, prices and incentives), and WHAT it means in modern economics, naming the concept, its originator and year (e.g. Ramsey rule 1927, tax salience 2009, buffer stocks, Keynes 1936).",
   "Historical significance: say where the idea stands in WORLD economic thought, comparing it with contemporaries elsewhere (e.g. Xenophon, Aristotle) and with later Western formulations. Phrase 'firsts' precisely ('the earliest known written statement', 'among the earliest') and source them; never claim a bare 'world first' without evidence.",
@@ -80,6 +84,7 @@ llm = "gemini"
 image = "gemini"
 tts = "gemini"
 tts_en = ""
+video = ""              # wan = animate illustrations (image-to-video); "" = stills with camera moves
 
 [gemini]
 api_key_env = "GEMINI_API_KEY"
@@ -123,6 +128,11 @@ size = "1536x1024"
 base_url = "http://localhost:8880/v1"
 api_key_env = ""
 model = "kokoro"
+
+[wan_video]             # 万相图生视频（阿里云百炼），key 同 DASHSCOPE_API_KEY；providers.video = "wan" 时使用
+model = "wan2.2-i2v-flash"
+resolution = "720P"
+motion_style = "Paper cut-out puppet animation with a stop-motion feel: flat paper pieces move with slight jitter, the background stays still, no new objects appear."
 
 [qwen_image]            # 千问图像（阿里云百炼），key 同 DASHSCOPE_API_KEY；结果图在阿里云 OSS 上下载
 model = "qwen-image-2.0"

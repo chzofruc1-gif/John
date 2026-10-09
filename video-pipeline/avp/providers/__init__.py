@@ -6,6 +6,7 @@
              or local (Ollama, LM Studio, vLLM, llama.cpp, Kokoro-FastAPI …); see [openai.*] in series.toml
     qwen     Qwen-Image illustrations on Alibaba Cloud Model Studio (百炼, DASHSCOPE_API_KEY)
     cosyvoice  CosyVoice speech on Alibaba Cloud Model Studio (百炼, DASHSCOPE_API_KEY)
+    wan      Wan image-to-video on Alibaba Cloud Model Studio (百炼), animates illustrations
     sdwebui  local Stable Diffusion WebUI (AUTOMATIC1111 / Forge) for illustrations
     command  any local TTS program (Piper, CosyVoice, F5-TTS, sherpa-onnx …) for voices
     mock     offline placeholders, for testing the pipeline at zero cost
@@ -14,7 +15,7 @@
 from __future__ import annotations
 
 from ..config import SeriesConfig
-from .base import ImageProvider, LLMProvider, ResearchResult, Source, TTSProvider
+from .base import ImageProvider, LLMProvider, ResearchResult, Source, TTSProvider, VideoProvider
 
 __all__ = ["Providers", "ResearchResult", "Source", "build_providers", "KINDS"]
 
@@ -23,6 +24,7 @@ KINDS = {
     "llm": ("anthropic", "gemini", "openai", "mock"),
     "image": ("gemini", "qwen", "openai", "sdwebui", "mock"),
     "tts": ("gemini", "cosyvoice", "openai", "command", "mock"),
+    "video": ("wan", "mock"),
 }
 
 
@@ -40,9 +42,10 @@ class _Lazy:
 
 class Providers:
     def __init__(self, research: LLMProvider, llm: LLMProvider, image: ImageProvider, tts: TTSProvider,
-                 tts_en: TTSProvider | None = None):
+                 tts_en: TTSProvider | None = None, video: VideoProvider | None = None):
         self.research, self.llm, self.image, self.tts = research, llm, image, tts
         self._tts_en = tts_en
+        self.video = video  # None: illustrations stay stills (camera moves only)
 
     def tts_for(self, language: str) -> TTSProvider:
         return self._tts_en if language == "en" and self._tts_en else self.tts
@@ -64,7 +67,8 @@ def build_providers(config: SeriesConfig) -> Providers:
             raise ValueError(f"unknown {kind} provider {name!r}; choose one of {', '.join(KINDS[kind])}")
         if name == "mock":
             from . import mock
-            return {"research": mock.MockLLM, "llm": mock.MockLLM, "image": mock.MockImage, "tts": mock.MockTTS}[kind]()
+            return {"research": mock.MockLLM, "llm": mock.MockLLM, "image": mock.MockImage, "tts": mock.MockTTS,
+                    "video": mock.MockVideo}[kind]()
         if name == "anthropic":
             from .claude import ClaudeLLM
             if "anthropic" not in cache:
@@ -90,6 +94,9 @@ def build_providers(config: SeriesConfig) -> Providers:
             if "cosyvoice" not in cache:
                 cache["cosyvoice"] = CosyVoiceTTS(config.cosyvoice, retries)
             return cache["cosyvoice"]
+        if name == "wan":
+            from .wan_video import WanVideo
+            return WanVideo(config.wan_video, retries)
         if name == "sdwebui":
             return oc.SDWebUIImage(config.sdwebui, retries)
         return oc.CommandTTS(config.command_tts)
@@ -105,4 +112,5 @@ def build_providers(config: SeriesConfig) -> Providers:
         image=lazy("image", names.image),
         tts=lazy("tts", names.tts),
         tts_en=lazy("tts", names.tts_en) if names.tts_en and names.tts_en != names.tts else None,
+        video=lazy("video", names.video) if names.video else None,
     )
