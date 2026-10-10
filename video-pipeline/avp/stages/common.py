@@ -27,6 +27,15 @@ class Context:
     only_scenes: set[str] = field(default_factory=set)   # empty = all scenes
     only_outputs: set[str] = field(default_factory=set)  # empty = all outputs
     skip_review: bool = False
+    dry_run: bool = False          # plan only: count what would be generated, call no provider
+    adopt: bool = False            # accept files already on disk (made by hand or another agent) as up to date
+    report: dict[str, dict] = field(default_factory=dict)   # per-stage counts, read by avp.api
+    planned: set[str] = field(default_factory=set)          # dry run: state keys that would be regenerated
+
+    def note(self, stage: str, **counts) -> None:
+        entry = self.report.setdefault(stage, {})
+        for key, value in counts.items():
+            entry[key] = entry.get(key, 0) + value if isinstance(value, int) else value
 
     def forced(self, scene_id: str) -> bool:
         """--force regenerates only the scenes picked with --scenes (or everything if none given)."""
@@ -43,9 +52,10 @@ class Context:
 
 
 def parallel(ctx: Context, items: Iterable[T], label: str, work: Callable[[T], str], name: Callable[[T], str]) -> None:
-    """Run `work` over items with the configured concurrency. `work` returns 'made', 'cached' or 'skipped'."""
+    """Run `work` over items with the configured concurrency.
+    `work` returns 'made', 'cached', 'skipped' (gave up but non-fatal), 'planned' (dry run) or 'adopted'."""
     errors: list[str] = []
-    made = cached = skipped = 0
+    made = cached = skipped = planned = adopted = 0
     with ThreadPoolExecutor(max_workers=max(1, ctx.config.runtime.max_workers)) as pool:
         futures = {pool.submit(work, item): item for item in items}
         for fut in as_completed(futures):
@@ -56,12 +66,20 @@ def parallel(ctx: Context, items: Iterable[T], label: str, work: Callable[[T], s
                     cached += 1
                 elif result == "skipped":
                     skipped += 1
+                elif result == "planned":
+                    planned += 1
+                elif result == "adopted":
+                    adopted += 1
                 else:
                     made += 1
                     log.info("  [%s] %s", label, name(item))
             except Exception as exc:  # keep going; report every failure at the end
                 errors.append(f"{name(item)}: {exc}")
                 log.error("  [%s] %s failed: %s", label, name(item), exc)
-    log.info("  [%s] %d generated, %d up to date%s", label, made, cached, f", {skipped} skipped" if skipped else "")
+    ctx.note(label, made=made, cached=cached, skipped=skipped, planned=planned, adopted=adopted, failed=len(errors))
+    if ctx.dry_run:
+        log.info("  [%s] would generate %d, %d up to date", label, planned, cached)
+    else:
+        log.info("  [%s] %d generated, %d up to date%s", label, made, cached, f", {skipped} skipped" if skipped else "")
     if errors:
         raise RuntimeError(f"{label}: {len(errors)} item(s) failed — fix and re-run:\n  " + "\n  ".join(errors))

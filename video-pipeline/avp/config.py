@@ -246,6 +246,7 @@ class SeriesConfig:
     cosyvoice: CosyVoiceConfig = field(default_factory=CosyVoiceConfig)
     qwen_image: QwenImageConfig = field(default_factory=QwenImageConfig)
     wan_video: WanVideoConfig = field(default_factory=WanVideoConfig)
+    plugins: dict[str, Any] = field(default_factory=dict)   # [plugins.<name>] options for custom providers
     command_tts: CommandTTSConfig = field(default_factory=CommandTTSConfig)
     render: RenderConfig = field(default_factory=RenderConfig)
     runtime: RuntimeConfig = field(default_factory=RuntimeConfig)
@@ -270,6 +271,8 @@ class SeriesConfig:
                 raise ValueError(f"output {o.id}: subtitles must be burn | soft | both | none")
         if len({o.id for o in self.outputs}) != len(self.outputs):
             raise ValueError("output ids must be unique")
+        if self.render.animate not in ("all", "marked"):
+            raise ValueError("render.animate must be all | marked")
         if not 0 <= self.render.transition <= 1.0:
             raise ValueError("render.transition must be between 0 and 1 second")
 

@@ -25,14 +25,18 @@
 
 ## 安装
 
-需要 Python 3.10+、ffmpeg、Chromium（渲染图解用）。macOS / Linux / Windows 都可以。
+需要 Python 3.10+、ffmpeg。macOS / Linux / Windows 都可以。
 
 ```bash
 cd video-pipeline
-pip install -e '.[anthropic,gemini,dev]'   # 只装你用得到的：anthropic = Claude，gemini = Gemini
-playwright install chromium        # 或设置 AVP_CHROMIUM=/path/to/chrome
-export GEMINI_API_KEY=...          # 用哪家就配哪家的 key，见 .env.example；本地模型不需要
+./scripts/install.sh          # Windows：powershell -ExecutionPolicy Bypass -File scripts\install.ps1
+source .venv/bin/activate     # Windows：.venv\Scripts\Activate.ps1
+# 在 .env 里填你用到的 key（avp 会自动读取当前目录的 .env）
+avp doctor channels/econ-history   # 检查 ffmpeg、Chromium、中文字体、各提供方的 key
+pytest                             # 全部离线跑，不花钱
 ```
+
+手动安装：`pip install -e '.[anthropic,gemini,dev]'`，再运行 `playwright install chromium`。
 
 ## 用法
 
@@ -46,9 +50,13 @@ avp revise  channels/econ/episodes/01-guanzhong @notes.md   # 按意见改稿（
 avp approve channels/econ/episodes/01-guanzhong
 avp run     channels/econ/episodes/01-guanzhong              # 生产全部成片
 
+avp plan   channels/econ/episodes/01-guanzhong   # 预演：会生成什么、要多少次付费调用（不花钱）
 avp status channels/econ
 avp check  channels/econ/episodes/01-guanzhong   # 手改或别的模型改过 script.json 后：校验并重新生成 script.md
 avp run    channels/econ/episodes/01-guanzhong --skip-review --draft --provider mock   # 零成本、低清预览结构和节奏
+avp outputs channels/econ/episodes/01-guanzhong  # 成片、字幕、发布文案、质检结论
+avp adopt   channels/econ/episodes/01-guanzhong  # 保留手放 / 别的 agent 做的插画、动画、配音
+avp doctor  channels/econ                        # 环境自检
 ```
 
 常用选项：
@@ -63,6 +71,25 @@ avp run    channels/econ/episodes/01-guanzhong --skip-review --draft --provider 
 | `--draft` | 540p 低清快速预览（正式清晰度单独缓存，不冲突） |
 | `render.animate` | `marked`（默认，只给写了 motion 的镜头做动画，省钱）或 `all`（每张插画都动） |
 | `--provider anthropic` | 研究和写稿用 Claude（画图、配音仍按 series.toml 设置） |
+| `--max-paid 200` | 付费调用超过 200 次就拒绝开始 |
+| `--json` | 输出 JSON（放在命令前：`avp --json run ...`），给程序和 agent 读 |
+
+## 给其他 agent 用的接口
+
+整条管线有三种调用方式，功能一样，返回同一份 JSON（细则见 **AGENTS.md**）：
+
+| 方式 | 怎么用 |
+|---|---|
+| MCP 服务 | `avp mcp`。Claude Code：`claude mcp add avp -- avp mcp`；Claude Desktop / Cursor 的配置见 `integrations/mcp.json` |
+| 命令行 + JSON | 任何命令加 `--json`，例如 `avp --json plan <集目录>`、`avp --json outputs <集目录>` |
+| Python | `from avp import api`，例如 `api.plan(...)`、`api.run(..., max_paid_calls=200)` |
+
+关键设计：
+- **防止误花钱**：`plan` 先算出要多少次付费调用。`run` 可以设上限，超过就拒绝开始；MCP 的 `run` 默认拒绝一切付费调用，必须明确传 `allow_paid=true`。
+- **交接点**：脚本用 `avp script get/put`（或 `get_script` / `put_script`）读写。写入改过的脚本会自动取消批准，旧版本存进 `revisions/`。别的 agent 做的插画、动画、配音放进 `assets/<镜头>/`，再执行 `avp adopt <集目录>`，管线就会保留它们。
+- **插件**：任何环节都可以在 `series.toml` 里填 `"模块:类名"`，接入自己的模型（写法见 AGENTS.md）。
+- **规格文件**：`schemas/script.schema.json` 是脚本的 JSON Schema，用 `avp schema > schemas/script.schema.json` 重新生成。
+- **Claude Code 技能**：`integrations/claude-code-skill/SKILL.md` 复制到 `~/.claude/skills/avp-video/` 即可使用。
 
 ## 换模型 / 完全本地运行
 
@@ -74,6 +101,7 @@ avp run    channels/econ/episodes/01-guanzhong --skip-review --draft --provider 
 | `llm` 大纲/脚本/改稿 | `anthropic`（Claude，官方 SDK，结构化输出）· `gemini` · `openai` = 任何 OpenAI 兼容接口：DeepSeek、通义千问、Kimi、GLM、OpenRouter、本地 **Ollama / LM Studio / vLLM / llama.cpp** |
 | `image` 插画 | `gemini`（支持人物参考图，形象最稳）· `openai`（gpt-image 等）· `sdwebui`（本地 **Stable Diffusion WebUI / Forge**）|
 | `video` 插画动起来 | `wan`（万相图生视频，百炼）· 留空 = 只用静帧推拉镜头 |
+| 任何环节 | `"你的模块:类名"`：自己写的提供方（插件） |
 | `tts` 配音 | `gemini` · `openai`（OpenAI TTS 或本地 **Kokoro-FastAPI** 等）· `command`（任意本地程序：**Piper、CosyVoice、F5-TTS、sherpa-onnx**…）|
 | 全部 | `mock`：离线占位，零成本测试流程 |
 

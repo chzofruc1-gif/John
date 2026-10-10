@@ -1,0 +1,10 @@
+{
+  "_comment": "Paste the avp entry into your MCP client config. Claude Desktop: claude_desktop_config.json; Cursor: .cursor/mcp.json; Claude Code: run `claude mcp add avp -- avp mcp` instead. Set cwd to the video-pipeline folder so relative series paths work; put API keys in video-pipeline/.env.",
+  "mcpServers": {
+    "avp": {
+      "command": "avp",
+      "args": ["mcp"],
+      "cwd": "/path/to/video-pipeline"
+    }
+  }
+}

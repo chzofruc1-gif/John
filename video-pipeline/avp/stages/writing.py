@@ -37,6 +37,10 @@ def research(ctx: Context) -> None:
     ep = ctx.episode
     if ep.research_path.exists() and not ctx.force:
         log.info("  [research] research.md exists — keeping it (use --force to redo)")
+        ctx.note("research", cached=1)
+        return
+    if ctx.dry_run:
+        ctx.note("research", planned=1)
         return
     prompt = f"""{series_brief(ctx)}
 
@@ -76,6 +80,10 @@ def outline(ctx: Context) -> None:
     ep, cfg = ctx.episode, ctx.config
     if ep.outline_path.exists() and not ctx.force:
         log.info("  [outline] outline.md exists — keeping it (use --force to redo)")
+        ctx.note("outline", cached=1)
+        return
+    if ctx.dry_run:
+        ctx.note("outline", planned=1)
         return
     d = cfg.episode
     prompt = f"""{series_brief(ctx)}
@@ -232,6 +240,10 @@ def script(ctx: Context) -> None:
     ep, cfg = ctx.episode, ctx.config
     if ep.script_path.exists() and not ctx.force:
         log.info("  [script] script.json exists — keeping it (use --force to rewrite, or `avp revise`)")
+        ctx.note("script", cached=1)
+        return
+    if ctx.dry_run:
+        ctx.note("script", planned=1)
         return
     prompt = f"""{series_brief(ctx)}
 

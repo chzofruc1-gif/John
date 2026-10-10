@@ -54,6 +54,13 @@ def cast(ctx: Context) -> None:
                             "(redraw with --force --scenes %s)", spec.id, spec.id)
             return "cached"
         fp = fingerprint(provider.name, provider.model, prompt)
+        if ctx.adopt and path.exists():  # a sheet drawn elsewhere: record it so it is kept from now on
+            ctx.series.record_sheet(spec.id, "external", "", spec.look)
+            ctx.episode.mark(key, fp)
+            return "adopted"
+        if ctx.dry_run:
+            ctx.planned.add(key)
+            return "planned"
         tmp = path.with_suffix(".tmp.png")
         provider.generate(prompt, MASTER_ASPECT, tmp, [])
         tmp.replace(path)
@@ -91,8 +98,15 @@ def art(ctx: Context) -> None:
         refs = [ctx.series.cast_sheet(c) for c in scene.characters if ctx.series.cast_sheet(c).exists()]
         fp = fingerprint(provider.name, provider.model, prompt, [ctx.episode.recorded(f"cast:{c}") for c in scene.characters])
         key = f"image:{scene.id}"
-        if not ctx.forced(scene.id) and ctx.episode.is_fresh(key, fp, path):
+        upstream = ctx.dry_run and any(f"cast:{c}" in ctx.planned for c in scene.characters)
+        if not upstream and not ctx.forced(scene.id) and ctx.episode.is_fresh(key, fp, path):
             return "cached"
+        if ctx.adopt and path.exists():
+            ctx.episode.mark(key, fp)
+            return "adopted"
+        if ctx.dry_run:
+            ctx.planned.add(key)
+            return "planned"
         tmp = path.with_suffix(".tmp.png")
         provider.generate(prompt, MASTER_ASPECT, tmp, refs)
         tmp.replace(path)
@@ -127,14 +141,20 @@ def motion(ctx: Context) -> None:
 
     def work(scene: Scene) -> str:
         image = ctx.episode.image_path(scene)
-        if not image.exists():
+        if not image.exists() and not ctx.dry_run:
             raise FileNotFoundError(f"missing illustration for {scene.id} — run the art stage")
         path = ctx.episode.motion_path(scene)
         prompt = motion_prompt(scene, specs)
         fp = fingerprint(provider.name, provider.model, prompt, ctx.episode.recorded(f"image:{scene.id}"))
         key = f"motion:{scene.id}"
-        if not ctx.forced(scene.id) and ctx.episode.is_fresh(key, fp, path):
+        upstream = ctx.dry_run and f"image:{scene.id}" in ctx.planned
+        if not upstream and not ctx.forced(scene.id) and ctx.episode.is_fresh(key, fp, path):
             return "cached"
+        if ctx.adopt and path.exists():
+            ctx.episode.mark(key, fp)
+            return "adopted"
+        if ctx.dry_run:
+            return "planned"
         tmp = path.with_suffix(".tmp.mp4")
         try:
             provider.animate(image, prompt, tmp)
@@ -199,6 +219,11 @@ def voice(ctx: Context) -> None:
         key = f"voice:{scene.id}:{lang}:{i}"
         if not ctx.forced(scene.id) and ctx.episode.is_fresh(key, fp, path):
             return "cached"
+        if ctx.adopt and path.exists():
+            ctx.episode.mark(key, fp)
+            return "adopted"
+        if ctx.dry_run:
+            return "planned"
         tmp = path.with_suffix(".tmp.wav")
         provider.synthesize(line.text[lang], voice_name, style, lang, tmp)
         tmp.replace(path)

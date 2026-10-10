@@ -10,6 +10,10 @@
     sdwebui  local Stable Diffusion WebUI (AUTOMATIC1111 / Forge) for illustrations
     command  any local TTS program (Piper, CosyVoice, F5-TTS, sherpa-onnx …) for voices
     mock     offline placeholders, for testing the pipeline at zero cost
+
+Any job can also name a custom provider as "package.module:ClassName" (see AGENTS.md → plugins). The class is
+built as ClassName(config, kind) and must implement the matching protocol in base.py; options for it can live
+in series.toml under [plugins.<anything>] and are read from config.plugins.
 """
 
 from __future__ import annotations
@@ -17,7 +21,7 @@ from __future__ import annotations
 from ..config import SeriesConfig
 from .base import ImageProvider, LLMProvider, ResearchResult, Source, TTSProvider, VideoProvider
 
-__all__ = ["Providers", "ResearchResult", "Source", "build_providers", "KINDS"]
+__all__ = ["Providers", "ResearchResult", "Source", "build_providers", "KINDS", "load_plugin"]
 
 KINDS = {
     "research": ("anthropic", "gemini", "openai", "mock"),
@@ -26,6 +30,29 @@ KINDS = {
     "tts": ("gemini", "cosyvoice", "openai", "command", "mock"),
     "video": ("wan", "mock"),
 }
+
+
+def is_plugin(name: str) -> bool:
+    return ":" in name
+
+
+def load_plugin(spec: str, config: SeriesConfig, kind: str):
+    """Instantiate a custom provider from "package.module:ClassName"."""
+    import importlib
+
+    module_name, _, attr = spec.partition(":")
+    try:
+        cls = getattr(importlib.import_module(module_name), attr)
+    except (ImportError, AttributeError) as exc:
+        raise ValueError(f"cannot load {kind} provider {spec!r}: {exc}") from exc
+    provider = cls(config, kind)
+    method = {"research": "research", "llm": "json", "image": "generate", "tts": "synthesize", "video": "animate"}[kind]
+    if not callable(getattr(provider, method, None)):
+        raise ValueError(f"{kind} provider {spec!r} has no {method}() method (see avp/providers/base.py)")
+    for attr_name in ("name", "model"):
+        if not hasattr(provider, attr_name):
+            setattr(provider, attr_name, spec if attr_name == "name" else "")
+    return provider
 
 
 class _Lazy:
@@ -63,6 +90,8 @@ def build_providers(config: SeriesConfig) -> Providers:
         return cache["gemini"]
 
     def pick(kind: str, name: str):
+        if is_plugin(name):
+            return load_plugin(name, config, kind)
         if name not in KINDS[kind]:
             raise ValueError(f"unknown {kind} provider {name!r}; choose one of {', '.join(KINDS[kind])}")
         if name == "mock":
@@ -102,7 +131,7 @@ def build_providers(config: SeriesConfig) -> Providers:
         return oc.CommandTTS(config.command_tts)
 
     def lazy(kind: str, name: str):
-        if name not in KINDS[kind]:  # fail fast on typos, even for providers this run won't use
+        if not is_plugin(name) and name not in KINDS[kind]:  # fail fast on typos, even for unused providers
             raise ValueError(f"unknown {kind} provider {name!r}; choose one of {', '.join(KINDS[kind])}")
         return _Lazy(lambda: pick(kind, name))
 
