@@ -1,0 +1,399 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "avp script.json",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "object",
+      "properties": {
+        "zh": {
+          "type": "string"
+        },
+        "en": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "zh",
+        "en"
+      ]
+    },
+    "logline": {
+      "type": "object",
+      "properties": {
+        "zh": {
+          "type": "string"
+        },
+        "en": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "zh",
+        "en"
+      ]
+    },
+    "cast": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "object",
+            "properties": {
+              "zh": {
+                "type": "string"
+              },
+              "en": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "zh",
+              "en"
+            ]
+          },
+          "gender": {
+            "type": "string",
+            "enum": [
+              "male",
+              "female"
+            ]
+          },
+          "look": {
+            "type": "string"
+          },
+          "role": {
+            "type": "object",
+            "properties": {
+              "zh": {
+                "type": "string"
+              },
+              "en": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "zh",
+              "en"
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "gender",
+          "look",
+          "role"
+        ]
+      }
+    },
+    "scenes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "part": {
+            "type": "integer"
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "illustration",
+              "diagram"
+            ]
+          },
+          "chapter": {
+            "type": "object",
+            "properties": {
+              "zh": {
+                "type": "string"
+              },
+              "en": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "zh",
+              "en"
+            ]
+          },
+          "lines": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "speaker": {
+                  "type": "string"
+                },
+                "delivery": {
+                  "type": "string"
+                },
+                "text": {
+                  "type": "object",
+                  "properties": {
+                    "zh": {
+                      "type": "string"
+                    },
+                    "en": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "zh",
+                    "en"
+                  ]
+                }
+              },
+              "required": [
+                "speaker",
+                "delivery",
+                "text"
+              ]
+            }
+          },
+          "visual_prompt": {
+            "type": "string"
+          },
+          "motion": {
+            "type": "string"
+          },
+          "characters": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "camera": {
+            "type": "string",
+            "enum": [
+              "zoom-in",
+              "zoom-out",
+              "pan-left",
+              "pan-right",
+              "static"
+            ]
+          },
+          "diagram": {
+            "type": "object",
+            "properties": {
+              "template": {
+                "type": "string",
+                "enum": [
+                  "chapter",
+                  "quote",
+                  "flow",
+                  "compare",
+                  "timeline",
+                  "stat"
+                ]
+              },
+              "title": {
+                "type": "object",
+                "properties": {
+                  "zh": {
+                    "type": "string"
+                  },
+                  "en": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "zh",
+                  "en"
+                ]
+              },
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "primary": {
+                      "type": "object",
+                      "properties": {
+                        "zh": {
+                          "type": "string"
+                        },
+                        "en": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "zh",
+                        "en"
+                      ]
+                    },
+                    "secondary": {
+                      "type": "object",
+                      "properties": {
+                        "zh": {
+                          "type": "string"
+                        },
+                        "en": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "zh",
+                        "en"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "primary",
+                    "secondary"
+                  ]
+                }
+              },
+              "original": {
+                "type": "string"
+              },
+              "source": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "template",
+              "title",
+              "items",
+              "original",
+              "source"
+            ]
+          },
+          "on_screen": {
+            "type": "object",
+            "properties": {
+              "zh": {
+                "type": "string"
+              },
+              "en": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "zh",
+              "en"
+            ]
+          },
+          "claims": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "id",
+          "part",
+          "kind",
+          "chapter",
+          "lines",
+          "visual_prompt",
+          "motion",
+          "characters",
+          "camera",
+          "on_screen",
+          "claims"
+        ]
+      }
+    },
+    "claims": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "statement": {
+            "type": "object",
+            "properties": {
+              "zh": {
+                "type": "string"
+              },
+              "en": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "zh",
+              "en"
+            ]
+          },
+          "source": {
+            "type": "string"
+          },
+          "quote": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "established",
+              "debated",
+              "traditional"
+            ]
+          },
+          "note": {
+            "type": "object",
+            "properties": {
+              "zh": {
+                "type": "string"
+              },
+              "en": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "zh",
+              "en"
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "statement",
+          "source",
+          "quote",
+          "confidence",
+          "note"
+        ]
+      }
+    },
+    "tags": {
+      "type": "object",
+      "properties": {
+        "zh": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "en": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "zh",
+        "en"
+      ]
+    }
+  },
+  "required": [
+    "title",
+    "logline",
+    "cast",
+    "scenes",
+    "claims",
+    "tags"
+  ]
+}

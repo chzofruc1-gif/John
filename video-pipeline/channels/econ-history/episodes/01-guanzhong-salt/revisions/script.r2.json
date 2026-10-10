@@ -1,0 +1,1776 @@
+{
+  "number": 1,
+  "title": {
+    "zh": "管仲：不加税，也能让国库暴富？",
+    "en": "The Tax Nobody Noticed: Guan Zhong and the Salt Monopoly"
+  },
+  "logline": {
+    "zh": "两千六百年前，齐国宰相管仲（或者说托名管仲的经济学家）发明了一种“看不见的税”：把盐和铁收归官营，把税藏进价格里。它让齐国称霸，也在中国历史上反复上演了两千年。",
+    "en": "Twenty-six centuries ago, the chancellor of Qi (or the economists who wrote in his name) invented a tax nobody could see: put salt and iron under state control and hide the tax inside the price. It made Qi a superpower, and it echoed through two thousand years of Chinese history."
+  },
+  "cast": [
+    {
+      "id": "guan_zhong",
+      "name": {
+        "zh": "管仲",
+        "en": "Guan Zhong"
+      },
+      "gender": "male",
+      "role": {
+        "zh": "齐国宰相",
+        "en": "Chancellor of Qi"
+      },
+      "look": "chibi middle-aged chancellor of the State of Qi in the Spring and Autumn period (7th century BC): slim, clever narrow eyes, long thin black moustache and short pointed beard, hair in a topknot held by a small black lacquered crown-cap (guan) and a hairpin, cap tied with a cord under the chin, no brim, no side flaps, deep green cross-collared robe closing right-over-left (shenyi) with wide sleeves, red trim and a black sash, holding a bamboo-slip ledger. Pre-imperial Zhou dynasty clothing"
+    },
+    {
+      "id": "duke_huan",
+      "name": {
+        "zh": "齐桓公",
+        "en": "Duke Huan"
+      },
+      "gender": "male",
+      "role": {
+        "zh": "齐国国君",
+        "en": "Ruler of Qi"
+      },
+      "look": "chibi young ruler of Qi in the Spring and Autumn period: round face, thick eyebrows, small goatee, flat-topped black mian crown with strings of jade beads hanging at front and back, crimson cross-collared robe closing right-over-left with gold-embroidered borders, jade pendant at the belt. Pre-imperial Zhou dynasty clothing"
+    },
+    {
+      "id": "bao_shuya",
+      "name": {
+        "zh": "鲍叔牙",
+        "en": "Bao Shuya"
+      },
+      "gender": "male",
+      "role": {
+        "zh": "管仲的挚友",
+        "en": "Guan Zhong's loyal friend"
+      },
+      "look": "chibi kind-faced official of Qi in the Spring and Autumn period: plump, rosy cheeks, neat grey beard, hair in a topknot under a small black cap tied under the chin, simple brown cross-collared robe closing right-over-left, warm smile. Pre-imperial Zhou dynasty clothing"
+    },
+    {
+      "id": "confucius",
+      "name": {
+        "zh": "孔子",
+        "en": "Confucius"
+      },
+      "gender": "male",
+      "role": {
+        "zh": "思想家",
+        "en": "Philosopher"
+      },
+      "look": "chibi elderly teacher of the late Spring and Autumn period: tall, high forehead, long grey beard, hair in a topknot under a plain black cloth cap, plain off-white cross-collared scholar's robe, holding a bamboo-slip scroll. Pre-imperial Zhou dynasty clothing"
+    },
+    {
+      "id": "sang_hongyang",
+      "name": {
+        "zh": "桑弘羊",
+        "en": "Sang Hongyang"
+      },
+      "gender": "male",
+      "role": {
+        "zh": "西汉理财大臣",
+        "en": "Han finance minister"
+      },
+      "look": "chibi Western Han dynasty finance official (1st century BC): thin, sharp features, neatly trimmed black beard, hair in a topknot wrapped by a black cloth headband-cap, with a small upright black lacquered crown-cap on top tied under the chin with thin ribbons, dark blue cross-collared robe closing right-over-left, holding a bundle of bamboo counting rods. Han dynasty clothing"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "s01",
+      "part": 1,
+      "kind": "illustration",
+      "visual_prompt": "Night interior of a humble farmhouse in ancient Qi (7th century BC): a family of three around a low table with millet porridge; a small clay jar of white salt glows in warm lamplight as the focal point.",
+      "characters": [],
+      "camera": "zoom-in",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "delivery": "intriguing, conspiratorial",
+          "text": {
+            "zh": "如果有个政府说：我要从你兜里多拿钱，但保证一分税都不加——你信吗？",
+            "en": "Imagine a government that wants more of your money, but promises never to raise your taxes. Sounds like a campaign slogan, right?"
+          }
+        },
+        {
+          "speaker": "narrator",
+          "delivery": "intriguing",
+          "text": {
+            "zh": "两千六百多年前的齐国，真有人做到了。秘密，就藏在你家厨房里。",
+            "en": "Twenty-six centuries ago, in the state of Qi, someone actually pulled it off. And the secret was hiding in your kitchen."
+          }
+        }
+      ],
+      "on_screen": {
+        "zh": "",
+        "en": ""
+      },
+      "claims": [],
+      "chapter": {
+        "zh": "开场",
+        "en": "Cold Open"
+      }
+    },
+    {
+      "id": "s02",
+      "part": 1,
+      "kind": "illustration",
+      "visual_prompt": "Illustration in the series' ink-and-wash style, not a photograph: a large close-up of a hand taking a pinch of coarse white sea salt from a rough clay jar of the Zhou period, salt crystals drawn as sparkling white flecks, warm rice-paper background.",
+      "characters": [],
+      "camera": "zoom-in",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "delivery": "deadpan, then knowing",
+          "text": {
+            "zh": "盐。肉可以不吃，酒可以不喝，盐不能不吃。有个叫管仲的人，盯上了这一点。",
+            "en": "Salt. You can skip meat. You can skip wine. But you cannot skip salt. And a man called Guan Zhong noticed exactly that."
+          }
+        }
+      ],
+      "on_screen": {
+        "zh": "盐",
+        "en": "Salt"
+      },
+      "claims": [],
+      "chapter": {
+        "zh": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "s03",
+      "part": 1,
+      "kind": "diagram",
+      "visual_prompt": "",
+      "characters": [],
+      "camera": "static",
+      "diagram": {
+        "template": "chapter",
+        "title": {
+          "zh": "射过国君的宰相",
+          "en": "The Man Who Shot a Duke"
+        },
+        "items": [
+          {
+            "primary": {
+              "zh": "第一幕",
+              "en": "Act 1"
+            },
+            "secondary": {
+              "zh": "",
+              "en": ""
+            }
+          }
+        ],
+        "original": "",
+        "source": ""
+      },
+      "lines": [
+        {
+          "speaker": "narrator",
+          "delivery": "playful announcement",
+          "text": {
+            "zh": "第一幕：射过国君的宰相。",
+            "en": "Act one: the man who shot a duke."
+          }
+        }
+      ],
+      "on_screen": {
+        "zh": "",
+        "en": ""
+      },
+      "claims": [],
+      "chapter": {
+        "zh": "射过国君的宰相",
+        "en": "The Man Who Shot a Duke"
+      }
+    },
+    {
+      "id": "s04",
+      "part": 1,
+      "kind": "illustration",
+      "visual_prompt": "On a dusty road between hills, Guan Zhong stands on a speeding two-wheeled war chariot and shoots an arrow; in a second chariot ahead, Prince Xiaobai (Duke Huan) jolts as the arrow hits the bronze hook of his belt; motion lines, comic freeze-frame energy.",
+      "characters": [
+        "guan_zhong",
+        "duke_huan"
+      ],
+      "camera": "pan-right",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "delivery": "storytelling, building",
+          "text": {
+            "zh": "大约公元前685年，齐国两位公子抢着回国继位。管仲站错了队，为了拦住对手，他一箭射了过去——",
+            "en": "Around 685 BC, two princes raced home to claim the throne of Qi. Guan Zhong backed the wrong one, and to slow the rival down, he shot him."
+          }
+        },
+        {
+          "speaker": "narrator",
+          "delivery": "beat, comic timing",
+          "text": {
+            "zh": "正中对方的衣带钩。",
+            "en": "The arrow hit the prince's belt buckle."
+          }
+        }
+      ],
+      "on_screen": {
+        "zh": "",
+        "en": ""
+      },
+      "claims": [
+        "c2"
+      ],
+      "chapter": {
+        "zh": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "s05",
+      "part": 1,
+      "kind": "illustration",
+      "visual_prompt": "Prince Xiaobai (Duke Huan) lying dramatically on the floor of his chariot pretending to be dead, tongue out, one eye peeking open; the arrow stuck in his belt buckle; his driver whipping the horses forward.",
+      "characters": [
+        "duke_huan"
+      ],
+      "camera": "zoom-out",
+      "lines": [
+        {
+          "speaker": "duke_huan",
+          "delivery": "frantic whisper",
+          "text": {
+            "zh": "（小声）装死……装得像一点……",
+            "en": "(whispering) Play dead. Play very, very dead."
+          }
+        },
+        {
+          "speaker": "narrator",
+          "delivery": "amused",
+          "text": {
+            "zh": "小白当场装死，然后抄近路抢先回国，当上了国君——就是后来的齐桓公。",
+            "en": "The prince faked his own death, beat everyone home, and took the throne as Duke Huan of Qi."
+          }
+        }
+      ],
+      "on_screen": {
+        "zh": "",
+        "en": ""
+      },
+      "claims": [
+        "c2",
+        "c1"
+      ],
+      "chapter": {
+        "zh": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "s06",
+      "part": 1,
+      "kind": "illustration",
+      "visual_prompt": "Palace hall of Qi: Bao Shuya bows earnestly before an annoyed Duke Huan on his throne, gesturing toward Guan Zhong who stands in the doorway in rope bonds looking sheepish.",
+      "characters": [
+        "bao_shuya",
+        "duke_huan",
+        "guan_zhong"
+      ],
+      "camera": "pan-left",
+      "lines": [
+        {
+          "speaker": "bao_shuya",
+          "delivery": "earnest, persuasive",
+          "text": {
+            "zh": "您要是只想管好齐国，有我就够了；要是想称霸天下，非管仲不可。",
+            "en": "If you only want to rule Qi, I'm enough. If you want to lead all the states, you need Guan Zhong."
+          }
+        },
+        {
+          "speaker": "narrator",
+          "delivery": "dry",
+          "text": {
+            "zh": "于是，齐桓公把差点射死自己的人，请来当了宰相。史上最大度的一次招聘。",
+            "en": "So the duke hired the man who had just tried to kill him. Possibly the best HR decision in Chinese history."
+          }
+        }
+      ],
+      "on_screen": {
+        "zh": "",
+        "en": ""
+      },
+      "claims": [
+        "c3"
+      ],
+      "chapter": {
+        "zh": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "s07",
+      "part": 1,
+      "kind": "diagram",
+      "visual_prompt": "",
+      "characters": [],
+      "camera": "static",
+      "diagram": {
+        "template": "timeline",
+        "title": {
+          "zh": "管仲与齐桓公",
+          "en": "Guan Zhong and Duke Huan"
+        },
+        "items": [
+          {
+            "primary": {
+              "zh": "前685年",
+              "en": "685 BC"
+            },
+            "secondary": {
+              "zh": "桓公即位，管仲为相",
+              "en": "Duke Huan takes the throne; Guan Zhong becomes chancellor"
+            }
+          },
+          {
+            "primary": {
+              "zh": "前667年",
+              "en": "667 BC"
+            },
+            "secondary": {
+              "zh": "诸侯会盟，齐为盟主",
+              "en": "Qi leads an alliance of states"
+            }
+          },
+          {
+            "primary": {
+              "zh": "前645年",
+              "en": "645 BC"
+            },
+            "secondary": {
+              "zh": "管仲去世",
+              "en": "Guan Zhong dies"
+            }
+          }
+        ],
+        "original": "",
+        "source": ""
+      },
+      "lines": [
+        {
+          "speaker": "narrator",
+          "delivery": "brisk",
+          "text": {
+            "zh": "此后将近四十年，这对“仇人组合”让齐国成了春秋第一强国，齐桓公也成了第一位霸主。",
+            "en": "For nearly forty years, this unlikely duo made Qi the strongest state of its age, and Duke Huan the first of the so-called hegemons, the leaders of the other states."
+          }
+        }
+      ],
+      "on_screen": {
+        "zh": "",
+        "en": ""
+      },
+      "claims": [
+        "c1",
+        "c4"
+      ],
+      "chapter": {
+        "zh": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "s08",
+      "part": 1,
+      "kind": "illustration",
+      "visual_prompt": "Duke Huan peering into an almost empty treasury storeroom: a few lonely bronze spade-coins, cobwebs, an echoing dark room; comedic despair.",
+      "characters": [
+        "duke_huan"
+      ],
+      "camera": "zoom-in",
+      "lines": [
+        {
+          "speaker": "duke_huan",
+          "delivery": "whiny, hopeful",
+          "text": {
+            "zh": "寡人缺钱。很缺。要不……收点税？",
+            "en": "We need money. A lot of money. Could we just… tax things?"
+          }
+        },
+        {
+          "speaker": "narrator",
+          "delivery": "listing, comic rhythm",
+          "text": {
+            "zh": "齐国刚打完内乱，国库见底。在托名管仲的《管子》一书里，齐桓公把能想到的税都问了一遍：房子税？树木税？牲口税？人头税？",
+            "en": "Qi was fresh out of civil war and the treasury was nearly empty. In the Guanzi, a book that carries Guan Zhong's name, the duke runs through every tax he can think of: on buildings, on trees, on livestock, on people."
+          }
+        }
+      ],
+      "on_screen": {
+        "zh": "国库：空",
+        "en": "Treasury: empty"
+      },
+      "claims": [
+        "c5"
+      ],
+      "chapter": {
+        "zh": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "s09",
+      "part": 1,
+      "kind": "illustration",
+      "visual_prompt": "Guan Zhong shaking his head and waving a bamboo-slip ledger while, behind him, a comic village scene: a farmer hurriedly roasting his pig before the tax man arrives, and a family hiding children inside a big basket; no text.",
+      "characters": [
+        "guan_zhong"
+      ],
+      "camera": "pan-left",
+      "lines": [
+        {
+          "speaker": "guan_zhong",
+          "delivery": "smug, matter-of-fact",
+          "text": {
+            "zh": "收牲口税，百姓就把牲口宰了；收人头税，大家就瞒报人口。",
+            "en": "Tax livestock and they'll slaughter it. Tax heads and they'll hide them."
+          }
+        },
+        {
+          "speaker": "narrator",
+          "delivery": "explaining",
+          "text": {
+            "zh": "书里的管仲全都否了：直接收税，老百姓看得清清楚楚，一定会嚷嚷起来。",
+            "en": "In the text, Guan Zhong rejects every one. A direct tax is visible: people see exactly what you take, and they'll howl about it."
+          }
+        }
+      ],
+      "on_screen": {
+        "zh": "",
+        "en": ""
+      },
+      "claims": [
+        "c5"
+      ],
+      "chapter": {
+        "zh": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "s10",
+      "part": 1,
+      "kind": "diagram",
+      "visual_prompt": "",
+      "characters": [],
+      "camera": "static",
+      "diagram": {
+        "template": "quote",
+        "title": {
+          "zh": "只有把山和海交给官府经营才行。",
+          "en": "Only by putting the mountains and the seas under state control."
+        },
+        "items": [],
+        "original": "唯官山海为可耳。",
+        "source": "《管子·海王》"
+      },
+      "lines": [
+        {
+          "speaker": "narrator",
+          "delivery": "slow, weighty",
+          "text": {
+            "zh": "那怎么办？管仲给出六个字：唯官山海为可耳——把山和海管起来。",
+            "en": "So what's left? His answer: only by putting the mountains and the seas under state control."
+          }
+        },
+        {
+          "speaker": "narrator",
+          "delivery": "reveal",
+          "text": {
+            "zh": "听着很文艺。可山里有什么？铁。海里有什么？盐。",
+            "en": "Sounds poetic. Until you ask what's in the mountains: iron. And what's in the sea: salt."
+          }
+        }
+      ],
+      "on_screen": {
+        "zh": "",
+        "en": ""
+      },
+      "claims": [
+        "c5"
+      ],
+      "chapter": {
+        "zh": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "s11",
+      "part": 2,
+      "kind": "diagram",
+      "visual_prompt": "",
+      "characters": [],
+      "camera": "static",
+      "diagram": {
+        "template": "chapter",
+        "title": {
+          "zh": "一粒盐里的财政学",
+          "en": "The Economics of a Pinch of Salt"
+        },
+        "items": [
+          {
+            "primary": {
+              "zh": "第二幕",
+              "en": "Act 2"
+            },
+            "secondary": {
+              "zh": "",
+              "en": ""
+            }
+          }
+        ],
+        "original": "",
+        "source": ""
+      },
+      "lines": [
+        {
+          "speaker": "narrator",
+          "delivery": "playful announcement",
+          "text": {
+            "zh": "第二幕：一粒盐里的财政学。",
+            "en": "Act two: the economics of a pinch of salt."
+          }
+        }
+      ],
+      "on_screen": {
+        "zh": "",
+        "en": ""
+      },
+      "claims": [],
+      "chapter": {
+        "zh": "一粒盐里的财政学",
+        "en": "The Economics of Salt"
+      }
+    },
+    {
+      "id": "s12",
+      "part": 2,
+      "kind": "illustration",
+      "visual_prompt": "A Han dynasty scholar (Liu Xiang) at a low wooden desk in a lamp-lit archive, sorting heaps of bamboo-slip bundles tied with cords and stacked on wooden shelves into one big book of bamboo slips; only bamboo slips and silk scrolls, no paper books; comic framing as if seen through a large round magnifying lens.",
+      "characters": [],
+      "camera": "zoom-in",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "delivery": "honest, lighter tone",
+          "text": {
+            "zh": "先插一句严肃的。今天看到的《管子》，是西汉刘向在公元前26年前后整理成书的，离管仲已经六百年。",
+            "en": "Quick footnote before we go on. The Guanzi we have today was edited by the Han scholar Liu Xiang around 26 BC, six centuries after Guan Zhong."
+          }
+        },
+        {
+          "speaker": "narrator",
+          "delivery": "wink",
+          "text": {
+            "zh": "我们引用的这几篇经济文章，学界多认为出自战国到汉代的“轻重家”之手，借了管仲的名号。所以下面的“管仲说”，可以理解成“管仲学派说”。",
+            "en": "The economic chapters we're quoting were most likely written by later policy thinkers borrowing his name. So when you hear 'Guan Zhong says', think 'the Guan Zhong brand says'."
+          }
+        }
+      ],
+      "on_screen": {
+        "zh": "托名之作",
+        "en": "Fine print"
+      },
+      "claims": [
+        "c6"
+      ],
+      "chapter": {
+        "zh": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "s13",
+      "part": 2,
+      "kind": "illustration",
+      "visual_prompt": "A Spring-and-Autumn period family of Qi (father, mother, small child) each standing beside a clay salt bowl of a different size: the father's bowl is large, the mother's medium, the child's small; simple, clear, chart-like composition on a plain background.",
+      "characters": [],
+      "camera": "static",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "delivery": "precise, amused",
+          "text": {
+            "zh": "《海王》篇算起账来，像个现代分析师：一个月，成年男子吃盐五升多，女子三升多，小孩两升多。",
+            "en": "The chapter called 'King of the Sea' does the maths like a modern analyst. In a month, it says, a grown man eats about five and a third sheng of salt, a woman three and a third, a child two and a third."
+          }
+        },
+        {
+          "speaker": "narrator",
+          "delivery": "emphatic",
+          "text": {
+            "zh": "人人都要吃，月月都要吃。",
+            "en": "Everyone eats it. Every single month."
+          }
+        }
+      ],
+      "on_screen": {
+        "zh": "",
+        "en": ""
+      },
+      "claims": [
+        "c7"
+      ],
+      "chapter": {
+        "zh": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "s14",
+      "part": 2,
+      "kind": "diagram",
+      "visual_prompt": "",
+      "characters": [],
+      "camera": "static",
+      "diagram": {
+        "template": "flow",
+        "title": {
+          "zh": "盐的钱怎么流",
+          "en": "How the salt money flows"
+        },
+        "items": [
+          {
+            "primary": {
+              "zh": "海边盐场",
+              "en": "Salt works"
+            },
+            "secondary": {
+              "zh": "官府收购",
+              "en": "the state buys"
+            }
+          },
+          {
+            "primary": {
+              "zh": "官府",
+              "en": "The state"
+            },
+            "secondary": {
+              "zh": "每升加一点价",
+              "en": "tiny markup per sheng"
+            }
+          },
+          {
+            "primary": {
+              "zh": "千万张嘴",
+              "en": "Ten million mouths"
+            },
+            "secondary": {
+              "zh": "每月都得买",
+              "en": "everyone buys monthly"
+            }
+          },
+          {
+            "primary": {
+              "zh": "国库",
+              "en": "Treasury"
+            },
+            "secondary": {
+              "zh": "",
+              "en": ""
+            }
+          }
+        ],
+        "original": "",
+        "source": ""
+      },
+      "lines": [
+        {
+          "speaker": "narrator",
+          "delivery": "building",
+          "text": {
+            "zh": "精髓来了：盐由官府统一经营。不收税，只在每升盐上加一点点价，几乎察觉不到。",
+            "en": "Now the trick. The state runs the salt trade. It doesn't tax anyone. It just adds a tiny markup, a fraction of a coin per sheng. Nobody notices."
+          }
+        },
+        {
+          "speaker": "narrator",
+          "delivery": "suspense",
+          "text": {
+            "zh": "可是乘以全国每一张嘴、每一个月……",
+            "en": "But multiply that by every mouth in the country, every month…"
+          }
+        }
+      ],
+      "on_screen": {
+        "zh": "",
+        "en": ""
+      },
+      "claims": [
+        "c8"
+      ],
+      "chapter": {
+        "zh": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "s15",
+      "part": 2,
+      "kind": "diagram",
+      "visual_prompt": "",
+      "characters": [],
+      "camera": "static",
+      "diagram": {
+        "template": "stat",
+        "title": {
+          "zh": "《海王》篇的算账",
+          "en": "By the Guanzi's own maths"
+        },
+        "items": [
+          {
+            "primary": {
+              "zh": "6000万",
+              "en": "60,000,000"
+            },
+            "secondary": {
+              "zh": "钱 / 月：盐利；人头税只有3000万",
+              "en": "coins a month from salt, vs 30,000,000 from a head tax"
+            }
+          }
+        ],
+        "original": "",
+        "source": ""
+      },
+      "lines": [
+        {
+          "speaker": "narrator",
+          "delivery": "impressed",
+          "text": {
+            "zh": "书里算出来：一个万乘大国，靠盐每月能进账六千万钱。而按人头每月收三十钱的税，只有三千万，还会骂声一片。",
+            "en": "And the book's own numbers come out at sixty million coins a month for a large state. A head tax of thirty coins per person would raise only thirty million, and everyone would be furious."
+          }
+        }
+      ],
+      "on_screen": {
+        "zh": "",
+        "en": ""
+      },
+      "claims": [
+        "c8"
+      ],
+      "chapter": {
+        "zh": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "s16",
+      "part": 2,
+      "kind": "illustration",
+      "visual_prompt": "Comedy close-up: Duke Huan with eyes turned into round bronze coins and drooling, while Guan Zhong leans in and whispers with a sly smile, holding a small bag of salt.",
+      "characters": [
+        "duke_huan",
+        "guan_zhong"
+      ],
+      "camera": "zoom-in",
+      "lines": [
+        {
+          "speaker": "duke_huan",
+          "delivery": "greedy delight",
+          "text": {
+            "zh": "钱翻一倍……还没人骂我？",
+            "en": "Twice the money… and nobody's angry at me?"
+          }
+        },
+        {
+          "speaker": "guan_zhong",
+          "delivery": "sly, confident",
+          "text": {
+            "zh": "他们只会嫌盐贵，不会骂您。",
+            "en": "They'll grumble about the price of salt. Not about you."
+          }
+        },
+        {
+          "speaker": "narrator",
+          "delivery": "serious",
+          "text": {
+            "zh": "这些数字是论证用的，不是真实账本。但逻辑一针见血：对离不开的东西收钱，把税藏进价格里。",
+            "en": "These are rhetorical numbers, not tax records. But the logic is razor-sharp: charge for what people can't live without, and hide the tax inside the price."
+          }
+        }
+      ],
+      "on_screen": {
+        "zh": "",
+        "en": ""
+      },
+      "claims": [
+        "c8"
+      ],
+      "chapter": {
+        "zh": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "s17",
+      "part": 2,
+      "kind": "diagram",
+      "visual_prompt": "",
+      "characters": [],
+      "camera": "static",
+      "diagram": {
+        "template": "compare",
+        "title": {
+          "zh": "两种收钱法",
+          "en": "Two ways to raise money"
+        },
+        "items": [
+          {
+            "primary": {
+              "zh": "人头税",
+              "en": "Head tax"
+            },
+            "secondary": {
+              "zh": "看得见；按人头收；人人有怨",
+              "en": "Visible; Per person; Resented"
+            }
+          },
+          {
+            "primary": {
+              "zh": "盐价加价",
+              "en": "Salt markup"
+            },
+            "secondary": {
+              "zh": "看不见；买盐时付；谁也跑不掉",
+              "en": "Invisible; Paid at purchase; No escape"
+            }
+          }
+        ],
+        "original": "",
+        "source": ""
+      },
+      "lines": [
+        {
+          "speaker": "narrator",
+          "delivery": "teaching",
+          "text": {
+            "zh": "用今天的经济学说，盐的需求“缺乏弹性”：涨价了，大家还得买差不多的量。",
+            "en": "Economists today would call salt 'price-inelastic': raise the price, and people still buy almost the same amount."
+          }
+        },
+        {
+          "speaker": "narrator",
+          "delivery": "ominous",
+          "text": {
+            "zh": "这正是它最完美、也最危险的地方。",
+            "en": "That's what makes it the perfect source of revenue. And a dangerous one."
+          }
+        }
+      ],
+      "on_screen": {
+        "zh": "",
+        "en": ""
+      },
+      "claims": [
+        "c19"
+      ],
+      "chapter": {
+        "zh": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "s18",
+      "part": 2,
+      "kind": "illustration",
+      "visual_prompt": "Bustling Qi market: a woman buying a bronze needle and knife, a farmer shouldering a new iron plough, a state official at a stall quietly dropping coins into a large state chest; no text.",
+      "characters": [],
+      "camera": "pan-right",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "delivery": "brisk",
+          "text": {
+            "zh": "铁也一样。书里说：每个女子都要有针有刀，每个农夫都要有犁有锄。每件加一点价，全国人都在交钱，却没有一个税吏上门。",
+            "en": "Iron gets the same treatment. Every woman needs a needle and a knife, every farmer a plough and a hoe. Add a little to the price of each, and the whole country pays without a single tax collector knocking on the door."
+          }
+        }
+      ],
+      "on_screen": {
+        "zh": "",
+        "en": ""
+      },
+      "claims": [
+        "c9"
+      ],
+      "chapter": {
+        "zh": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "s19",
+      "part": 2,
+      "kind": "illustration",
+      "visual_prompt": "A huge whimsical bronze machine: salt pours in at the top, coins stream out at the bottom into the treasury; Duke Huan's hand rests on a big dial, about to turn it to maximum; ominous lighting.",
+      "characters": [
+        "duke_huan"
+      ],
+      "camera": "zoom-in",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "delivery": "upbeat, then pause",
+          "text": {
+            "zh": "听起来是不是很完美？国家有钱，百姓不闹。",
+            "en": "Brilliant, right? Painless revenue, a stronger state, no angry crowds."
+          }
+        },
+        {
+          "speaker": "narrator",
+          "delivery": "ominous cliffhanger",
+          "text": {
+            "zh": "可是，把这样一台印钞机交给政府——如果有一天，它被拧到最大挡呢？",
+            "en": "But hand a government a money machine like that, and you have to ask: what happens when someone turns it all the way up?"
+          }
+        }
+      ],
+      "on_screen": {
+        "zh": "",
+        "en": ""
+      },
+      "claims": [],
+      "chapter": {
+        "zh": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "s20",
+      "part": 3,
+      "kind": "diagram",
+      "visual_prompt": "",
+      "characters": [],
+      "camera": "static",
+      "diagram": {
+        "template": "chapter",
+        "title": {
+          "zh": "盐的两千年",
+          "en": "Two Thousand Years of Salt"
+        },
+        "items": [
+          {
+            "primary": {
+              "zh": "第三幕",
+              "en": "Act 3"
+            },
+            "secondary": {
+              "zh": "",
+              "en": ""
+            }
+          }
+        ],
+        "original": "",
+        "source": ""
+      },
+      "lines": [
+        {
+          "speaker": "narrator",
+          "delivery": "playful announcement",
+          "text": {
+            "zh": "第三幕：盐的两千年。",
+            "en": "Act three: two thousand years of salt."
+          }
+        }
+      ],
+      "on_screen": {
+        "zh": "",
+        "en": ""
+      },
+      "claims": [],
+      "chapter": {
+        "zh": "盐的两千年",
+        "en": "2,000 Years of Salt"
+      }
+    },
+    {
+      "id": "s21",
+      "part": 3,
+      "kind": "illustration",
+      "visual_prompt": "Grand outdoor covenant of feudal lords: Duke Huan stands at the head of an altar as rulers of other states bow; Guan Zhong stands beside him; banners and bronze vessels; triumphant golden light.",
+      "characters": [
+        "duke_huan",
+        "guan_zhong"
+      ],
+      "camera": "pan-right",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "delivery": "measured",
+          "text": {
+            "zh": "先说齐国管不管用。约五百年后，司马迁在《史记》里说管仲“通货积财，富国强兵”，还靠“鱼盐之利”接济穷人。",
+            "en": "First: did it work for Qi? Writing about five hundred years later, the historian Sima Qian credits Guan Zhong with circulating goods and piling up wealth, enriching the state and strengthening the army, partly through the profits of fish and salt."
+          }
+        },
+        {
+          "speaker": "narrator",
+          "delivery": "triumphant",
+          "text": {
+            "zh": "齐国成了当时最强的诸侯国。",
+            "en": "Qi became the dominant power of its day."
+          }
+        }
+      ],
+      "on_screen": {
+        "zh": "",
+        "en": ""
+      },
+      "claims": [
+        "c10",
+        "c11",
+        "c4"
+      ],
+      "chapter": {
+        "zh": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "s22",
+      "part": 3,
+      "kind": "illustration",
+      "visual_prompt": "Confucius, an elderly teacher, standing with arms crossed, side-eyeing Guan Zhong's lavish mansion with a gilded gate, then grudgingly nodding to his students; split comedic composition.",
+      "characters": [
+        "confucius",
+        "guan_zhong"
+      ],
+      "camera": "pan-left",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "delivery": "amused",
+          "text": {
+            "zh": "连孔子都纠结过：他嫌管仲奢侈、不守礼，但又说“微管仲，吾其被发左衽矣”——没有管仲，我们恐怕早就被外族同化了。",
+            "en": "Even Confucius was torn. He called Guan Zhong extravagant and careless about ritual, but also admitted that without him, 'we'd all be wearing our hair loose and our robes buttoned on the left'. In other words, conquered by outsiders."
+          }
+        }
+      ],
+      "on_screen": {
+        "zh": "",
+        "en": ""
+      },
+      "claims": [
+        "c20",
+        "c21"
+      ],
+      "chapter": {
+        "zh": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "s23",
+      "part": 3,
+      "kind": "diagram",
+      "visual_prompt": "",
+      "characters": [],
+      "camera": "static",
+      "diagram": {
+        "template": "timeline",
+        "title": {
+          "zh": "盐专营两千年",
+          "en": "Two millennia of state salt"
+        },
+        "items": [
+          {
+            "primary": {
+              "zh": "前685年",
+              "en": "685 BC"
+            },
+            "secondary": {
+              "zh": "管仲相齐",
+              "en": "Guan Zhong in Qi"
+            }
+          },
+          {
+            "primary": {
+              "zh": "约前119年",
+              "en": "c. 119 BC"
+            },
+            "secondary": {
+              "zh": "汉武帝盐铁官营",
+              "en": "Han salt and iron monopoly"
+            }
+          },
+          {
+            "primary": {
+              "zh": "前81年",
+              "en": "81 BC"
+            },
+            "secondary": {
+              "zh": "盐铁会议",
+              "en": "The Salt and Iron Debate"
+            }
+          },
+          {
+            "primary": {
+              "zh": "758年",
+              "en": "AD 758"
+            },
+            "secondary": {
+              "zh": "唐朝榷盐",
+              "en": "Tang salt monopoly"
+            }
+          },
+          {
+            "primary": {
+              "zh": "2017年",
+              "en": "2017"
+            },
+            "secondary": {
+              "zh": "食盐价格放开",
+              "en": "Salt prices freed"
+            }
+          }
+        ],
+        "original": "",
+        "source": ""
+      },
+      "lines": [
+        {
+          "speaker": "narrator",
+          "delivery": "sweeping",
+          "text": {
+            "zh": "而这台机器，后来在中国历史上一次次被重新启动。",
+            "en": "And that machine kept getting switched back on, again and again."
+          }
+        }
+      ],
+      "on_screen": {
+        "zh": "",
+        "en": ""
+      },
+      "claims": [
+        "c13",
+        "c14",
+        "c15",
+        "c16"
+      ],
+      "chapter": {
+        "zh": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "s24",
+      "part": 3,
+      "kind": "illustration",
+      "visual_prompt": "Han dynasty court: Emperor Wu on his throne frowning at a war map of the northern steppe while Sang Hongyang, holding a bundle of counting rods, points at a cart loaded with salt sacks and iron tools.",
+      "characters": [
+        "sang_hongyang"
+      ],
+      "camera": "zoom-in",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "delivery": "storytelling",
+          "text": {
+            "zh": "五百年后，汉武帝连年打匈奴，钱不够花。大约从公元前119年起，他起用大盐商东郭咸阳、大铁商孔仅，加上理财高手桑弘羊，把盐铁彻底收归官营。",
+            "en": "Five centuries later, Emperor Wu of Han was fighting endless wars against the Xiongnu and running out of money. From around 119 BC, he put a former salt tycoon, an iron magnate and a brilliant young finance official named Sang Hongyang in charge, and salt and iron became full state monopolies."
+          }
+        },
+        {
+          "speaker": "sang_hongyang",
+          "delivery": "crisp, confident",
+          "text": {
+            "zh": "打仗要钱，钱在盐里。就这么简单。",
+            "en": "Wars need money. Money is in salt. Simple."
+          }
+        }
+      ],
+      "on_screen": {
+        "zh": "",
+        "en": ""
+      },
+      "claims": [
+        "c13"
+      ],
+      "chapter": {
+        "zh": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "s25",
+      "part": 3,
+      "kind": "diagram",
+      "visual_prompt": "",
+      "characters": [],
+      "camera": "static",
+      "diagram": {
+        "template": "compare",
+        "title": {
+          "zh": "盐铁会议（前81年）",
+          "en": "The Salt and Iron Debate (81 BC)"
+        },
+        "items": [
+          {
+            "primary": {
+              "zh": "桑弘羊",
+              "en": "Sang Hongyang"
+            },
+            "secondary": {
+              "zh": "充实国库；平抑物价；打压豪强",
+              "en": "Fills the treasury; Steadies prices; Curbs the tycoons"
+            }
+          },
+          {
+            "primary": {
+              "zh": "贤良文学",
+              "en": "The Confucian scholars"
+            },
+            "secondary": {
+              "zh": "与民争利；官盐又贵；官铁农具差",
+              "en": "Competes with the people; State salt costs more; State tools are worse"
+            }
+          }
+        ],
+        "original": "",
+        "source": ""
+      },
+      "lines": [
+        {
+          "speaker": "narrator",
+          "delivery": "dramatic",
+          "text": {
+            "zh": "公元前81年，朝廷为此开了一场空前的大辩论。一边是桑弘羊，一边是几十位儒生，吵的正是：国家该不该做生意？",
+            "en": "In 81 BC, the court staged an extraordinary public debate. On one side, Sang Hongyang. On the other, dozens of Confucian scholars. The question: should the state be in business at all?"
+          }
+        },
+        {
+          "speaker": "narrator",
+          "delivery": "teaser",
+          "text": {
+            "zh": "这场辩论后来被整理成《盐铁论》。下一期，我们专门讲它。",
+            "en": "The record of that clash, the Discourses on Salt and Iron, is one of the great economic debates of the ancient world. It gets its own episode."
+          }
+        }
+      ],
+      "on_screen": {
+        "zh": "",
+        "en": ""
+      },
+      "claims": [
+        "c14"
+      ],
+      "chapter": {
+        "zh": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "s26",
+      "part": 3,
+      "kind": "illustration",
+      "visual_prompt": "Night scene in Tang dynasty China: smugglers with lanterns loading salt sacks onto a boat in reeds while a government patrol's torches appear on the far bank; tense, moody blue light.",
+      "characters": [],
+      "camera": "pan-left",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "delivery": "serious",
+          "text": {
+            "zh": "这个点子再也没消失过。唐朝安史之乱后税收体系崩了，758年重新实行盐专卖；据《新唐书》记载，后来“天下之赋，盐利居半”。",
+            "en": "The idea never died. In the Tang dynasty, after the An Lushan rebellion wrecked the tax system, the state brought back the salt monopoly in 758. According to the official history, salt eventually made up around half of all state revenue."
+          }
+        },
+        {
+          "speaker": "narrator",
+          "delivery": "ominous",
+          "text": {
+            "zh": "副作用是私盐泛滥。出身私盐贩子世家的黄巢，后来掀起大起义，动摇了唐朝的根基。",
+            "en": "The side effect: salt smuggling became big business. Huang Chao, from a family of salt smugglers, went on to lead a rebellion that shook the dynasty to its foundations."
+          }
+        }
+      ],
+      "on_screen": {
+        "zh": "",
+        "en": ""
+      },
+      "claims": [
+        "c15",
+        "c22"
+      ],
+      "chapter": {
+        "zh": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "s27",
+      "part": 3,
+      "kind": "illustration",
+      "visual_prompt": "Two-panel illustration: left, an 18th-century French salt-tax collector weighing salt as peasants glare; right, a lean Indian independence leader in white homespun cloth bending to pick up salt on a sunlit beach, followers behind him. No text.",
+      "characters": [],
+      "camera": "pan-right",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "delivery": "comparative",
+          "text": {
+            "zh": "这事不只中国有。法国人恨透了的盐税，大革命时被废，拿破仑又把它恢复了。",
+            "en": "And it's not just China. France's hated salt tax, the gabelle, was abolished in the Revolution, then brought back by Napoleon."
+          }
+        },
+        {
+          "speaker": "narrator",
+          "delivery": "building to a point",
+          "text": {
+            "zh": "1930年，甘地步行三百多公里走到海边，捧起一把盐，公开对抗英国在印度的盐法。对盐收钱，就是对所有人收钱——所以它诱人，也危险。",
+            "en": "In 1930, Gandhi walked two hundred and forty miles to the sea and picked up a handful of salt in defiance of Britain's salt laws in India. Tax salt, and you're taxing everyone. That's exactly why it's so tempting, and so explosive."
+          }
+        }
+      ],
+      "on_screen": {
+        "zh": "",
+        "en": ""
+      },
+      "claims": [
+        "c17",
+        "c18"
+      ],
+      "chapter": {
+        "zh": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "s28",
+      "part": 3,
+      "kind": "diagram",
+      "visual_prompt": "",
+      "characters": [],
+      "camera": "static",
+      "diagram": {
+        "template": "stat",
+        "title": {
+          "zh": "中国盐业改革",
+          "en": "China's salt reform"
+        },
+        "items": [
+          {
+            "primary": {
+              "zh": "2017",
+              "en": "2017"
+            },
+            "secondary": {
+              "zh": "食盐价格放开，可跨区销售",
+              "en": "salt prices freed, cross-region sales allowed"
+            }
+          }
+        ],
+        "original": "",
+        "source": ""
+      },
+      "lines": [
+        {
+          "speaker": "narrator",
+          "delivery": "matter-of-fact",
+          "text": {
+            "zh": "至于中国，盐的国家管控以不同形式延续到了二十一世纪。直到2017年，食盐价格才放开，盐企才能跨区域销售。",
+            "en": "As for China, state control of salt survived, in one form or another, into the twenty-first century. Only in 2017 did reforms free salt prices and let companies sell across regional borders."
+          }
+        }
+      ],
+      "on_screen": {
+        "zh": "",
+        "en": ""
+      },
+      "claims": [
+        "c16"
+      ],
+      "chapter": {
+        "zh": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "s29",
+      "part": 3,
+      "kind": "illustration",
+      "visual_prompt": "Guan Zhong breaking the fourth wall: he leans toward the viewer from inside an ancient frame, eyebrow raised, holding a pinch of salt between two fingers; warm spotlight, dark background.",
+      "characters": [
+        "guan_zhong"
+      ],
+      "camera": "zoom-in",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "delivery": "reflective",
+          "text": {
+            "zh": "所以管仲是天才，还是“隐形税”的鼻祖？大概两样都是。",
+            "en": "So was Guan Zhong a genius, or the inventor of the stealth tax? Probably both."
+          }
+        },
+        {
+          "speaker": "narrator",
+          "delivery": "emphatic, slow",
+          "text": {
+            "zh": "这一期就记住一句话：对政府来说，最好收的钱，是老百姓察觉不到自己在交的钱。",
+            "en": "Here's the one idea to keep: for a government, the easiest money to collect is the money people don't notice they're paying."
+          }
+        },
+        {
+          "speaker": "guan_zhong",
+          "delivery": "smug, teasing",
+          "text": {
+            "zh": "别这么看我。盐，你们不也照样买？",
+            "en": "Don't look at me like that. You all still buy salt."
+          }
+        },
+        {
+          "speaker": "narrator",
+          "delivery": "teaser, upbeat",
+          "text": {
+            "zh": "下一期：盐铁会议——一群儒生，把朝廷的“国企帝国”送上了审判席。",
+            "en": "Next time: the Salt and Iron Debate, when a room full of Confucian scholars put the empire's state businesses on trial."
+          }
+        }
+      ],
+      "on_screen": {
+        "zh": "最好收的钱",
+        "en": "The easiest money"
+      },
+      "claims": [],
+      "chapter": {
+        "zh": "结语",
+        "en": "The Big Idea"
+      }
+    }
+  ],
+  "claims": [
+    {
+      "id": "c1",
+      "statement": {
+        "zh": "管仲（约前720—前645年）任齐桓公（前685—前643年在位）之相。",
+        "en": "Guan Zhong (c. 720–645 BC) served as chancellor to Duke Huan of Qi (r. 685–643 BC)."
+      },
+      "source": "《史记·管晏列传》《史记·齐太公世家》",
+      "quote": "",
+      "confidence": "established",
+      "note": {
+        "zh": "生年为约数。",
+        "en": "Birth year is approximate."
+      }
+    },
+    {
+      "id": "c2",
+      "statement": {
+        "zh": "争位时管仲射中公子小白的衣带钩，小白装死，抢先回国即位。",
+        "en": "During the succession race Guan Zhong shot Prince Xiaobai's belt hook; the prince feigned death and reached Qi first."
+      },
+      "source": "《史记·齐太公世家》",
+      "quote": "管仲别将兵遮莒道，射中小白带钩。小白详死。",
+      "confidence": "traditional",
+      "note": {
+        "zh": "成书晚于事件约五百年。（已核对维基文库原文）",
+        "en": "Written about five centuries later. (verified against the Wikisource text)"
+      }
+    },
+    {
+      "id": "c3",
+      "statement": {
+        "zh": "鲍叔牙向桓公推荐管仲：治齐有他即可，称霸非管仲不可。",
+        "en": "Bao Shuya told the duke: to govern Qi he would suffice; to become hegemon he needed Guan Zhong."
+      },
+      "source": "《史记·齐太公世家》",
+      "quote": "君将治齐，即高傒与叔牙足也。君且欲霸王，非管夷吾不可。",
+      "confidence": "traditional",
+      "note": {
+        "zh": "台词为意译。（已核对维基文库原文）",
+        "en": "Dialogue paraphrased. (verified against the Wikisource text)"
+      }
+    },
+    {
+      "id": "c4",
+      "statement": {
+        "zh": "齐桓公成为春秋第一位霸主，前667年诸侯会盟以齐为长。",
+        "en": "Duke Huan became the first hegemon; in 667 BC an interstate covenant recognised Qi's leadership."
+      },
+      "source": "《左传·庄公二十七年》；《论语·宪问》“桓公九合诸侯，不以兵车，管仲之力也”",
+      "quote": "桓公九合诸侯，不以兵车，管仲之力也。",
+      "confidence": "established",
+      "note": {
+        "zh": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "c5",
+      "statement": {
+        "zh": "《管子·海王》中，桓公提出向台雉（房屋）、树木、六畜、人口征税，管子分别以“毁成”“伐生”“杀生”“隐情”否定，主张“唯官山海为可耳”。",
+        "en": "In Guanzi 'King of the Sea', the duke proposes taxing buildings, trees, livestock and people; Guan Zhong rejects each (destroys buildings, fells trees, kills livestock, people conceal themselves) and says only state control of mountains and seas will do."
+      },
+      "source": "《管子·海王》",
+      "quote": "吾欲藉於六畜……此殺生也。吾欲藉於人……此隱情也。……唯官山海爲可耳。",
+      "confidence": "debated",
+      "note": {
+        "zh": "篇章作者与年代存疑，见c6。（已核对维基文库原文）",
+        "en": "Authorship and date disputed, see c6. (verified against the Wikisource text)"
+      }
+    },
+    {
+      "id": "c6",
+      "statement": {
+        "zh": "《管子》由刘向约前26年编定；轻重诸篇多认为成于战国至西汉，非管仲本人所作。",
+        "en": "The Guanzi was edited by Liu Xiang c. 26 BC; the Qingzhong chapters are generally dated Warring States to Western Han, not by Guan Zhong himself."
+      },
+      "source": "Rickett, Guanzi (Princeton, 1985/1998), introductions; 金谷治《管子の研究》及其轻重篇论文 (1984)",
+      "quote": "",
+      "confidence": "debated",
+      "note": {
+        "zh": "具体年代学界有争论（战国说、汉初说、武帝前后说）。",
+        "en": "Exact dating debated (Warring States, early Han or around Emperor Wu)."
+      }
+    },
+    {
+      "id": "c7",
+      "statement": {
+        "zh": "《海王》：每月成年男子食盐五升少半，女子三升少半，小孩二升少半。",
+        "en": "'King of the Sea': per month an adult man eats 5⅓ sheng of salt, a woman 3⅓, a child 2⅓."
+      },
+      "source": "《管子·海王》",
+      "quote": "终月，大男食盐五升少半，大女食盐三升少半，吾子食盐二升少半。",
+      "confidence": "established",
+      "note": {
+        "zh": "这是文本记载，数字为示意性。（已核对维基文库原文）",
+        "en": "Accurately quoted text; numbers are schematic. (verified against the Wikisource text)"
+      }
+    },
+    {
+      "id": "c8",
+      "statement": {
+        "zh": "《海王》算账：每升加价少许，万乘之国千万人口，月得盐利六千万，而月人三十钱的人头税仅三千万。",
+        "en": "'King of the Sea' arithmetic: a small markup per sheng across ten million mouths yields 60 million coins a month, versus 30 million from a 30-coin monthly head tax."
+      },
+      "source": "《管子·海王》",
+      "quote": "万乘之国，人数开口千万也……月人三十钱之籍，为钱三千万。今吾非籍之诸君吾子，而有二国之籍者六千万。",
+      "confidence": "debated",
+      "note": {
+        "zh": "论证性数字，不是财政记录。（已核对维基文库原文）",
+        "en": "Rhetorical figures, not fiscal records. (verified against the Wikisource text)"
+      }
+    },
+    {
+      "id": "c9",
+      "statement": {
+        "zh": "《海王》称每个女子需针刀、每个农夫需耒耜铫，铁器加价即可遍及全民。",
+        "en": "'King of the Sea' says every woman needs a needle and knife and every farmer plough tools, so a markup on iron reaches everyone."
+      },
+      "source": "《管子·海王》",
+      "quote": "今鐵官之數曰：一女必有一鍼一刀，若其事立。耕者必有一耒一耜一銚，若其事立。",
+      "confidence": "established",
+      "note": {
+        "zh": "原文字句需核对校本。（已核对维基文库原文）",
+        "en": "Verify exact wording against a critical edition. (verified against the Wikisource text)"
+      }
+    },
+    {
+      "id": "c10",
+      "statement": {
+        "zh": "《史记》称管仲“通货积财，富国强兵，与俗同好恶”。",
+        "en": "The Shiji says Guan Zhong 'circulated goods and accumulated wealth, enriched the state and strengthened the army'."
+      },
+      "source": "《史记·管晏列传》",
+      "quote": "通货积财，富国强兵，与俗同好恶。",
+      "confidence": "established",
+      "note": {
+        "zh": "已核对维基文库原文",
+        "en": "verified against the Wikisource text"
+      }
+    },
+    {
+      "id": "c11",
+      "statement": {
+        "zh": "《史记》称管仲“设轻重鱼盐之利，以赡贫穷，禄贤能”。",
+        "en": "The Shiji says Guan Zhong used price management and the profits of fish and salt to relieve the poor and reward the able."
+      },
+      "source": "《史记·齐太公世家》",
+      "quote": "设轻重鱼盐之利，以赡贫穷，禄贤能。",
+      "confidence": "established",
+      "note": {
+        "zh": "已核对维基文库原文。史记支持管仲经营盐利，但不能证明完整的“加价专营”制度出自他本人。",
+        "en": "Verified against the Wikisource text. Supports state profit from salt, not that the full markup monopoly was his own design."
+      }
+    },
+    {
+      "id": "c13",
+      "statement": {
+        "zh": "汉武帝时（约前119年起）盐铁官营，东郭咸阳、孔仅主持，桑弘羊参与谋划。",
+        "en": "Under Emperor Wu, from c. 119 BC, salt and iron became state monopolies, run by Dongguo Xianyang and Kong Jin with Sang Hongyang."
+      },
+      "source": "《史记·平准书》《汉书·食货志》",
+      "quote": "",
+      "confidence": "established",
+      "note": {
+        "zh": "具体年份各书记载为前119—前117年。",
+        "en": "Accounts place it between 119 and 117 BC."
+      }
+    },
+    {
+      "id": "c14",
+      "statement": {
+        "zh": "前81年盐铁会议，桑弘羊与贤良文学辩论，桓宽整理为《盐铁论》；批评者指责与民争利、官器质次价高。",
+        "en": "In 81 BC Sang Hongyang debated the Confucian 'worthies and literati'; Huan Kuan edited the record as the Discourses on Salt and Iron; critics said the state competed with the people and sold poor, costly tools."
+      },
+      "source": "桓宽《盐铁论》（《本议》《水旱》等篇）；《汉书·昭帝纪》",
+      "quote": "",
+      "confidence": "established",
+      "note": {
+        "zh": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "c15",
+      "statement": {
+        "zh": "唐乾元元年（758年）第五琦变盐法、榷天下盐；刘晏主持后，到大历末年盐利由每年四十万缗增至六百余万缗，“天下之赋，盐利居半”。",
+        "en": "In 758 Diwu Qi imposed a salt monopoly; under Liu Yan, salt revenue rose from 400,000 to over 6 million strings a year by the late 770s, 'half of all the empire's revenue'."
+      },
+      "source": "《新唐书·食货志》",
+      "quote": "晏之始至也，鹽利歲纔四十萬緡，至大曆末，六百餘萬緡。天下之賦，鹽利居半。",
+      "confidence": "established",
+      "note": {
+        "zh": "已核对维基文库原文（《新唐书·食货志四》）。",
+        "en": "Verified against the Wikisource text (New Tang History, Treatise on Food and Money 4)."
+      }
+    },
+    {
+      "id": "c16",
+      "statement": {
+        "zh": "2016年国务院盐业体制改革方案自2017年1月1日起放开食盐价格、允许跨区经营，生产仍需许可。",
+        "en": "China's 2016 State Council salt reform, effective 1 Jan 2017, freed salt prices and cross-region sales; production still requires a licence."
+      },
+      "source": "国务院《盐业体制改革方案》（2016）；国家发改委通告（2016年10月）",
+      "quote": "",
+      "confidence": "established",
+      "note": {
+        "zh": "媒体称“终结两千年专营”为概括说法，历代制度并不连续。",
+        "en": "Headlines about ending a '2,000-year monopoly' are shorthand; the institution was not continuous."
+      }
+    },
+    {
+      "id": "c17",
+      "statement": {
+        "zh": "法国盐税gabelle于1790年大革命中废除，1806年拿破仑恢复，1945年最终废止。",
+        "en": "France's gabelle was abolished in 1790, restored by Napoleon in 1806 and finally ended in 1945."
+      },
+      "source": "Encyclopaedia Britannica, 'Gabelle'; 法国经济财政部档案处",
+      "quote": "",
+      "confidence": "established",
+      "note": {
+        "zh": "最终废止年份有1945/1946两说。",
+        "en": "Sources give 1945 or 1946 for the final abolition."
+      }
+    },
+    {
+      "id": "c18",
+      "statement": {
+        "zh": "1930年3月12日至4月6日，甘地徒步约387公里至丹迪海边取盐，抗议英国盐法。",
+        "en": "From 12 March to 6 April 1930 Gandhi marched about 387 km (240 miles) to Dandi to make salt in defiance of British salt laws."
+      },
+      "source": "Encyclopaedia Britannica, 'Salt March'",
+      "quote": "",
+      "confidence": "established",
+      "note": {
+        "zh": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "c19",
+      "statement": {
+        "zh": "盐的需求缺乏价格弹性。",
+        "en": "Demand for salt is price-inelastic."
+      },
+      "source": "标准经济学概念（以今释古的类比）",
+      "quote": "",
+      "confidence": "established",
+      "note": {
+        "zh": "现代经济学解释，不是古人用语。",
+        "en": "Modern economic framing, not an ancient term."
+      }
+    },
+    {
+      "id": "c20",
+      "statement": {
+        "zh": "孔子说：“微管仲，吾其被发左衽矣。”",
+        "en": "Confucius: without Guan Zhong we would wear our hair loose and fasten our robes on the left."
+      },
+      "source": "《论语·宪问》",
+      "quote": "微管仲，吾其被发左衽矣。",
+      "confidence": "established",
+      "note": {
+        "zh": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "c21",
+      "statement": {
+        "zh": "孔子批评管仲器小、不俭、不知礼。",
+        "en": "Confucius criticised Guan Zhong as narrow, extravagant and ignorant of ritual."
+      },
+      "source": "《论语·八佾》",
+      "quote": "管仲之器小哉！……管氏而知礼，孰不知礼？",
+      "confidence": "established",
+      "note": {
+        "zh": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "c22",
+      "statement": {
+        "zh": "黄巢出身贩盐世家，后领导唐末大起义。",
+        "en": "Huang Chao came from a salt-dealing family and led the great late-Tang rebellion."
+      },
+      "source": "《新唐书·黄巢传》《旧唐书·黄巢传》",
+      "quote": "",
+      "confidence": "established",
+      "note": {
+        "zh": "“私盐”为通行说法；史书称其家世代贩盐。",
+        "en": "Sources say his family traded salt for generations; 'smuggler' is the usual reading."
+      }
+    }
+  ],
+  "tags": {
+    "zh": [
+      "管仲",
+      "盐铁专营",
+      "管子",
+      "齐桓公",
+      "经济史",
+      "中国历史",
+      "盐铁论",
+      "历史科普",
+      "财政",
+      "春秋"
+    ],
+    "en": [
+      "Guan Zhong",
+      "Chinese history",
+      "economic history",
+      "salt monopoly",
+      "ancient China",
+      "Guanzi",
+      "Spring and Autumn period",
+      "history of taxation",
+      "Salt and Iron Debate",
+      "Han dynasty",
+      "explainer"
+    ]
+  },
+  "approved": false,
+  "revision": 2
+}

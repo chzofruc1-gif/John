@@ -1,0 +1,181 @@
+# Series bible — 中国古代经济思想史（不露脸科普栏目）
+# Everything here is shared by all episodes. Edit freely; `avp status <series>` validates it.
+
+[series]
+name_zh = "古人怎么搞钱"                       # 暂定名 / working title
+name_en = "The Emperor's Ledger"              # working title
+premise = """A faceless explainer series on the history of Chinese economic thought and institutions:
+state monopolies (salt and iron), taxation systems, money and credit, markets and merchants, and the
+great policy debates — from Guan Zhong (7th c. BC) to the Qing. The goal is to help the world understand
+Chinese history through its economic ideas, and to show how those debates echo today's questions."""
+audience_zh = "18-35 岁、对历史和经济感兴趣的中文观众，刷抖音/视频号/小红书，喜欢有梗又有干货的知识类内容"
+audience_en = "curious English-speaking viewers (history, economics, geopolitics fans) with no background in Chinese history"
+tone = """Witty and irreverent, never sloppy. A smart friend who loves this stuff: modern analogies
+(Guan Zhong as a finance minister running a state enterprise), deadpan narrator asides, short comic skits
+where historical figures speak for themselves. But every joke serves the explanation, and every mechanism
+is explained so concretely that a teenager could re-explain it. The spine of every episode is economics:
+the measures, how they work, what modern economics calls them, and why they matter in world history."""
+art_style = """ART STYLE 'Cinnabar Ledger' (朱砂账本): mixed-media paper collage in risograph print style.
+Characters are chibi paper cut-out puppets with visible cut paper edges, a thin white paper border and a soft drop
+shadow; big expressive comic faces; flat colour shapes with grainy risograph texture and halftone dot shading,
+slight print misregistration. Background is an aged ledger page: warm cream paper with faint vertical ruled lines,
+a thin ruled border and tea stains. Strict limited palette of four spot inks: cinnabar red, ink black, verdigris
+green and metallic gold. Collage elements cut from real-looking artifacts (bronze coins, bamboo slips, red seal
+stamps, torn paper scraps) are layered in. Pre-imperial buildings use rammed-earth walls and timber halls.
+Bold, graphic, playful, contemporary editorial design; illustration, not a photograph."""
+rules = [
+  "Economics first: every episode is built around concrete measures. For each one say WHAT was done (with the primary source), HOW it works mechanically (who pays, what moves, prices and incentives), and WHAT it means in modern economics, naming the concept, its originator and year (e.g. Ramsey rule 1927, tax salience 2009, buffer stocks, Keynes 1936).",
+  "Historical significance: say where the idea stands in WORLD economic thought, comparing it with contemporaries elsewhere (e.g. Xenophon, Aristotle) and with later Western formulations. Phrase 'firsts' precisely ('the earliest known written statement', 'among the earliest') and source them; never claim a bare 'world first' without evidence.",
+  "Modern comparisons must say where the analogy stops (an echo is not the same theory).",
+  "Separate evidence from tradition: texts like the Guanzi (esp. the Qingzhong chapters) were compiled centuries after Guan Zhong — say so when quoting them.",
+  "Every number, date, quote and attribution needs a claim with a precise source (book and chapter, or scholar and work).",
+  "Quote classical Chinese exactly; give a faithful modern paraphrase, never a made-up quote.",
+  "Present historical debates fairly (e.g. both sides of the Salt and Iron Debate); no modern partisan political commentary.",
+  "Modern analogies must be labelled as analogies and must not distort the history.",
+  "Use pinyin without tone marks in English; give dates as BC/AD; explain every name and institution the first time.",
+  "No sweeping cultural essentialism ('the Chinese always…'); be specific about time and place.",
+]
+
+[episode]
+minutes = 10            # target length of the full English cut
+seconds_per_scene = 18
+zh_parts = 3            # Chinese vertical cut = 3 shorts, split at act breaks
+
+[narrator]
+# CosyVoice 音色 id（请在百炼控制台“音色列表”里试听确认，可随时替换）
+en = "loongstella_v2"    # 已验证可用；英文旁白，可在百炼控制台试听后替换
+zh = "longcheng_v2"      # 已验证可用
+style_en = "Narrate like a warm, witty British documentary presenter with good comic timing"
+style_zh = "用轻松幽默、略带吐槽的知识区博主口吻讲述，语速适中，抑扬顿挫"
+
+# Recurring characters can be pinned here (look + voices). New characters that episodes introduce are
+# registered automatically under cast/<id>.json and reused by later episodes.
+# [[characters]]
+# id = "guan_zhong"
+# name_zh = "管仲"
+# name_en = "Guan Zhong"
+# gender = "male"
+# look = "chibi middle-aged minister of the State of Qi, long thin moustache, black official hat, deep green robe with red trim, holding a bamboo-slip ledger"
+# voice = { en = "Charon", zh = "Orus", style_en = "smug and clever", style_zh = "自信又有点得意" }
+
+[[outputs]]
+id = "youtube_en"
+language = "en"
+aspect = "16:9"
+split_parts = false
+subtitles = "both"      # burned-in + soft .srt track
+platform = "youtube"
+
+[[outputs]]
+id = "douyin_zh"
+language = "zh"
+aspect = "9:16"
+split_parts = true      # one short per act -> douyin_zh_part1.mp4 ...
+subtitles = "burn"
+platform = "douyin"     # same files work for 视频号 / 小红书
+
+[providers]
+# Each job can use a different backend — nothing here is tied to one vendor or to the cloud.
+#   research: anthropic | gemini (both search the web and cite sources) | openai | mock   ("" = same as llm)
+#   llm:      anthropic | gemini | openai | mock   (openai = ANY OpenAI-compatible server, cloud or local)
+#   image:    gemini | openai | sdwebui | mock
+#   tts:      gemini | cosyvoice | openai | command | mock
+#   video:    wan | mock | ""  (image-to-video for illustrations; "" = stills with camera moves)
+research = "anthropic"
+llm = "anthropic"
+image = "qwen"           # 千问图像（百炼），与 CosyVoice 共用 key
+tts = "cosyvoice"
+tts_en = ""             # 英文想换别的引擎时填这里
+video = "wan"           # 插画做成动画（图生视频）；留空 = 只用静帧推拉镜头
+
+[gemini]
+api_key_env = "GEMINI_API_KEY"
+research_model = "gemini-2.5-pro"
+script_model = "gemini-2.5-pro"
+image_model = "gemini-2.5-flash-image"
+tts_model = "gemini-2.5-flash-preview-tts"
+
+[anthropic]             # Claude; credentials from ANTHROPIC_API_KEY or `ant auth login`
+model = "claude-opus-5-5"
+effort = "high"
+max_tokens = 64000
+web_search_max_uses = 15
+
+# Voices handed to characters without an assigned voice. Names depend on the TTS provider.
+[voices]
+# CosyVoice 音色 id（均已验证可用）
+male = ["longshu_v2", "longhua_v2", "longshuo_v2"]
+female = ["longwan_v2", "longxiaoxia_v2"]
+
+# ---- OpenAI-compatible endpoints (used when a job is set to "openai") -------------------------------
+# Examples for [openai.llm]:
+#   local Ollama:  base_url = "http://localhost:11434/v1"   model = "qwen2.5:32b"        api_key_env = ""
+#   LM Studio:     base_url = "http://localhost:1234/v1"    model = "<loaded model>"     api_key_env = ""
+#   DeepSeek:      base_url = "https://api.deepseek.com/v1" model = "deepseek-chat"      api_key_env = "DEEPSEEK_API_KEY"
+#   Qwen:          base_url = "https://dashscope.aliyuncs.com/compatible-mode/v1"  model = "qwen-max"  api_key_env = "DASHSCOPE_API_KEY"
+#   OpenRouter:    base_url = "https://openrouter.ai/api/v1" model = "anthropic/claude-sonnet-4.5" api_key_env = "OPENROUTER_API_KEY"
+[openai.llm]
+base_url = "http://localhost:11434/v1"
+api_key_env = ""
+model = "qwen2.5:14b"
+json_mode = true
+max_tokens = 0          # set e.g. 16000 if long scripts come back truncated
+
+[openai.image]          # OpenAI images API or a compatible local server
+base_url = "https://api.openai.com/v1"
+api_key_env = "OPENAI_API_KEY"
+model = "gpt-image-1"
+size = "1536x1024"
+
+[openai.tts]            # e.g. local Kokoro-FastAPI (http://localhost:8880/v1) or OpenAI gpt-4o-mini-tts
+base_url = "http://localhost:8880/v1"
+api_key_env = ""
+model = "kokoro"
+
+[qwen_image]            # 千问图像（百炼）；结果图从阿里云 OSS 下载，需放行 *.oss-accelerate.aliyuncs.com 等域名
+model = "qwen-image-2.0"
+region = "cn"
+auth_via_proxy = true
+max_references = 3
+negative_prompt = "futou hat, Tang dynasty hat with long side flaps, Song dynasty clothing, Qing dynasty clothing, imperial mian crown with bead curtains, brick battlements, crenellated walls, Great Wall, readable text, letters, English words, signboard with writing, road sign, caption, watermark, signature, logo, photorealistic, photograph, 3D render, blurry, deformed hands, extra fingers"
+
+[wan_video]             # 万相图生视频（百炼）：把插画做成 5 秒纸偶动画，key 同 DASHSCOPE_API_KEY
+model = "wan2.2-i2v-flash"
+region = "cn"
+resolution = "480P"           # 480P ≈ half the price of 720P; upscaled in compose
+auth_via_proxy = true
+motion_style = "Paper cut-out puppet animation with a stop-motion feel: flat paper pieces move with slight jitter, the ledger-paper background stays still, no new objects appear."
+negative_prompt = "camera cut, scene change, morphing faces, text, letters, photorealistic, 3D render"
+
+[cosyvoice]             # 阿里云百炼 CosyVoice；key 放在环境变量 DASHSCOPE_API_KEY
+model = "cosyvoice-v2"
+region = "cn"           # cn = 北京地域；intl = 国际站
+speech_rate = 1.0
+use_instruction = false
+auth_via_proxy = true   # 云端会话里 key 由网络代理注入；本地运行时设置 DASHSCOPE_API_KEY 即可（优先使用）
+
+[sdwebui]               # local AUTOMATIC1111 / Forge started with --api
+base_url = "http://127.0.0.1:7860"
+checkpoint = ""
+long_side = 1344
+steps = 28
+
+[command_tts]           # any local TTS program; text on stdin (or {text_file}), must write a WAV to {out}
+# zh = "piper --model ~/voices/zh_CN-huayan-medium.onnx --output_file {out}"
+# en = "piper --model ~/voices/en_GB-alan-medium.onnx --output_file {out}"
+zh = ""
+en = ""
+
+[render]
+height = 1080
+fps = 30
+transition = 0.4
+transition_style = "fade"
+bgm = ""                # e.g. "music/guqin_loop.mp3" (relative to the series folder); royalty-free only
+bgm_volume = 0.12
+loudnorm = true
+animate = "marked"      # image-to-video only for scenes with a motion line (all = every illustration)
+
+[runtime]
+max_workers = 2         # use 1 on a free-tier Gemini key
+retries = 3

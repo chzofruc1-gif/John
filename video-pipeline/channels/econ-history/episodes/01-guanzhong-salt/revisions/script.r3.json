@@ -1,0 +1,2149 @@
+{
+  "number": 1,
+  "title": {
+    "zh": "管仲：两千年前的经济学家？盐铁专营与“看不见的税”",
+    "en": "The Tax Nobody Noticed: Guan Zhong and the World's First Economic Toolkit"
+  },
+  "logline": {
+    "zh": "托名管仲的《管子》，把盐铁专营、隐形税、平抑物价、刺激消费写成了一套“国家经济工具箱”，比亚当·斯密早近两千年。用现代经济学重读它，你会发现很多道理今天还在争论。",
+    "en": "The Guanzi, written in Guan Zhong's name, set out a whole state economic toolkit: salt monopolies, hidden taxes, price stabilisation and spending to create jobs, nearly two thousand years before Adam Smith. Read with modern economics, many of its ideas are still argued over today."
+  },
+  "cast": [
+    {
+      "id": "guan_zhong",
+      "name": {
+        "zh": "管仲",
+        "en": "Guan Zhong"
+      },
+      "gender": "male",
+      "role": {
+        "zh": "齐国宰相",
+        "en": "Chancellor of Qi"
+      },
+      "look": "chibi middle-aged chancellor of the State of Qi in the Spring and Autumn period (7th century BC): slim, clever narrow eyes, long thin black moustache and short pointed beard, hair in a topknot held by a small black lacquered crown-cap (guan) and a hairpin, cap tied with a cord under the chin, no brim, no side flaps, deep green cross-collared robe closing right-over-left (shenyi) with wide sleeves, red trim and a black sash, holding a bamboo-slip ledger. Pre-imperial Zhou dynasty clothing"
+    },
+    {
+      "id": "duke_huan",
+      "name": {
+        "zh": "齐桓公",
+        "en": "Duke Huan"
+      },
+      "gender": "male",
+      "role": {
+        "zh": "齐国国君",
+        "en": "Ruler of Qi"
+      },
+      "look": "chibi young ruler of Qi in the Spring and Autumn period: round face, thick eyebrows, small goatee, flat-topped black mian crown with strings of jade beads hanging at front and back, crimson cross-collared robe closing right-over-left with gold-embroidered borders, jade pendant at the belt. Pre-imperial Zhou dynasty clothing"
+    },
+    {
+      "id": "bao_shuya",
+      "name": {
+        "zh": "鲍叔牙",
+        "en": "Bao Shuya"
+      },
+      "gender": "male",
+      "role": {
+        "zh": "管仲的挚友",
+        "en": "Guan Zhong's loyal friend"
+      },
+      "look": "chibi kind-faced official of Qi in the Spring and Autumn period: plump, rosy cheeks, neat grey beard, hair in a topknot under a small black cap tied under the chin, simple brown cross-collared robe closing right-over-left, warm smile. Pre-imperial Zhou dynasty clothing"
+    },
+    {
+      "id": "confucius",
+      "name": {
+        "zh": "孔子",
+        "en": "Confucius"
+      },
+      "gender": "male",
+      "role": {
+        "zh": "思想家",
+        "en": "Philosopher"
+      },
+      "look": "chibi elderly teacher of the late Spring and Autumn period: tall, high forehead, long grey beard, hair in a topknot under a plain black cloth cap, plain off-white cross-collared scholar's robe, holding a bamboo-slip scroll. Pre-imperial Zhou dynasty clothing"
+    },
+    {
+      "id": "sang_hongyang",
+      "name": {
+        "zh": "桑弘羊",
+        "en": "Sang Hongyang"
+      },
+      "gender": "male",
+      "role": {
+        "zh": "西汉理财大臣",
+        "en": "Han finance minister"
+      },
+      "look": "chibi Western Han dynasty finance official (1st century BC): thin, sharp features, neatly trimmed black beard, hair in a topknot wrapped by a black cloth headband-cap, with a small upright black lacquered crown-cap on top tied under the chin with thin ribbons, dark blue cross-collared robe closing right-over-left, holding a bundle of bamboo counting rods. Han dynasty clothing"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "s01",
+      "part": 1,
+      "kind": "illustration",
+      "visual_prompt": "Night interior of a humble farmhouse in ancient Qi (7th century BC): a family of three around a low table with millet porridge; a small clay jar of white salt glows in warm lamplight as the focal point.",
+      "characters": [],
+      "camera": "zoom-in",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "delivery": "intriguing, conspiratorial",
+          "text": {
+            "zh": "你每天都在交一种税，却几乎感觉不到。经济学家管这叫“低显著性税收”。",
+            "en": "You pay a tax every single day, and you barely notice it. Economists call it a low-salience tax."
+          }
+        },
+        {
+          "speaker": "narrator",
+          "delivery": "intriguing",
+          "text": {
+            "zh": "而最早把这套门道写下来、算清楚的，要追溯到两千六百多年前齐国的一位宰相。秘密，就藏在你家厨房里。",
+            "en": "And the earliest written playbook for it traces back to a chancellor in ancient China, twenty-six centuries ago. The secret was hiding in your kitchen."
+          }
+        }
+      ],
+      "on_screen": {
+        "zh": "",
+        "en": ""
+      },
+      "claims": [
+        "c33",
+        "c6"
+      ],
+      "chapter": {
+        "zh": "开场",
+        "en": "Cold Open"
+      }
+    },
+    {
+      "id": "s02",
+      "part": 1,
+      "kind": "illustration",
+      "visual_prompt": "Illustration in the series' ink-and-wash style, not a photograph: a large close-up of a hand taking a pinch of coarse white sea salt from a rough clay jar of the Zhou period, salt crystals drawn as sparkling white flecks, warm rice-paper background.",
+      "characters": [],
+      "camera": "zoom-in",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "delivery": "deadpan, then knowing",
+          "text": {
+            "zh": "盐。肉可以不吃，酒可以不喝，盐不能不吃。有个叫管仲的人，盯上了这一点。",
+            "en": "Salt. You can skip meat. You can skip wine. But you cannot skip salt. And a man called Guan Zhong noticed exactly that."
+          }
+        }
+      ],
+      "on_screen": {
+        "zh": "盐",
+        "en": "Salt"
+      },
+      "claims": [],
+      "chapter": {
+        "zh": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "s03",
+      "part": 1,
+      "kind": "diagram",
+      "visual_prompt": "",
+      "characters": [],
+      "camera": "static",
+      "diagram": {
+        "template": "chapter",
+        "title": {
+          "zh": "射过国君的宰相",
+          "en": "The Man Who Shot a Duke"
+        },
+        "items": [
+          {
+            "primary": {
+              "zh": "第一幕",
+              "en": "Act 1"
+            },
+            "secondary": {
+              "zh": "",
+              "en": ""
+            }
+          }
+        ],
+        "original": "",
+        "source": ""
+      },
+      "lines": [
+        {
+          "speaker": "narrator",
+          "delivery": "playful announcement",
+          "text": {
+            "zh": "第一幕：射过国君的宰相。",
+            "en": "Act one: the man who shot a duke."
+          }
+        }
+      ],
+      "on_screen": {
+        "zh": "",
+        "en": ""
+      },
+      "claims": [],
+      "chapter": {
+        "zh": "射过国君的宰相",
+        "en": "The Man Who Shot a Duke"
+      }
+    },
+    {
+      "id": "s04",
+      "part": 1,
+      "kind": "illustration",
+      "visual_prompt": "On a dusty road between hills, Guan Zhong stands on a speeding two-wheeled war chariot and shoots an arrow; in a second chariot ahead, Prince Xiaobai (Duke Huan) jolts as the arrow hits the bronze hook of his belt; motion lines, comic freeze-frame energy.",
+      "characters": [
+        "guan_zhong",
+        "duke_huan"
+      ],
+      "camera": "pan-right",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "delivery": "storytelling, building",
+          "text": {
+            "zh": "大约公元前685年，齐国两位公子抢着回国继位。管仲站错了队，为了拦住对手，他一箭射了过去——",
+            "en": "Around 685 BC, two princes raced home to claim the throne of Qi. Guan Zhong backed the wrong one, and to slow the rival down, he shot him."
+          }
+        },
+        {
+          "speaker": "narrator",
+          "delivery": "beat, comic timing",
+          "text": {
+            "zh": "正中对方的衣带钩。",
+            "en": "The arrow hit the prince's belt buckle."
+          }
+        }
+      ],
+      "on_screen": {
+        "zh": "",
+        "en": ""
+      },
+      "claims": [
+        "c2"
+      ],
+      "chapter": {
+        "zh": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "s05",
+      "part": 1,
+      "kind": "illustration",
+      "visual_prompt": "Prince Xiaobai (Duke Huan) lying dramatically on the floor of his chariot pretending to be dead, tongue out, one eye peeking open; the arrow stuck in his belt buckle; his driver whipping the horses forward.",
+      "characters": [
+        "duke_huan"
+      ],
+      "camera": "zoom-out",
+      "lines": [
+        {
+          "speaker": "duke_huan",
+          "delivery": "frantic whisper",
+          "text": {
+            "zh": "（小声）装死……装得像一点……",
+            "en": "(whispering) Play dead. Play very, very dead."
+          }
+        },
+        {
+          "speaker": "narrator",
+          "delivery": "amused",
+          "text": {
+            "zh": "小白当场装死，然后抄近路抢先回国，当上了国君——就是后来的齐桓公。",
+            "en": "The prince faked his own death, beat everyone home, and took the throne as Duke Huan of Qi."
+          }
+        }
+      ],
+      "on_screen": {
+        "zh": "",
+        "en": ""
+      },
+      "claims": [
+        "c2",
+        "c1"
+      ],
+      "chapter": {
+        "zh": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "s06",
+      "part": 1,
+      "kind": "illustration",
+      "visual_prompt": "Palace hall of Qi: Bao Shuya bows earnestly before an annoyed Duke Huan on his throne, gesturing toward Guan Zhong who stands in the doorway in rope bonds looking sheepish.",
+      "characters": [
+        "bao_shuya",
+        "duke_huan",
+        "guan_zhong"
+      ],
+      "camera": "pan-left",
+      "lines": [
+        {
+          "speaker": "bao_shuya",
+          "delivery": "earnest, persuasive",
+          "text": {
+            "zh": "您要是只想管好齐国，有我就够了；要是想称霸天下，非管仲不可。",
+            "en": "If you only want to rule Qi, I'm enough. If you want to lead all the states, you need Guan Zhong."
+          }
+        },
+        {
+          "speaker": "narrator",
+          "delivery": "dry",
+          "text": {
+            "zh": "于是，齐桓公把差点射死自己的人，请来当了宰相。史上最大度的一次招聘。",
+            "en": "So the duke hired the man who had just tried to kill him. Possibly the best HR decision in Chinese history."
+          }
+        }
+      ],
+      "on_screen": {
+        "zh": "",
+        "en": ""
+      },
+      "claims": [
+        "c3"
+      ],
+      "chapter": {
+        "zh": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "s07",
+      "part": 1,
+      "kind": "diagram",
+      "visual_prompt": "",
+      "characters": [],
+      "camera": "static",
+      "diagram": {
+        "template": "timeline",
+        "title": {
+          "zh": "管仲与齐桓公",
+          "en": "Guan Zhong and Duke Huan"
+        },
+        "items": [
+          {
+            "primary": {
+              "zh": "前685年",
+              "en": "685 BC"
+            },
+            "secondary": {
+              "zh": "桓公即位，管仲为相",
+              "en": "Duke Huan takes the throne; Guan Zhong becomes chancellor"
+            }
+          },
+          {
+            "primary": {
+              "zh": "前667年",
+              "en": "667 BC"
+            },
+            "secondary": {
+              "zh": "诸侯会盟，齐为盟主",
+              "en": "Qi leads an alliance of states"
+            }
+          },
+          {
+            "primary": {
+              "zh": "前645年",
+              "en": "645 BC"
+            },
+            "secondary": {
+              "zh": "管仲去世",
+              "en": "Guan Zhong dies"
+            }
+          }
+        ],
+        "original": "",
+        "source": ""
+      },
+      "lines": [
+        {
+          "speaker": "narrator",
+          "delivery": "brisk",
+          "text": {
+            "zh": "此后将近四十年，这对“仇人组合”让齐国成了春秋第一强国，齐桓公也成了第一位霸主。",
+            "en": "For nearly forty years, this unlikely duo made Qi the strongest state of its age, and Duke Huan the first of the so-called hegemons, the leaders of the other states."
+          }
+        }
+      ],
+      "on_screen": {
+        "zh": "",
+        "en": ""
+      },
+      "claims": [
+        "c1",
+        "c4"
+      ],
+      "chapter": {
+        "zh": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "s08",
+      "part": 1,
+      "kind": "illustration",
+      "visual_prompt": "Duke Huan peering into an almost empty treasury storeroom: a few lonely bronze spade-coins, cobwebs, an echoing dark room; comedic despair.",
+      "characters": [
+        "duke_huan"
+      ],
+      "camera": "zoom-in",
+      "lines": [
+        {
+          "speaker": "duke_huan",
+          "delivery": "whiny, hopeful",
+          "text": {
+            "zh": "寡人缺钱。很缺。要不……收点税？",
+            "en": "We need money. A lot of money. Could we just… tax things?"
+          }
+        },
+        {
+          "speaker": "narrator",
+          "delivery": "listing, comic rhythm",
+          "text": {
+            "zh": "齐国刚打完内乱，国库见底。在托名管仲的《管子》一书里，齐桓公把能想到的税都问了一遍：房子税？树木税？牲口税？人头税？",
+            "en": "Qi was fresh out of civil war and the treasury was nearly empty. In the Guanzi, a book that carries Guan Zhong's name, the duke runs through every tax he can think of: on buildings, on trees, on livestock, on people."
+          }
+        }
+      ],
+      "on_screen": {
+        "zh": "国库：空",
+        "en": "Treasury: empty"
+      },
+      "claims": [
+        "c5"
+      ],
+      "chapter": {
+        "zh": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "s09",
+      "part": 1,
+      "kind": "illustration",
+      "visual_prompt": "Guan Zhong shaking his head and waving a bamboo-slip ledger while, behind him, a comic village scene: a farmer hurriedly roasting his pig before the tax man arrives, and a family hiding children inside a big basket; no text.",
+      "characters": [
+        "guan_zhong"
+      ],
+      "camera": "pan-left",
+      "lines": [
+        {
+          "speaker": "guan_zhong",
+          "delivery": "smug, matter-of-fact",
+          "text": {
+            "zh": "收牲口税，百姓就把牲口宰了；收人头税，大家就瞒报人口。",
+            "en": "Tax livestock and they'll slaughter it. Tax heads and they'll hide them."
+          }
+        },
+        {
+          "speaker": "narrator",
+          "delivery": "explaining",
+          "text": {
+            "zh": "书里的管仲全都否了：直接收税，老百姓看得清清楚楚，一定会嚷嚷起来。",
+            "en": "In the text, Guan Zhong rejects every one. A direct tax is visible: people see exactly what you take, and they'll howl about it."
+          }
+        }
+      ],
+      "on_screen": {
+        "zh": "",
+        "en": ""
+      },
+      "claims": [
+        "c5"
+      ],
+      "chapter": {
+        "zh": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "s10",
+      "part": 1,
+      "kind": "diagram",
+      "visual_prompt": "",
+      "characters": [],
+      "camera": "static",
+      "diagram": {
+        "template": "quote",
+        "title": {
+          "zh": "只有把山和海交给官府经营才行。",
+          "en": "Only by putting the mountains and the seas under state control."
+        },
+        "items": [],
+        "original": "唯官山海为可耳。",
+        "source": "《管子·海王》"
+      },
+      "lines": [
+        {
+          "speaker": "narrator",
+          "delivery": "slow, weighty",
+          "text": {
+            "zh": "那怎么办？管仲给出六个字：唯官山海为可耳——把山和海管起来。",
+            "en": "So what's left? His answer: only by putting the mountains and the seas under state control."
+          }
+        },
+        {
+          "speaker": "narrator",
+          "delivery": "reveal",
+          "text": {
+            "zh": "听着很文艺。可山里有什么？铁。海里有什么？盐。",
+            "en": "Sounds poetic. Until you ask what's in the mountains: iron. And what's in the sea: salt."
+          }
+        }
+      ],
+      "on_screen": {
+        "zh": "",
+        "en": ""
+      },
+      "claims": [
+        "c5"
+      ],
+      "chapter": {
+        "zh": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "s11",
+      "part": 2,
+      "kind": "diagram",
+      "visual_prompt": "",
+      "characters": [],
+      "camera": "static",
+      "diagram": {
+        "template": "chapter",
+        "title": {
+          "zh": "一粒盐里的财政学",
+          "en": "The Economics of a Pinch of Salt"
+        },
+        "items": [
+          {
+            "primary": {
+              "zh": "第二幕",
+              "en": "Act 2"
+            },
+            "secondary": {
+              "zh": "",
+              "en": ""
+            }
+          }
+        ],
+        "original": "",
+        "source": ""
+      },
+      "lines": [
+        {
+          "speaker": "narrator",
+          "delivery": "playful announcement",
+          "text": {
+            "zh": "第二幕：一粒盐里的财政学。",
+            "en": "Act two: the economics of a pinch of salt."
+          }
+        }
+      ],
+      "on_screen": {
+        "zh": "",
+        "en": ""
+      },
+      "claims": [],
+      "chapter": {
+        "zh": "一粒盐里的财政学",
+        "en": "The Economics of Salt"
+      }
+    },
+    {
+      "id": "s12",
+      "part": 2,
+      "kind": "illustration",
+      "visual_prompt": "A Han dynasty scholar (Liu Xiang) at a low wooden desk in a lamp-lit archive, sorting heaps of bamboo-slip bundles tied with cords and stacked on wooden shelves into one big book of bamboo slips; only bamboo slips and silk scrolls, no paper books; comic framing as if seen through a large round magnifying lens.",
+      "characters": [],
+      "camera": "zoom-in",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "delivery": "honest, lighter tone",
+          "text": {
+            "zh": "先插一句严肃的。今天看到的《管子》，是西汉刘向在公元前26年前后整理成书的，离管仲已经六百年。",
+            "en": "Quick footnote before we go on. The Guanzi we have today was edited by the Han scholar Liu Xiang around 26 BC, six centuries after Guan Zhong."
+          }
+        },
+        {
+          "speaker": "narrator",
+          "delivery": "wink",
+          "text": {
+            "zh": "我们引用的这几篇经济文章，学界多认为出自战国到汉代的“轻重家”之手，借了管仲的名号。所以下面的“管仲说”，可以理解成“管仲学派说”。",
+            "en": "The economic chapters we're quoting were most likely written by later policy thinkers borrowing his name. So when you hear 'Guan Zhong says', think 'the Guan Zhong brand says'."
+          }
+        }
+      ],
+      "on_screen": {
+        "zh": "托名之作",
+        "en": "Fine print"
+      },
+      "claims": [
+        "c6"
+      ],
+      "chapter": {
+        "zh": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "s13",
+      "part": 2,
+      "kind": "illustration",
+      "visual_prompt": "A Spring-and-Autumn period family of Qi (father, mother, small child) each standing beside a clay salt bowl of a different size: the father's bowl is large, the mother's medium, the child's small; simple, clear, chart-like composition on a plain background.",
+      "characters": [],
+      "camera": "static",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "delivery": "precise, amused",
+          "text": {
+            "zh": "《海王》篇算起账来，像个现代分析师：一个月，成年男子吃盐五升多，女子三升多，小孩两升多。",
+            "en": "The chapter called 'King of the Sea' does the maths like a modern analyst. In a month, it says, a grown man eats about five and a third sheng of salt, a woman three and a third, a child two and a third."
+          }
+        },
+        {
+          "speaker": "narrator",
+          "delivery": "emphatic",
+          "text": {
+            "zh": "人人都要吃，月月都要吃。",
+            "en": "Everyone eats it. Every single month."
+          }
+        }
+      ],
+      "on_screen": {
+        "zh": "",
+        "en": ""
+      },
+      "claims": [
+        "c7"
+      ],
+      "chapter": {
+        "zh": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "s14",
+      "part": 2,
+      "kind": "diagram",
+      "visual_prompt": "",
+      "characters": [],
+      "camera": "static",
+      "diagram": {
+        "template": "flow",
+        "title": {
+          "zh": "盐的钱怎么流",
+          "en": "How the salt money flows"
+        },
+        "items": [
+          {
+            "primary": {
+              "zh": "海边盐场",
+              "en": "Salt works"
+            },
+            "secondary": {
+              "zh": "官府收购",
+              "en": "the state buys"
+            }
+          },
+          {
+            "primary": {
+              "zh": "官府",
+              "en": "The state"
+            },
+            "secondary": {
+              "zh": "每升加一点价",
+              "en": "tiny markup per sheng"
+            }
+          },
+          {
+            "primary": {
+              "zh": "千万张嘴",
+              "en": "Ten million mouths"
+            },
+            "secondary": {
+              "zh": "每月都得买",
+              "en": "everyone buys monthly"
+            }
+          },
+          {
+            "primary": {
+              "zh": "国库",
+              "en": "Treasury"
+            },
+            "secondary": {
+              "zh": "",
+              "en": ""
+            }
+          }
+        ],
+        "original": "",
+        "source": ""
+      },
+      "lines": [
+        {
+          "speaker": "narrator",
+          "delivery": "building",
+          "text": {
+            "zh": "精髓来了：盐由官府统一经营。不收税，只在每升盐上加一点点价，几乎察觉不到。",
+            "en": "Now the trick. The state runs the salt trade. It doesn't tax anyone. It just adds a tiny markup, a fraction of a coin per sheng. Nobody notices."
+          }
+        },
+        {
+          "speaker": "narrator",
+          "delivery": "suspense",
+          "text": {
+            "zh": "可是乘以全国每一张嘴、每一个月……",
+            "en": "But multiply that by every mouth in the country, every month…"
+          }
+        }
+      ],
+      "on_screen": {
+        "zh": "",
+        "en": ""
+      },
+      "claims": [
+        "c8"
+      ],
+      "chapter": {
+        "zh": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "s15",
+      "part": 2,
+      "kind": "diagram",
+      "visual_prompt": "",
+      "characters": [],
+      "camera": "static",
+      "diagram": {
+        "template": "stat",
+        "title": {
+          "zh": "《海王》篇的算账",
+          "en": "By the Guanzi's own maths"
+        },
+        "items": [
+          {
+            "primary": {
+              "zh": "6000万",
+              "en": "60,000,000"
+            },
+            "secondary": {
+              "zh": "钱 / 月：盐利；人头税只有3000万",
+              "en": "coins a month from salt, vs 30,000,000 from a head tax"
+            }
+          }
+        ],
+        "original": "",
+        "source": ""
+      },
+      "lines": [
+        {
+          "speaker": "narrator",
+          "delivery": "impressed",
+          "text": {
+            "zh": "书里算出来：一个万乘大国，靠盐每月能进账六千万钱。而按人头每月收三十钱的税，只有三千万，还会骂声一片。",
+            "en": "And the book's own numbers come out at sixty million coins a month for a large state. A head tax of thirty coins per person would raise only thirty million, and everyone would be furious."
+          }
+        }
+      ],
+      "on_screen": {
+        "zh": "",
+        "en": ""
+      },
+      "claims": [
+        "c8"
+      ],
+      "chapter": {
+        "zh": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "s16",
+      "part": 2,
+      "kind": "illustration",
+      "visual_prompt": "Comedy close-up: Duke Huan with eyes turned into round bronze coins and drooling, while Guan Zhong leans in and whispers with a sly smile, holding a small bag of salt.",
+      "characters": [
+        "duke_huan",
+        "guan_zhong"
+      ],
+      "camera": "zoom-in",
+      "lines": [
+        {
+          "speaker": "duke_huan",
+          "delivery": "greedy delight",
+          "text": {
+            "zh": "钱翻一倍……还没人骂我？",
+            "en": "Twice the money… and nobody's angry at me?"
+          }
+        },
+        {
+          "speaker": "guan_zhong",
+          "delivery": "sly, confident",
+          "text": {
+            "zh": "他们只会嫌盐贵，不会骂您。",
+            "en": "They'll grumble about the price of salt. Not about you."
+          }
+        },
+        {
+          "speaker": "narrator",
+          "delivery": "serious",
+          "text": {
+            "zh": "这些数字是论证用的，不是真实账本。但逻辑一针见血：对离不开的东西收钱，把税藏进价格里。",
+            "en": "These are rhetorical numbers, not tax records. But the logic is razor-sharp: charge for what people can't live without, and hide the tax inside the price."
+          }
+        }
+      ],
+      "on_screen": {
+        "zh": "",
+        "en": ""
+      },
+      "claims": [
+        "c8"
+      ],
+      "chapter": {
+        "zh": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "s17",
+      "part": 2,
+      "kind": "diagram",
+      "visual_prompt": "",
+      "characters": [],
+      "camera": "static",
+      "diagram": {
+        "template": "compare",
+        "title": {
+          "zh": "两种收钱法",
+          "en": "Two ways to raise money"
+        },
+        "items": [
+          {
+            "primary": {
+              "zh": "人头税",
+              "en": "Head tax"
+            },
+            "secondary": {
+              "zh": "看得见；按人头收；人人有怨",
+              "en": "Visible; Per person; Resented"
+            }
+          },
+          {
+            "primary": {
+              "zh": "盐价加价",
+              "en": "Salt markup"
+            },
+            "secondary": {
+              "zh": "看不见；买盐时付；谁也跑不掉",
+              "en": "Invisible; Paid at purchase; No escape"
+            }
+          }
+        ],
+        "original": "",
+        "source": ""
+      },
+      "lines": [
+        {
+          "speaker": "narrator",
+          "delivery": "teaching",
+          "text": {
+            "zh": "用现代经济学来说，这是对“需求缺乏弹性”的商品征税：盐涨价了，大家还得买差不多的量，所以税收稳，对经济的扭曲也小。",
+            "en": "In modern terms, this is taxing a good with price-inelastic demand: raise the price of salt and people still buy almost the same amount. So the revenue is steady, and the economy barely bends."
+          }
+        },
+        {
+          "speaker": "narrator",
+          "delivery": "impressed",
+          "text": {
+            "zh": "1927年，英国数学家拉姆齐证明：想让征税造成的效率损失最小，就该对需求弹性小的商品多征税。《海王》篇的思路，和这条“拉姆齐法则”惊人地相似。",
+            "en": "In 1927 the British mathematician Frank Ramsey showed that to minimise the damage a tax does, you should tax most heavily the goods whose demand responds least to price. The 'King of the Sea' chapter is a strikingly close ancestor of that Ramsey rule."
+          }
+        }
+      ],
+      "on_screen": {
+        "zh": "",
+        "en": ""
+      },
+      "claims": [
+        "c19",
+        "c32"
+      ],
+      "chapter": {
+        "zh": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "s17b",
+      "part": 2,
+      "kind": "diagram",
+      "visual_prompt": "",
+      "characters": [],
+      "camera": "static",
+      "diagram": {
+        "template": "quote",
+        "title": {
+          "zh": "高明的君主，让百姓看得见给予，看不见拿走。",
+          "en": "Wise rulers let the people see what is given, never what is taken."
+        },
+        "items": [],
+        "original": "先王知其然，故見予之形，不見奪之理。",
+        "source": "《管子·國蓄》"
+      },
+      "lines": [
+        {
+          "speaker": "narrator",
+          "delivery": "conspiratorial",
+          "text": {
+            "zh": "还有更绝的。《国蓄》篇写道：高明的君主，要让百姓看得见给予，看不见拿走。",
+            "en": "It gets better. Another chapter, 'State Reserves', says a wise ruler lets people see what he gives, but never what he takes."
+          }
+        },
+        {
+          "speaker": "narrator",
+          "delivery": "explaining",
+          "text": {
+            "zh": "2009年，经济学家切蒂在美国超市做了个实验：把含税价直接印在价签上，这些商品的销量就掉了大约8%。税一被看见，人就有反应，这叫“税收显著性”。",
+            "en": "In 2009, economist Raj Chetty and colleagues tested this in American supermarkets: when shelf tags showed the price including tax, sales of those items fell by about eight percent. Make a tax visible, and people react. Economists call it tax salience."
+          }
+        },
+        {
+          "speaker": "narrator",
+          "delivery": "emphatic",
+          "text": {
+            "zh": "两千多年前的这句话，可能是世界上最早写下这个道理的文字之一。",
+            "en": "That line, over two thousand years old, may be among the earliest written statements of the idea anywhere."
+          }
+        }
+      ],
+      "on_screen": {
+        "zh": "",
+        "en": ""
+      },
+      "claims": [
+        "c24",
+        "c33"
+      ],
+      "chapter": {
+        "zh": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "s18",
+      "part": 2,
+      "kind": "illustration",
+      "visual_prompt": "Bustling Qi market: a woman buying a bronze needle and knife, a farmer shouldering a new iron plough, a state official at a stall quietly dropping coins into a large state chest; no text.",
+      "characters": [],
+      "camera": "pan-right",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "delivery": "brisk",
+          "text": {
+            "zh": "铁也一样。书里说：每个女子都要有针有刀，每个农夫都要有犁有锄。每件加一点价，全国人都在交钱，却没有一个税吏上门。",
+            "en": "Iron gets the same treatment. Every woman needs a needle and a knife, every farmer a plough and a hoe. Add a little to the price of each, and the whole country pays without a single tax collector knocking on the door."
+          }
+        }
+      ],
+      "on_screen": {
+        "zh": "",
+        "en": ""
+      },
+      "claims": [
+        "c9"
+      ],
+      "chapter": {
+        "zh": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "s19",
+      "part": 2,
+      "kind": "illustration",
+      "visual_prompt": "A huge whimsical bronze machine: salt pours in at the top, coins stream out at the bottom into the treasury; Duke Huan's hand rests on a big dial, about to turn it to maximum; ominous lighting.",
+      "characters": [
+        "duke_huan"
+      ],
+      "camera": "zoom-in",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "delivery": "upbeat, then pause",
+          "text": {
+            "zh": "听起来已经很厉害了？可盐，只是这部书经济工具箱里的第一件。",
+            "en": "Impressive already? But salt was only the first tool in the Guanzi's economic toolkit."
+          }
+        },
+        {
+          "speaker": "narrator",
+          "delivery": "cliffhanger",
+          "text": {
+            "zh": "接下来的几件里，有一件在两千年后，被美国农业部长借去救了大萧条。",
+            "en": "One of the others would be borrowed, two thousand years later, by an American agriculture secretary fighting the Great Depression."
+          }
+        }
+      ],
+      "on_screen": {
+        "zh": "",
+        "en": ""
+      },
+      "claims": [],
+      "chapter": {
+        "zh": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "s20",
+      "part": 3,
+      "kind": "diagram",
+      "visual_prompt": "",
+      "characters": [],
+      "camera": "static",
+      "diagram": {
+        "template": "chapter",
+        "title": {
+          "zh": "《管子》的经济工具箱",
+          "en": "The Guanzi's Economic Toolkit"
+        },
+        "items": [
+          {
+            "primary": {
+              "zh": "第三幕",
+              "en": "Act 3"
+            },
+            "secondary": {
+              "zh": "",
+              "en": ""
+            }
+          }
+        ],
+        "original": "",
+        "source": ""
+      },
+      "lines": [
+        {
+          "speaker": "narrator",
+          "delivery": "playful announcement",
+          "text": {
+            "zh": "第三幕：《管子》的经济工具箱。",
+            "en": "Act three: the Guanzi's economic toolkit."
+          }
+        }
+      ],
+      "on_screen": {
+        "zh": "",
+        "en": ""
+      },
+      "claims": [],
+      "chapter": {
+        "zh": "经济工具箱",
+        "en": "The Toolkit"
+      }
+    },
+    {
+      "id": "s30",
+      "part": 3,
+      "kind": "diagram",
+      "visual_prompt": "",
+      "characters": [],
+      "camera": "static",
+      "diagram": {
+        "template": "compare",
+        "title": {
+          "zh": "敛之以轻，散之以重",
+          "en": "Buy when cheap, sell when dear"
+        },
+        "items": [
+          {
+            "primary": {
+              "zh": "丰年：粮多价贱",
+              "en": "Good harvest: grain is cheap"
+            },
+            "secondary": {
+              "zh": "官府收购；托住农民收入",
+              "en": "The state buys; Farm incomes are protected"
+            }
+          },
+          {
+            "primary": {
+              "zh": "荒年：粮少价贵",
+              "en": "Bad harvest: grain is dear"
+            },
+            "secondary": {
+              "zh": "官府放粮；压住粮价、断了囤积者的财路",
+              "en": "The state sells; Prices are capped, hoarders lose out"
+            }
+          }
+        ],
+        "original": "",
+        "source": ""
+      },
+      "lines": [
+        {
+          "speaker": "narrator",
+          "delivery": "explaining",
+          "text": {
+            "zh": "第二件工具，叫“轻重之术”。《国蓄》篇说：东西多了就便宜，官府趁便宜收进来；东西少了就贵，官府再拿出去卖。",
+            "en": "Tool two: 'the art of light and heavy'. When goods are plentiful they're cheap, so the state buys them up. When they're scarce they're dear, so the state sells them back."
+          }
+        },
+        {
+          "speaker": "narrator",
+          "delivery": "teaching",
+          "text": {
+            "zh": "目的不是赚差价，而是把物价稳住，让囤积居奇的商人无利可图。今天的说法叫“缓冲储备”，国家粮食储备、平准基金，用的都是这个逻辑。",
+            "en": "The point isn't profit. It's stable prices, and it squeezes out the hoarders. Today we'd call it a buffer stock, the same logic behind national grain reserves and market stabilisation funds."
+          }
+        }
+      ],
+      "on_screen": {
+        "zh": "",
+        "en": ""
+      },
+      "claims": [
+        "c23"
+      ],
+      "chapter": {
+        "zh": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "s31",
+      "part": 3,
+      "kind": "illustration",
+      "visual_prompt": "A Qi state granary shown in two halves: on the left a bumper harvest, officials buying heaps of cheap grain from smiling farmers; on the right a lean year, the same officials selling grain to a queue of relieved villagers while a fat grain hoarder sulks behind his locked storehouse.",
+      "characters": [
+        "guan_zhong"
+      ],
+      "camera": "pan-right",
+      "lines": [
+        {
+          "speaker": "guan_zhong",
+          "delivery": "smug, playful",
+          "text": {
+            "zh": "粮贱我收，粮贵我卖。囤粮的那位，您先歇会儿。",
+            "en": "Cheap, I buy. Dear, I sell. Hoarders, please take a seat."
+          }
+        }
+      ],
+      "on_screen": {
+        "zh": "轻重之术",
+        "en": "Buy cheap, sell dear"
+      },
+      "claims": [
+        "c23"
+      ],
+      "chapter": {
+        "zh": "",
+        "en": ""
+      },
+      "diagram": null
+    },
+    {
+      "id": "s32",
+      "part": 3,
+      "kind": "illustration",
+      "visual_prompt": "1930s American Midwest drawn in the series' ink-and-wash illustration style: a Depression-era agriculture official in a suit and hat stands before rows of grain silos, holding an open book showing an ancient Chinese granary; farmers in overalls listen; warm sepia light.",
+      "characters": [],
+      "camera": "zoom-in",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "delivery": "storytelling",
+          "text": {
+            "zh": "这个思路后来在汉朝变成了制度：公元前54年，耿寿昌奏请设立“常平仓”。",
+            "en": "In the Han dynasty the idea became an institution: in 54 BC, the official Geng Shouchang set up the 'ever-normal granary'."
+          }
+        },
+        {
+          "speaker": "narrator",
+          "delivery": "building",
+          "text": {
+            "zh": "两千年后，美国大萧条，农产品价格暴跌。农业部长华莱士推出“常平仓”计划，写进了1938年的农业调整法。学者考证，他的灵感正来自中国的常平仓传统。",
+            "en": "Two thousand years later, in the Great Depression, US Agriculture Secretary Henry Wallace championed an 'Ever-Normal Granary' to steady crashing farm prices. It went into the Agricultural Adjustment Act of 1938, and historians have traced his inspiration to China's ever-normal granaries."
+          }
+        }
+      ],
+      "on_screen": {
+        "zh": "常平仓",
+        "en": "Ever-Normal Granary"
+      },
+      "claims": [
+        "c25",
+        "c26"
+      ],
+      "chapter": {
+        "zh": "",
+        "en": ""
+      },
+      "diagram": null
+    },
+    {
+      "id": "s34",
+      "part": 3,
+      "kind": "illustration",
+      "visual_prompt": "An extravagant ancient funeral of a wealthy Qi family: a huge carved coffin and piles of fine burial robes, while carpenters, weavers and labourers work busily and are paid in bronze coins; comic contrast between the solemn rich family and the cheerful busy workers.",
+      "characters": [],
+      "camera": "pan-left",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "delivery": "amused",
+          "text": {
+            "zh": "第三件工具最反直觉：《侈靡》篇竟然鼓励有钱人花钱，“富者靡之，贫者为之”，富人挥霍，穷人才有活干。",
+            "en": "Tool three is the most counter-intuitive. The chapter 'On Extravagance' actually encourages the rich to spend: the rich splurge, and the poor get work."
+          }
+        },
+        {
+          "speaker": "narrator",
+          "delivery": "measured",
+          "text": {
+            "zh": "它举的例子是办丧事：大棺椁让木匠有活干，多衣衾让织女有活干。这和1936年凯恩斯讲的“有效需求”有几分神似，当然只是神似，背景完全不同。",
+            "en": "Its example is lavish funerals: big coffins employ carpenters, fine burial clothes employ weavers. It echoes Keynes's 1936 argument that spending creates jobs. An echo, not the same theory, but a remarkable one."
+          }
+        }
+      ],
+      "on_screen": {
+        "zh": "富者靡之",
+        "en": "Spending makes jobs"
+      },
+      "claims": [
+        "c30",
+        "c34"
+      ],
+      "chapter": {
+        "zh": "",
+        "en": ""
+      },
+      "diagram": null
+    },
+    {
+      "id": "s35",
+      "part": 3,
+      "kind": "illustration",
+      "visual_prompt": "Comic scene on the Qi-Chu border: farmers of Chu abandon their rice fields to chase deer with nets, while Qi merchants hold out bags of bronze coins; behind the Qi side a granary is stacked high with grain sacks.",
+      "characters": [],
+      "camera": "pan-right",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "delivery": "storytelling, playful",
+          "text": {
+            "zh": "书里还讲了一个传说：齐国高价收购楚国的鹿，楚国人纷纷丢下庄稼去抓鹿。等楚国粮食不够了，齐国一关边境，粮价飞涨，楚国只好服软。",
+            "en": "The book even tells a legend of economic warfare: Qi pays sky-high prices for Chu's deer, Chu's farmers abandon their fields to hunt them, and then Qi shuts the border. Grain prices soar, and Chu submits."
+          }
+        },
+        {
+          "speaker": "narrator",
+          "delivery": "wry",
+          "text": {
+            "zh": "多半是寓言，但它讲的粮食安全和贸易依赖，放到今天也毫不过时。",
+            "en": "Almost certainly a parable, but its lessons about food security and trade dependence sound remarkably modern."
+          }
+        }
+      ],
+      "on_screen": {
+        "zh": "买鹿制楚",
+        "en": "The deer gambit"
+      },
+      "claims": [
+        "c31"
+      ],
+      "chapter": {
+        "zh": "",
+        "en": ""
+      },
+      "diagram": null
+    },
+    {
+      "id": "s33",
+      "part": 3,
+      "kind": "diagram",
+      "visual_prompt": "",
+      "characters": [],
+      "camera": "static",
+      "diagram": {
+        "template": "compare",
+        "title": {
+          "zh": "两千年前的经济学",
+          "en": "Economics, two thousand years early"
+        },
+        "items": [
+          {
+            "primary": {
+              "zh": "《管子》",
+              "en": "The Guanzi"
+            },
+            "secondary": {
+              "zh": "盐铁专营；见予不见夺；敛轻散重；富者靡之",
+              "en": "State salt monopoly; Hidden taxes; Buy cheap, sell dear; Spending makes jobs"
+            }
+          },
+          {
+            "primary": {
+              "zh": "现代经济学",
+              "en": "Modern economics"
+            },
+            "secondary": {
+              "zh": "拉姆齐法则 1927；税收显著性 2009；缓冲储备；凯恩斯 1936",
+              "en": "Ramsey rule, 1927; Tax salience, 2009; Buffer stocks; Keynes, 1936"
+            }
+          }
+        ],
+        "original": "",
+        "source": ""
+      },
+      "lines": [
+        {
+          "speaker": "narrator",
+          "delivery": "building",
+          "text": {
+            "zh": "再加上按土地好坏定税、关卡只检查不收税、士农工商分业聚居，这部书几乎是把国家当成市场里的一个参与者来思考。",
+            "en": "Add land taxed by its fertility, border posts that inspect but don't tax, and trades clustered by occupation, and you have a book that treats the state as a player in the market."
+          }
+        },
+        {
+          "speaker": "narrator",
+          "delivery": "emphatic",
+          "text": {
+            "zh": "它和古希腊色诺芬讨论雅典财政的《论收入》差不多同时代，是世界上最早系统讨论国家与市场关系的著作之一。比亚当·斯密的《国富论》，早了将近两千年。",
+            "en": "Alongside Greek works like Xenophon's 'Ways and Means', it's among the world's earliest systematic writing on how a state should handle markets and money, nearly two thousand years before Adam Smith's Wealth of Nations."
+          }
+        }
+      ],
+      "on_screen": {
+        "zh": "",
+        "en": ""
+      },
+      "claims": [
+        "c27",
+        "c28",
+        "c29",
+        "c35",
+        "c36"
+      ],
+      "chapter": {
+        "zh": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "s37",
+      "part": 4,
+      "kind": "diagram",
+      "visual_prompt": "",
+      "characters": [],
+      "camera": "static",
+      "diagram": {
+        "template": "chapter",
+        "title": {
+          "zh": "两千年的回响",
+          "en": "Two Thousand Years of Echoes"
+        },
+        "items": [
+          {
+            "primary": {
+              "zh": "第四幕",
+              "en": "Act 4"
+            },
+            "secondary": {
+              "zh": "",
+              "en": ""
+            }
+          }
+        ],
+        "original": "",
+        "source": ""
+      },
+      "lines": [
+        {
+          "speaker": "narrator",
+          "delivery": "playful announcement",
+          "text": {
+            "zh": "第四幕：两千年的回响。",
+            "en": "Act four: two thousand years of echoes."
+          }
+        }
+      ],
+      "on_screen": {
+        "zh": "",
+        "en": ""
+      },
+      "claims": [],
+      "chapter": {
+        "zh": "两千年的回响",
+        "en": "Echoes"
+      }
+    },
+    {
+      "id": "s21",
+      "part": 4,
+      "kind": "illustration",
+      "visual_prompt": "Grand outdoor covenant of feudal lords: Duke Huan stands at the head of an altar as rulers of other states bow; Guan Zhong stands beside him; banners and bronze vessels; triumphant golden light.",
+      "characters": [
+        "duke_huan",
+        "guan_zhong"
+      ],
+      "camera": "pan-right",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "delivery": "measured",
+          "text": {
+            "zh": "先说齐国管不管用。约五百年后，司马迁在《史记》里说管仲“通货积财，富国强兵”，还靠“鱼盐之利”接济穷人。",
+            "en": "First: did it work for Qi? Writing about five hundred years later, the historian Sima Qian credits Guan Zhong with circulating goods and piling up wealth, enriching the state and strengthening the army, partly through the profits of fish and salt."
+          }
+        },
+        {
+          "speaker": "narrator",
+          "delivery": "triumphant",
+          "text": {
+            "zh": "齐国成了当时最强的诸侯国。",
+            "en": "Qi became the dominant power of its day."
+          }
+        }
+      ],
+      "on_screen": {
+        "zh": "",
+        "en": ""
+      },
+      "claims": [
+        "c10",
+        "c11",
+        "c4"
+      ],
+      "chapter": {
+        "zh": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "s23",
+      "part": 4,
+      "kind": "diagram",
+      "visual_prompt": "",
+      "characters": [],
+      "camera": "static",
+      "diagram": {
+        "template": "timeline",
+        "title": {
+          "zh": "盐专营两千年",
+          "en": "Two millennia of state salt"
+        },
+        "items": [
+          {
+            "primary": {
+              "zh": "前685年",
+              "en": "685 BC"
+            },
+            "secondary": {
+              "zh": "管仲相齐",
+              "en": "Guan Zhong in Qi"
+            }
+          },
+          {
+            "primary": {
+              "zh": "约前119年",
+              "en": "c. 119 BC"
+            },
+            "secondary": {
+              "zh": "汉武帝盐铁官营",
+              "en": "Han salt and iron monopoly"
+            }
+          },
+          {
+            "primary": {
+              "zh": "前81年",
+              "en": "81 BC"
+            },
+            "secondary": {
+              "zh": "盐铁会议",
+              "en": "The Salt and Iron Debate"
+            }
+          },
+          {
+            "primary": {
+              "zh": "758年",
+              "en": "AD 758"
+            },
+            "secondary": {
+              "zh": "唐朝榷盐",
+              "en": "Tang salt monopoly"
+            }
+          },
+          {
+            "primary": {
+              "zh": "2017年",
+              "en": "2017"
+            },
+            "secondary": {
+              "zh": "食盐价格放开",
+              "en": "Salt prices freed"
+            }
+          }
+        ],
+        "original": "",
+        "source": ""
+      },
+      "lines": [
+        {
+          "speaker": "narrator",
+          "delivery": "sweeping",
+          "text": {
+            "zh": "这台盐的机器，此后一次次被重新启动：汉朝盐铁官营，唐朝榷盐，唐代盐利一度占到国家赋税的一半；一直到2017年，中国才放开食盐价格。",
+            "en": "And the salt machine kept getting switched back on: Han monopolies, Tang monopolies, with salt at one point supplying half of all Tang state revenue, all the way to 2017, when China finally freed salt prices."
+          }
+        }
+      ],
+      "on_screen": {
+        "zh": "",
+        "en": ""
+      },
+      "claims": [
+        "c13",
+        "c14",
+        "c15",
+        "c16"
+      ],
+      "chapter": {
+        "zh": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "s24",
+      "part": 4,
+      "kind": "illustration",
+      "visual_prompt": "Han dynasty court: Emperor Wu on his throne frowning at a war map of the northern steppe while Sang Hongyang, holding a bundle of counting rods, points at a cart loaded with salt sacks and iron tools.",
+      "characters": [
+        "sang_hongyang"
+      ],
+      "camera": "zoom-in",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "delivery": "storytelling",
+          "text": {
+            "zh": "五百年后，汉武帝连年打匈奴，钱不够花。大约从公元前119年起，他起用大盐商东郭咸阳、大铁商孔仅，加上理财高手桑弘羊，把盐铁彻底收归官营。",
+            "en": "Five centuries later, Emperor Wu of Han was fighting endless wars against the Xiongnu and running out of money. From around 119 BC, he put a former salt tycoon, an iron magnate and a brilliant young finance official named Sang Hongyang in charge, and salt and iron became full state monopolies."
+          }
+        },
+        {
+          "speaker": "sang_hongyang",
+          "delivery": "crisp, confident",
+          "text": {
+            "zh": "打仗要钱，钱在盐里。就这么简单。",
+            "en": "Wars need money. Money is in salt. Simple."
+          }
+        }
+      ],
+      "on_screen": {
+        "zh": "",
+        "en": ""
+      },
+      "claims": [
+        "c13"
+      ],
+      "chapter": {
+        "zh": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "s25",
+      "part": 4,
+      "kind": "diagram",
+      "visual_prompt": "",
+      "characters": [],
+      "camera": "static",
+      "diagram": {
+        "template": "compare",
+        "title": {
+          "zh": "盐铁会议（前81年）",
+          "en": "The Salt and Iron Debate (81 BC)"
+        },
+        "items": [
+          {
+            "primary": {
+              "zh": "桑弘羊",
+              "en": "Sang Hongyang"
+            },
+            "secondary": {
+              "zh": "充实国库；平抑物价；打压豪强",
+              "en": "Fills the treasury; Steadies prices; Curbs the tycoons"
+            }
+          },
+          {
+            "primary": {
+              "zh": "贤良文学",
+              "en": "The Confucian scholars"
+            },
+            "secondary": {
+              "zh": "与民争利；官盐又贵；官铁农具差",
+              "en": "Competes with the people; State salt costs more; State tools are worse"
+            }
+          }
+        ],
+        "original": "",
+        "source": ""
+      },
+      "lines": [
+        {
+          "speaker": "narrator",
+          "delivery": "dramatic",
+          "text": {
+            "zh": "公元前81年，朝廷为此开了一场空前的大辩论。一边是桑弘羊，一边是几十位儒生，吵的正是：国家该不该做生意？",
+            "en": "In 81 BC, the court staged an extraordinary public debate. On one side, Sang Hongyang. On the other, dozens of Confucian scholars. The question: should the state be in business at all?"
+          }
+        },
+        {
+          "speaker": "narrator",
+          "delivery": "teaser",
+          "text": {
+            "zh": "这场辩论后来被整理成《盐铁论》。下一期，我们专门讲它。",
+            "en": "The record of that clash, the Discourses on Salt and Iron, is one of the great economic debates of the ancient world. It gets its own episode."
+          }
+        }
+      ],
+      "on_screen": {
+        "zh": "",
+        "en": ""
+      },
+      "claims": [
+        "c14"
+      ],
+      "chapter": {
+        "zh": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "s29",
+      "part": 4,
+      "kind": "illustration",
+      "visual_prompt": "Guan Zhong breaking the fourth wall: he leans toward the viewer from inside an ancient frame, eyebrow raised, holding a pinch of salt between two fingers; warm spotlight, dark background.",
+      "characters": [
+        "guan_zhong"
+      ],
+      "camera": "zoom-in",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "delivery": "reflective",
+          "text": {
+            "zh": "所以，管仲和他名下的这部书，留下的远不只是一个“盐铁专营”。",
+            "en": "So Guan Zhong, and the book that bears his name, left us far more than a salt monopoly."
+          }
+        },
+        {
+          "speaker": "narrator",
+          "delivery": "emphatic, slow",
+          "text": {
+            "zh": "它提出的两个问题，经济学家到今天还在争论：政府最好收的钱，是不是老百姓察觉不到的钱？市场失衡的时候，国家该不该出手？",
+            "en": "It raised two questions economists still argue about: is the easiest money for a government the money people don't notice paying? And when markets wobble, should the state step in?"
+          }
+        },
+        {
+          "speaker": "guan_zhong",
+          "delivery": "smug, teasing",
+          "text": {
+            "zh": "别这么看我。盐，你们不也照样买？",
+            "en": "Don't look at me like that. You all still buy salt."
+          }
+        },
+        {
+          "speaker": "narrator",
+          "delivery": "teaser, upbeat",
+          "text": {
+            "zh": "下一期：盐铁会议，一群儒生把朝廷的“国营帝国”送上了审判席。",
+            "en": "Next time: the Salt and Iron Debate, when a room full of Confucian scholars put the empire's state businesses on trial."
+          }
+        }
+      ],
+      "on_screen": {
+        "zh": "最好收的钱",
+        "en": "The easiest money"
+      },
+      "claims": [],
+      "chapter": {
+        "zh": "结语",
+        "en": "The Big Idea"
+      }
+    }
+  ],
+  "claims": [
+    {
+      "id": "c1",
+      "statement": {
+        "zh": "管仲（约前720—前645年）任齐桓公（前685—前643年在位）之相。",
+        "en": "Guan Zhong (c. 720–645 BC) served as chancellor to Duke Huan of Qi (r. 685–643 BC)."
+      },
+      "source": "《史记·管晏列传》《史记·齐太公世家》",
+      "quote": "",
+      "confidence": "established",
+      "note": {
+        "zh": "生年为约数。",
+        "en": "Birth year is approximate."
+      }
+    },
+    {
+      "id": "c2",
+      "statement": {
+        "zh": "争位时管仲射中公子小白的衣带钩，小白装死，抢先回国即位。",
+        "en": "During the succession race Guan Zhong shot Prince Xiaobai's belt hook; the prince feigned death and reached Qi first."
+      },
+      "source": "《史记·齐太公世家》",
+      "quote": "管仲别将兵遮莒道，射中小白带钩。小白详死。",
+      "confidence": "traditional",
+      "note": {
+        "zh": "成书晚于事件约五百年。（已核对维基文库原文）",
+        "en": "Written about five centuries later. (verified against the Wikisource text)"
+      }
+    },
+    {
+      "id": "c3",
+      "statement": {
+        "zh": "鲍叔牙向桓公推荐管仲：治齐有他即可，称霸非管仲不可。",
+        "en": "Bao Shuya told the duke: to govern Qi he would suffice; to become hegemon he needed Guan Zhong."
+      },
+      "source": "《史记·齐太公世家》",
+      "quote": "君将治齐，即高傒与叔牙足也。君且欲霸王，非管夷吾不可。",
+      "confidence": "traditional",
+      "note": {
+        "zh": "台词为意译。（已核对维基文库原文）",
+        "en": "Dialogue paraphrased. (verified against the Wikisource text)"
+      }
+    },
+    {
+      "id": "c4",
+      "statement": {
+        "zh": "齐桓公成为春秋第一位霸主，前667年诸侯会盟以齐为长。",
+        "en": "Duke Huan became the first hegemon; in 667 BC an interstate covenant recognised Qi's leadership."
+      },
+      "source": "《左传·庄公二十七年》；《论语·宪问》“桓公九合诸侯，不以兵车，管仲之力也”",
+      "quote": "桓公九合诸侯，不以兵车，管仲之力也。",
+      "confidence": "established",
+      "note": {
+        "zh": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "c5",
+      "statement": {
+        "zh": "《管子·海王》中，桓公提出向台雉（房屋）、树木、六畜、人口征税，管子分别以“毁成”“伐生”“杀生”“隐情”否定，主张“唯官山海为可耳”。",
+        "en": "In Guanzi 'King of the Sea', the duke proposes taxing buildings, trees, livestock and people; Guan Zhong rejects each (destroys buildings, fells trees, kills livestock, people conceal themselves) and says only state control of mountains and seas will do."
+      },
+      "source": "《管子·海王》",
+      "quote": "吾欲藉於六畜……此殺生也。吾欲藉於人……此隱情也。……唯官山海爲可耳。",
+      "confidence": "debated",
+      "note": {
+        "zh": "篇章作者与年代存疑，见c6。（已核对维基文库原文）",
+        "en": "Authorship and date disputed, see c6. (verified against the Wikisource text)"
+      }
+    },
+    {
+      "id": "c6",
+      "statement": {
+        "zh": "《管子》由刘向约前26年编定；轻重诸篇多认为成于战国至西汉，非管仲本人所作。",
+        "en": "The Guanzi was edited by Liu Xiang c. 26 BC; the Qingzhong chapters are generally dated Warring States to Western Han, not by Guan Zhong himself."
+      },
+      "source": "Rickett, Guanzi (Princeton, 1985/1998), introductions; 金谷治《管子の研究》及其轻重篇论文 (1984)",
+      "quote": "",
+      "confidence": "debated",
+      "note": {
+        "zh": "具体年代学界有争论（战国说、汉初说、武帝前后说）。",
+        "en": "Exact dating debated (Warring States, early Han or around Emperor Wu)."
+      }
+    },
+    {
+      "id": "c7",
+      "statement": {
+        "zh": "《海王》：每月成年男子食盐五升少半，女子三升少半，小孩二升少半。",
+        "en": "'King of the Sea': per month an adult man eats 5⅓ sheng of salt, a woman 3⅓, a child 2⅓."
+      },
+      "source": "《管子·海王》",
+      "quote": "终月，大男食盐五升少半，大女食盐三升少半，吾子食盐二升少半。",
+      "confidence": "established",
+      "note": {
+        "zh": "这是文本记载，数字为示意性。（已核对维基文库原文）",
+        "en": "Accurately quoted text; numbers are schematic. (verified against the Wikisource text)"
+      }
+    },
+    {
+      "id": "c8",
+      "statement": {
+        "zh": "《海王》算账：每升加价少许，万乘之国千万人口，月得盐利六千万，而月人三十钱的人头税仅三千万。",
+        "en": "'King of the Sea' arithmetic: a small markup per sheng across ten million mouths yields 60 million coins a month, versus 30 million from a 30-coin monthly head tax."
+      },
+      "source": "《管子·海王》",
+      "quote": "万乘之国，人数开口千万也……月人三十钱之籍，为钱三千万。今吾非籍之诸君吾子，而有二国之籍者六千万。",
+      "confidence": "debated",
+      "note": {
+        "zh": "论证性数字，不是财政记录。（已核对维基文库原文）",
+        "en": "Rhetorical figures, not fiscal records. (verified against the Wikisource text)"
+      }
+    },
+    {
+      "id": "c9",
+      "statement": {
+        "zh": "《海王》称每个女子需针刀、每个农夫需耒耜铫，铁器加价即可遍及全民。",
+        "en": "'King of the Sea' says every woman needs a needle and knife and every farmer plough tools, so a markup on iron reaches everyone."
+      },
+      "source": "《管子·海王》",
+      "quote": "今鐵官之數曰：一女必有一鍼一刀，若其事立。耕者必有一耒一耜一銚，若其事立。",
+      "confidence": "established",
+      "note": {
+        "zh": "原文字句需核对校本。（已核对维基文库原文）",
+        "en": "Verify exact wording against a critical edition. (verified against the Wikisource text)"
+      }
+    },
+    {
+      "id": "c10",
+      "statement": {
+        "zh": "《史记》称管仲“通货积财，富国强兵，与俗同好恶”。",
+        "en": "The Shiji says Guan Zhong 'circulated goods and accumulated wealth, enriched the state and strengthened the army'."
+      },
+      "source": "《史记·管晏列传》",
+      "quote": "通货积财，富国强兵，与俗同好恶。",
+      "confidence": "established",
+      "note": {
+        "zh": "已核对维基文库原文",
+        "en": "verified against the Wikisource text"
+      }
+    },
+    {
+      "id": "c11",
+      "statement": {
+        "zh": "《史记》称管仲“设轻重鱼盐之利，以赡贫穷，禄贤能”。",
+        "en": "The Shiji says Guan Zhong used price management and the profits of fish and salt to relieve the poor and reward the able."
+      },
+      "source": "《史记·齐太公世家》",
+      "quote": "设轻重鱼盐之利，以赡贫穷，禄贤能。",
+      "confidence": "established",
+      "note": {
+        "zh": "已核对维基文库原文。史记支持管仲经营盐利，但不能证明完整的“加价专营”制度出自他本人。",
+        "en": "Verified against the Wikisource text. Supports state profit from salt, not that the full markup monopoly was his own design."
+      }
+    },
+    {
+      "id": "c13",
+      "statement": {
+        "zh": "汉武帝时（约前119年起）盐铁官营，东郭咸阳、孔仅主持，桑弘羊参与谋划。",
+        "en": "Under Emperor Wu, from c. 119 BC, salt and iron became state monopolies, run by Dongguo Xianyang and Kong Jin with Sang Hongyang."
+      },
+      "source": "《史记·平准书》《汉书·食货志》",
+      "quote": "",
+      "confidence": "established",
+      "note": {
+        "zh": "具体年份各书记载为前119—前117年。",
+        "en": "Accounts place it between 119 and 117 BC."
+      }
+    },
+    {
+      "id": "c14",
+      "statement": {
+        "zh": "前81年盐铁会议，桑弘羊与贤良文学辩论，桓宽整理为《盐铁论》；批评者指责与民争利、官器质次价高。",
+        "en": "In 81 BC Sang Hongyang debated the Confucian 'worthies and literati'; Huan Kuan edited the record as the Discourses on Salt and Iron; critics said the state competed with the people and sold poor, costly tools."
+      },
+      "source": "桓宽《盐铁论》（《本议》《水旱》等篇）；《汉书·昭帝纪》",
+      "quote": "",
+      "confidence": "established",
+      "note": {
+        "zh": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "c15",
+      "statement": {
+        "zh": "唐乾元元年（758年）第五琦变盐法、榷天下盐；刘晏主持后，到大历末年盐利由每年四十万缗增至六百余万缗，“天下之赋，盐利居半”。",
+        "en": "In 758 Diwu Qi imposed a salt monopoly; under Liu Yan, salt revenue rose from 400,000 to over 6 million strings a year by the late 770s, 'half of all the empire's revenue'."
+      },
+      "source": "《新唐书·食货志》",
+      "quote": "晏之始至也，鹽利歲纔四十萬緡，至大曆末，六百餘萬緡。天下之賦，鹽利居半。",
+      "confidence": "established",
+      "note": {
+        "zh": "已核对维基文库原文（《新唐书·食货志四》）。",
+        "en": "Verified against the Wikisource text (New Tang History, Treatise on Food and Money 4)."
+      }
+    },
+    {
+      "id": "c16",
+      "statement": {
+        "zh": "2016年国务院盐业体制改革方案自2017年1月1日起放开食盐价格、允许跨区经营，生产仍需许可。",
+        "en": "China's 2016 State Council salt reform, effective 1 Jan 2017, freed salt prices and cross-region sales; production still requires a licence."
+      },
+      "source": "国务院《盐业体制改革方案》（2016）；国家发改委通告（2016年10月）",
+      "quote": "",
+      "confidence": "established",
+      "note": {
+        "zh": "媒体称“终结两千年专营”为概括说法，历代制度并不连续。",
+        "en": "Headlines about ending a '2,000-year monopoly' are shorthand; the institution was not continuous."
+      }
+    },
+    {
+      "id": "c19",
+      "statement": {
+        "zh": "盐的需求缺乏价格弹性。",
+        "en": "Demand for salt is price-inelastic."
+      },
+      "source": "标准经济学概念（以今释古的类比）",
+      "quote": "",
+      "confidence": "established",
+      "note": {
+        "zh": "现代经济学解释，不是古人用语。",
+        "en": "Modern economic framing, not an ancient term."
+      }
+    },
+    {
+      "id": "c23",
+      "statement": {
+        "zh": "《管子·国蓄》主张物多则贱时官府收购、物少则贵时官府抛售，以平物价，抑制“蓄贾”。",
+        "en": "Guanzi 'State Reserves' says the state should buy when goods are plentiful and cheap and sell when scarce and dear, to steady prices and curb hoarding merchants."
+      },
+      "source": "《管子·国蓄》",
+      "quote": "民有餘則輕之，故人君斂之以輕；民不足則重之，故人君散之以重。",
+      "confidence": "established",
+      "note": {
+        "zh": "文本记载（已核对维基文库原文）",
+        "en": "Text (verified against the Wikisource text)"
+      }
+    },
+    {
+      "id": "c24",
+      "statement": {
+        "zh": "《管子·国蓄》：先王“见予之形，不见夺之理”。",
+        "en": "Guanzi 'State Reserves': the former kings showed the form of giving but not the logic of taking."
+      },
+      "source": "《管子·国蓄》",
+      "quote": "先王知其然，故見予之形，不見奪之理。",
+      "confidence": "established",
+      "note": {
+        "zh": "“最早之一”为谨慎表述，非定论。（已核对维基文库原文）",
+        "en": "'Among the earliest' is a hedged claim, not a consensus. (verified against the Wikisource text)"
+      }
+    },
+    {
+      "id": "c25",
+      "statement": {
+        "zh": "汉宣帝五凤四年（前54年），大司农中丞耿寿昌奏设常平仓。",
+        "en": "In 54 BC the Han official Geng Shouchang proposed and set up ever-normal granaries."
+      },
+      "source": "《汉书·食货志上》",
+      "quote": "",
+      "confidence": "established",
+      "note": {
+        "zh": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "c26",
+      "statement": {
+        "zh": "美国农业部长华莱士推动“常平仓”（Ever-Normal Granary）政策，体现于1938年农业调整法；Bodde考证其受中国常平仓传统启发。",
+        "en": "US Agriculture Secretary Henry A. Wallace promoted the Ever-Normal Granary, embodied in the Agricultural Adjustment Act of 1938; Derk Bodde traced its inspiration to China's ever-normal granaries."
+      },
+      "source": "Derk Bodde, 'Henry A. Wallace and the Ever-Normal Granary', Far Eastern Quarterly 5.4 (1946); 李超民相关研究 (2014)",
+      "quote": "",
+      "confidence": "established",
+      "note": {
+        "zh": "华莱士的具体灵感来源（如陈焕章《孔门理财学》）待查Bodde原文确认。",
+        "en": "The exact channel of Wallace's inspiration (e.g. Chen Huan-chang's 1911 book) is to be confirmed in Bodde's article."
+      }
+    },
+    {
+      "id": "c27",
+      "statement": {
+        "zh": "管仲主张按土地好坏征税（相地而衰其政/相地而衰征），使民不迁移。",
+        "en": "Guan Zhong is credited with grading land taxes by land quality so that people would not migrate."
+      },
+      "source": "《管子·小匡》；《国语·齐语》",
+      "quote": "相地而衰其政，則民不移矣。",
+      "confidence": "established",
+      "note": {
+        "zh": "文本记载（已核对维基文库原文）",
+        "en": "Text (verified against the Wikisource text)"
+      }
+    },
+    {
+      "id": "c28",
+      "statement": {
+        "zh": "齐国“关市几而不正（征）”，关卡与市场只稽查、不征税，以利诸侯通商。",
+        "en": "Qi's border posts and markets inspected goods but did not tax them, to attract trade."
+      },
+      "source": "《管子·小匡》；《国语·齐语》",
+      "quote": "使關市幾而不正，㙻而不稅，以爲諸侯之利。",
+      "confidence": "established",
+      "note": {
+        "zh": "文本记载（已核对维基文库原文）",
+        "en": "Text (verified against the Wikisource text)"
+      }
+    },
+    {
+      "id": "c29",
+      "statement": {
+        "zh": "管仲主张士农工商“四民”分业聚居，不可杂处。",
+        "en": "Guan Zhong is credited with keeping the four occupations (scholars, farmers, artisans, merchants) in separate quarters."
+      },
+      "source": "《管子·小匡》；《国语·齐语》",
+      "quote": "士農工商，四民者，國之石民也，不可使雜處。",
+      "confidence": "established",
+      "note": {
+        "zh": "文本记载（已核对维基文库原文）",
+        "en": "Text (verified against the Wikisource text)"
+      }
+    },
+    {
+      "id": "c30",
+      "statement": {
+        "zh": "《管子·侈靡》主张“富者靡之，贫者为之”，以厚葬等消费创造就业。",
+        "en": "Guanzi 'On Extravagance' argues that spending by the rich (e.g. lavish funerals) gives the poor work."
+      },
+      "source": "《管子·侈靡》",
+      "quote": "富者靡之，貧者爲之。……巨棺槨，所以起木工也。多衣衾，所以起女工也。",
+      "confidence": "debated",
+      "note": {
+        "zh": "文本残缺难读；与凯恩斯的比较只是类比（杨联陞《侈靡论》）。（已核对维基文库原文）",
+        "en": "The chapter is corrupt; the Keynes comparison is an analogy only (Yang Lien-sheng). (verified against the Wikisource text)"
+      }
+    },
+    {
+      "id": "c31",
+      "statement": {
+        "zh": "《管子·轻重戊》记“买鹿制楚”：齐高价买楚鹿，楚民弃耕，齐闭关，楚粮价飞涨而服。",
+        "en": "Guanzi 'Qingzhong Wu' tells how Qi bought Chu's deer at high prices, Chu farmers abandoned their fields, Qi closed the border and Chu submitted."
+      },
+      "source": "《管子·轻重戊》",
+      "quote": "公貴買其鹿。……楚民即釋其耕農而田鹿。……因令人閉關，不與楚通使。……三年而楚服。",
+      "confidence": "traditional",
+      "note": {
+        "zh": "寓言性质，非信史。（已核对维基文库原文）",
+        "en": "A parable, not reliable history. (verified against the Wikisource text)"
+      }
+    },
+    {
+      "id": "c32",
+      "statement": {
+        "zh": "拉姆齐（1927）证明：为使超额负担最小，应对需求（与供给）弹性较小的商品课以较高税率。",
+        "en": "Ramsey (1927): to minimise excess burden, tax rates should be higher on goods with less elastic demand (and supply)."
+      },
+      "source": "F. P. Ramsey, 'A Contribution to the Theory of Taxation', Economic Journal 37 (1927)",
+      "quote": "",
+      "confidence": "established",
+      "note": {
+        "zh": "与《管子》的对应是以今释古的类比。",
+        "en": "The link to the Guanzi is a modern analogy."
+      }
+    },
+    {
+      "id": "c33",
+      "statement": {
+        "zh": "切蒂等（2009）：超市价签显示含税价后，相关商品需求下降约8%，说明消费者对不显著的税反应不足。",
+        "en": "Chetty, Looney and Kroft (2009): posting tax-inclusive prices reduced demand for the products by about 8%, showing consumers under-react to non-salient taxes."
+      },
+      "source": "R. Chetty, A. Looney, K. Kroft, 'Salience and Taxation: Theory and Evidence', American Economic Review 99.4 (2009)",
+      "quote": "",
+      "confidence": "established",
+      "note": {
+        "zh": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "c34",
+      "statement": {
+        "zh": "凯恩斯《就业、利息和货币通论》（1936）强调有效需求决定就业。",
+        "en": "Keynes's General Theory (1936) argued that effective demand determines employment."
+      },
+      "source": "J. M. Keynes, The General Theory of Employment, Interest and Money (1936)",
+      "quote": "",
+      "confidence": "established",
+      "note": {
+        "zh": "仅作类比。",
+        "en": "Used as an analogy only."
+      }
+    },
+    {
+      "id": "c35",
+      "statement": {
+        "zh": "色诺芬《论收入》（约前355年）讨论雅典的财政收入与经济政策。",
+        "en": "Xenophon's 'Ways and Means' (c. 355 BC) discusses Athenian state revenue and economic policy."
+      },
+      "source": "Xenophon, Poroi (Ways and Means), c. 355 BC",
+      "quote": "",
+      "confidence": "established",
+      "note": {
+        "zh": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "c36",
+      "statement": {
+        "zh": "亚当·斯密《国富论》出版于1776年。",
+        "en": "Adam Smith's Wealth of Nations was published in 1776."
+      },
+      "source": "A. Smith, An Inquiry into the Nature and Causes of the Wealth of Nations (1776)",
+      "quote": "",
+      "confidence": "established",
+      "note": {
+        "zh": "《管子》轻重诸篇约成于战国至西汉（见c6），早于《国富论》约两千年。",
+        "en": "The Qingzhong chapters date from the Warring States to Western Han (see c6), roughly two thousand years earlier."
+      }
+    }
+  ],
+  "tags": {
+    "zh": [
+      "中国历史",
+      "凯恩斯",
+      "历史科普",
+      "常平仓",
+      "拉姆齐法则",
+      "春秋",
+      "盐铁专营",
+      "盐铁论",
+      "管仲",
+      "管子",
+      "管子轻重",
+      "经济史",
+      "经济学",
+      "财政",
+      "齐桓公"
+    ],
+    "en": [
+      "Chinese history",
+      "Guan Zhong",
+      "Guanzi",
+      "Han dynasty",
+      "Ramsey rule",
+      "Salt and Iron Debate",
+      "Spring and Autumn period",
+      "ancient China",
+      "economic history",
+      "economics",
+      "ever-normal granary",
+      "explainer",
+      "history of economic thought",
+      "history of taxation",
+      "salt monopoly",
+      "tax salience"
+    ]
+  },
+  "approved": false,
+  "revision": 3
+}

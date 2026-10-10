@@ -1,0 +1,11 @@
+projects/
+*.egg-info/
+__pycache__/
+.pytest_cache/
+.venv/
+.env
+# generated media (text artifacts like research/script stay versioned)
+channels/*/episodes/*/assets/
+channels/*/episodes/*/build/
+channels/*/episodes/*/out/
+channels/*/episodes/*/state.json
