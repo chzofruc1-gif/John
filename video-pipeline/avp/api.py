@@ -379,9 +379,12 @@ def doctor(series_dir: str | Path | None = None) -> dict:
             name = getattr(cfg.providers, job) or ("" if job != "research" else cfg.providers.llm)
             env, proxy = _key_for(cfg, job, name)
             if env:
-                ok = bool(os.environ.get(env)) or proxy
-                checks.append({"check": f"{job}: {name}", "ok": ok, "detail": f"needs ${env}" + (" (or proxy)" if proxy else ""),
-                               "fix": f"export {env}=... (see .env.example)"})
+                has_key = bool(os.environ.get(env))
+                detail = f"${env} " + ("set" if has_key else "not set")
+                if proxy and not has_key:
+                    detail += " (auth_via_proxy is on: fine only where a proxy adds the key, e.g. the cloud session)"
+                checks.append({"check": f"{job}: {name}", "ok": has_key, "detail": detail,
+                               "fix": f"put {env}=... in .env (see .env.example)"})
     return {"ok": all(c["ok"] for c in checks), "checks": checks}
 
 
